@@ -1,1 +1,7 @@
-
+title: 'HvanA.nl Barometer'
+client: 'HvanA'
+status: 'active'
+years: [2]
+main_link: ''
+dev_link: ''
+tech_stack: ['SvelteKit', 'WordPress', 'Directus']
