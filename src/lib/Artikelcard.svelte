@@ -1,6 +1,11 @@
 <section>
   <article class="cards">
     <a class="card" href="#WONTDO">
+      <img
+        src="https://picsum.photos/id/1005/600/400"
+        alt="decoratieve-img"
+        loading="lazy"
+      />
       <span class="tag">Column</span>
       <h3>
         ‘We laten studenten samenwerken zonder ze ooit te leren hoe je dat doet’
