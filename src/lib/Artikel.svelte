@@ -4,9 +4,9 @@
 
 <section>
   <ul class="articlebox">
-    <ArtikelCard />
-    <ArtikelCard />
-    <ArtikelCard />
+    <li><ArtikelCard /></li>
+    <li><ArtikelCard /></li>
+    <li><ArtikelCard /></li>
   </ul>
   <a class="clickmorebtn" href="#">Meer columns</a>
 </section>
