@@ -1,5 +1,5 @@
 <script>
-  import ArtikelCard from "$lib/Artikelcard.svelte";
+  import ArtikelCard from "$lib/artikelcard.svelte";
 </script>
 
 <section>
@@ -8,7 +8,7 @@
     <li><ArtikelCard /></li>
     <li><ArtikelCard /></li>
   </ul>
-  <a class="clickmorebtn" href="#">Meer columns</a>
+  <a class="clickmorebtn" href="#WONTDO">Meer columns</a>
 </section>
 
 <style>
