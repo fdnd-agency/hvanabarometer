@@ -1,0 +1,67 @@
+:root {
+
+	/* Kleuren */
+	--black: #000000;
+	--white: #FFFFFF;
+ 
+	--blue: #0751D8;
+	--pink: #FF88C0;
+	--teal: #32DCB4;
+	--yellow: #FED200;
+	--orange: #FF5E31;
+
+    
+	/* Kleurgebruik */ 
+    --primary-color: var(--blue); 
+    --secondary-color: var(--pink); 
+    --background-color: var(--white); 
+    --text-color: var(--black);
+
+
+	/* Lettertype */
+	--font-family: Georgia, serif; 
+    --font-size: 20px; 
+    --font-style: normal; 
+    --font-weight: 400; 
+
+
+	/* Font weight */
+    --regular: 400;
+	--bold: 700;
+
+	/* Spacing (padding, margin etc) */
+	
+
+	/* Border radius */
+	
+}
+
+/* Globale styling */
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+    font-family: var(--font-family); 
+    font-size: var(--font-size); 
+    font-style: var(--font-style); 
+    font-weight: var(--font-weight); 
+    background: var(--background-color); 
+    color: var(--text-color);
+}
+
+ul {
+	list-style: none;
+}
+
+a {
+	color: var(--primary-color); 
+    font-size: var(--font-size); 
+    text-decoration: none; 
+    cursor: pointer;
+}
+
+/*a:hover {
+}*/
