@@ -127,7 +127,7 @@
         display:none;
         @media (min-width:810px){
             display:flex;
-            gap:15px;
+            gap:25px;
         }
     }
     .mobile-container{
