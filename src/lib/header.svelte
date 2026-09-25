@@ -17,7 +17,7 @@
         data-orig-src="https://hvana.nl/wp-content/uploads/2023/03/hvana_logo_wit-2025.svg"
     />
 
-    <div class="wrapper">
+    <div class="wrapper-icons">
         <a
             class="twitter-1"
             style="color:var(--awb-color1);font-size:24px;"
@@ -57,7 +57,6 @@
             <img
                 class="yt-img"
                 src="/assets/youtube.png"
-                style="filter: brightness(0) saturate(100%) invert(100%) sepia(1%) saturate(30%) hue-rotate(108deg) brightness(106%) contrast(100%);"
             />
         </a>
         <a
@@ -72,8 +71,12 @@
             <img class="linkedin-img" src="/assets/linkedin.png" />
         </a>
     </div>
+
+    <div class="mobile-container">
     <img class="search-img" src="/assets/search.svg" />
     <img class="menu-img" src="/assets/menu.png" />
+    </div>
+
 </header>
 
 <style>
@@ -82,25 +85,61 @@
     }
     ul{
         list-style: none;
+        display:none;
+        @media (min-width: 1120px){
+            display:flex;
+            gap: 15px;
+         
+        }
     }
     li{
         font-size: 20px;
-        color:white;
+        color:#0751d8;
         &:hover{
             text-decoration: underline;
         }
     }
     header img {
-        filter: brightness(0) saturate(100%) invert(100%) sepia(1%)
-            saturate(30%) hue-rotate(108deg) brightness(106%) contrast(100%);
+       filter: brightness(0) saturate(100%) invert(20%) sepia(69%) saturate(6268%) hue-rotate(218deg) brightness(90%) contrast(94%);
             height: 24px;
             width: 24px;
     }
     header {
-        background-color: lightblue;
+        position:sticky;
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+        top:0;
+        z-index: 100;
+        background-color: white;
+        padding: 10px;
+        @media (min-width:810px){
+            display:flex;
+            justify-content: space-between;
+        }
     }
+
     .hvana-logo{
         width:clamp(7.75rem, 5.9583rem + 8.9583vw, 13.125rem);
         height: clamp(2.3125rem, 1.75rem + 2.8125vw, 4rem);
+    }
+    .wrapper-icons{
+        display:none;
+        @media (min-width:810px){
+            display:flex;
+            gap:15px;
+        }
+    }
+    .mobile-container{
+        display:flex;
+        gap:15px;
+
+    }
+  
+    .menu-img{
+display:flex;
+@media (min-width:810px){
+    display:none;
+}
     }
 </style>
