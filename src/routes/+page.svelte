@@ -1,6 +1,6 @@
 <script>
-    import Artikel from '$lib/artikel.svelte';
-    import Header from '$lib/header.svelte';
+    import Artikel from '$lib/components/Artikel.svelte';
+    import Header from '$lib/components/Header.svelte';
 </script>
 <Header/>
 

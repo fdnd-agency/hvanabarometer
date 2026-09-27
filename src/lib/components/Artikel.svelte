@@ -1,5 +1,5 @@
 <script>
-  import ArtikelCard from "$lib/artikelcard.svelte";
+  import ArtikelCard from "$lib/components/ArtikelCard.svelte";
 </script>
 
 <section>
