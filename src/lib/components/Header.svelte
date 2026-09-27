@@ -20,7 +20,6 @@
     <div class="wrapper-icons">
         <a
             class="twitter-1"
-            style="color:var(--awb-color1);font-size:24px;"
             title="X"
             aria-label="twitter"
             target="_blank"
@@ -31,7 +30,6 @@
         </a>
         <a
             class="instagram"
-            style="color:var(--awb-color1);font-size:24px;"
             title="Instagram"
             aria-label="instagram"
             target="_blank"
@@ -46,14 +44,12 @@
         </a>
         <a
             class="youtube"
-            style="color:var(--awb-color1);font-size:24px;"
             title="YouTube"
             aria-label="youtube"
             target="_blank"
             rel="noopener noreferrer"
             href="https://www.youtube.com/c/HvanA"
         >
-            <!-- how to change color bron: https://www.youtube.com/watch?v=Ni49a8gZQxY -->
             <img
                 class="yt-img"
                 src="/assets/youtube.png"
@@ -62,7 +58,6 @@
         </a>
         <a
             class="icon-linkedin"
-            style="color:var(--awb-color1);font-size:24px;"
             title="LinkedIn"
             aria-label="linkedin"
             target="_blank"
@@ -137,6 +132,12 @@
             display:flex;
             gap:25px;
         }
+    }
+
+    .wrapper-icons a{
+        color:var(--awb-color1);font-size:24px; /*how to change color bron: https://www.youtube.com/watch?v=Ni49a8gZQxY*/
+
+        
     }
     .mobile-container{
         display:flex;
