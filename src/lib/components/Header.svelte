@@ -74,8 +74,15 @@
     </div>
 
     <div class="mobile-container">
-    <img class="search-img" src="/assets/search.svg" alt="search-icon"/>
-    <img class="menu-img" src="/assets/menu.png" alt="menu-icon" />
+
+        <button>
+            <img class="search-img" src="/assets/search.svg" alt="search-icon"/>
+        </button>
+
+        <button>
+            <img class="menu-img" src="/assets/menu.png" alt="menu-icon" />
+        </button>
+
     </div>
 
 </header>
@@ -135,6 +142,10 @@
         display:flex;
         gap:15px;
 
+    }
+    button{
+        all:unset;
+        cursor: pointer;
     }
   
     .menu-img{
