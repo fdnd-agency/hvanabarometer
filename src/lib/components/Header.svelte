@@ -89,6 +89,7 @@
     ul{
         list-style: none;
         display:none;
+        padding:0;
         @media (min-width: 1120px){
             display:flex;
             gap: 15px;
@@ -116,6 +117,7 @@
         z-index: 100;
         background-color: white;
         padding: 10px;
+        margin: 0 20px;
         @media (min-width:810px){
             display:flex;
             justify-content: space-between;
