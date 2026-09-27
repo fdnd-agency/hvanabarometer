@@ -15,6 +15,7 @@
         alt="HvanA"
         src="https://hvana.nl/wp-content/uploads/2023/03/hvana_logo_wit-2025.svg"
         data-orig-src="https://hvana.nl/wp-content/uploads/2023/03/hvana_logo_wit-2025.svg"
+        fetchpriority="high"
     />
 
     <div class="wrapper-icons">
@@ -83,9 +84,7 @@
 </header>
 
 <style>
-    :global(*) {
-        margin: 0;
-    }
+   
     ul{
         list-style: none;
         display:none;
@@ -119,7 +118,6 @@
         padding: 10px;
         margin: 0 20px;
         @media (min-width:810px){
-            display:flex;
             justify-content: space-between;
         }
     }
