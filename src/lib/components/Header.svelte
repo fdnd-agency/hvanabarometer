@@ -29,7 +29,7 @@
         data-orig-src="https://hvana.nl/wp-content/uploads/2023/03/hvana_logo_wit-2025.svg"
         fetchpriority="high"
     />
-
+    <div class="container-icons-search">
     <div class="wrapper-icons">
         <a
             class="twitter-1"
@@ -81,16 +81,14 @@
         </a>
     </div>
 
-    <div class="mobile-container">
-
+    
         <button>
             <img class="search-img" src="/assets/search.svg" alt="search-icon"/>
         </button>
-
-        <button>
+        
+        <button class="menu">
             <img class="menu-img" src="/assets/menu.png" alt="menu-icon" />
         </button>
-
     </div>
 
 </header>
@@ -110,9 +108,12 @@
     li{
         font-size: 20px;
         color:#0751d8;
+        a{
+            text-decoration: none;        
         &:hover{
             text-decoration: underline;
         }
+    }
     }
     header img {
        filter: brightness(0) saturate(100%) invert(20%) sepia(69%) saturate(6268%) hue-rotate(218deg) brightness(90%) contrast(94%);
@@ -122,21 +123,26 @@
     header {
         position:sticky;
         display:flex;
-        justify-content: space-between;
         align-items: center;
+        justify-content: space-between;
         top:0;
-        z-index: 100;
+        z-index: 10;
         background-color: white;
-        padding: 10px;
-        margin: 0 20px;
+        padding:  10px 20px;
         @media (min-width:810px){
             justify-content: space-between;
+            padding: 10px 40px
         }
     }
 
     .hvana-logo{
         width:clamp(7.75rem, 5.9583rem + 8.9583vw, 13.125rem);
         height: clamp(2.3125rem, 1.75rem + 2.8125vw, 4rem);
+    }
+    .container-icons-search{
+        display: flex;
+        gap: clamp(0.625rem, 0rem + 3.125vw, 2.5rem);
+        
     }
     .wrapper-icons{
         display:none;
@@ -148,21 +154,18 @@
 
     .wrapper-icons a{
         color:var(--awb-color1);font-size:24px; /*how to change color bron: https://www.youtube.com/watch?v=Ni49a8gZQxY*/
-
-        
     }
-    .mobile-container{
-        display:flex;
-        gap:15px;
-
-    }
+ .button-container{
+    display: flex;
+ }
     button{
         all:unset;
         cursor: pointer;
+        gap: 0;
     }
   
-    .menu-img{
-display:flex;
+    .menu{
+      display:flex;
 @media (min-width:810px){
     display:none;
 }
