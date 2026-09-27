@@ -1,11 +1,23 @@
 <header>
     <nav>
         <ul>
-            <li>Nieuws</li>
-            <li>Video</li>
-            <li>Columns</li>
-            <li>Opinie</li>
-            <li>Podcast</li>
+                <li>
+                    <a href="#Niews">Nieuws</a>
+                </li>
+
+                 <li>
+                    <a href="#Video">Video</a>
+                </li>
+                 <li>
+                    <a href="#Columns">Columns</a>
+                </li>
+
+                 <li>
+                    <a href="#Opinie">Opinie</a>
+                </li>
+                 <li>
+                    <a href="#Podcast">Podcast</a>
+                </li>
         </ul>
     </nav>
     <img
