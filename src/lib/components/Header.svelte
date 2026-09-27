@@ -27,7 +27,7 @@
             rel="noopener noreferrer"
             href="https://twitter.com/HvanA_nl"
         >
-            <img class="twitter-img" src="/assets/twitter.png" />
+            <img class="twitter-img" src="/assets/twitter.png" alt="twitter-logo"/>
         </a>
         <a
             class="instagram"
@@ -57,6 +57,7 @@
             <img
                 class="yt-img"
                 src="/assets/youtube.png"
+                alt="yt-logo"
             />
         </a>
         <a
@@ -68,13 +69,13 @@
             rel="noopener noreferrer"
             href="https://nl.linkedin.com/company/hvana"
         >
-            <img class="linkedin-img" src="/assets/linkedin.png" />
+            <img class="linkedin-img" src="/assets/linkedin.png" alt="linkedin-logo"/>
         </a>
     </div>
 
     <div class="mobile-container">
-    <img class="search-img" src="/assets/search.svg" />
-    <img class="menu-img" src="/assets/menu.png" />
+    <img class="search-img" src="/assets/search.svg" alt="search-icon"/>
+    <img class="menu-img" src="/assets/menu.png" alt="menu-icon" />
     </div>
 
 </header>
