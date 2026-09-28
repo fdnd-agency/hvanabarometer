@@ -34,7 +34,6 @@
         <a
             class="twitter-1"
             title="X"
-            aria-label="twitter"
             target="_blank"
             rel="noopener noreferrer"
             href="https://twitter.com/HvanA_nl"
@@ -44,7 +43,6 @@
         <a
             class="instagram"
             title="Instagram"
-            aria-label="instagram"
             target="_blank"
             rel="noopener noreferrer"
             href="https://www.instagram.com/hvana_nl/"
@@ -58,7 +56,6 @@
         <a
             class="youtube"
             title="YouTube"
-            aria-label="youtube"
             target="_blank"
             rel="noopener noreferrer"
             href="https://www.youtube.com/c/HvanA"
@@ -72,7 +69,6 @@
         <a
             class="icon-linkedin"
             title="LinkedIn"
-            aria-label="linkedin"
             target="_blank"
             rel="noopener noreferrer"
             href="https://nl.linkedin.com/company/hvana"
@@ -94,7 +90,12 @@
 </header>
 
 <style>
-   
+   nav {
+    @media (min-width: 810px) {
+        grid-column: 1;
+        grid-row: 1;
+    }
+}
     ul{
         list-style: none;
         display:none;
@@ -130,19 +131,30 @@
         background-color: white;
         padding:  10px 20px;
         @media (min-width:810px){
-            justify-content: space-between;
-            padding: 10px 40px
+              display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        padding: 10px 40px;
         }
     }
 
     .hvana-logo{
         width:clamp(7.75rem, 5.9583rem + 8.9583vw, 13.125rem);
         height: clamp(2.3125rem, 1.75rem + 2.8125vw, 4rem);
+            @media (min-width: 810px) {
+        grid-column: 2;
+        grid-row: 1;
+    }
+      
     }
     .container-icons-search{
         display: flex;
         gap: clamp(0.625rem, 0rem + 3.125vw, 2.5rem);
         
+    @media (min-width: 810px) {
+        grid-column: 3;
+        grid-row: 1;
+        justify-self: end;
+    }
     }
     .wrapper-icons{
         display:none;
