@@ -1,4 +1,4 @@
-# Afspraken over samenwerking: Q42 Museumplatform
+# Afspraken over samenwerking: HavanA
 > In dit document staan de afspraken over hoe wij samenwerken aan het project HavanA. Door dezelfde werkwijze en codeconventies te gebruiken, houden we het project overzichtelijk en behouden we de consistentie.
  
 ## Teamafspraken & teamcanvas
