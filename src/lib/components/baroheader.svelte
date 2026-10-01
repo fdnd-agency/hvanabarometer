@@ -54,5 +54,33 @@
       padding-left: 0.75rem;
       border-left: 1px solid rgba(255, 255, 255, 0.4);
     }
+
+    @media (min-width: 48rem) {
+      .hva-meter {
+        gap: 1rem;
+        padding: 0 2rem;
+      }
+      strong {
+        font-size: 1.375rem;
+      }
+
+      .score {
+        font-size: 1.875rem;
+      }
+
+      .voting {
+        padding-left: 1rem;
+        font-size: 1.0625rem;
+      }
+
+      .today {
+        display: inline;
+      }
+
+      .vote {
+        font-size: 1.125rem;
+      }
+    }
+
   }
 </style>
