@@ -3,8 +3,9 @@
     <span class="headertext">
       <strong>HvA-Meter</strong>
       <data class="score" value="7.2">7.2</data>
-      <span class="voting">312 stemmen <span class="today">vandaag</span></span>
-    </span>
+      <span class="voting"> <a href="#">312 stemmen</a> </span>
+      <span class="today">vandaag</span></span
+    >
   </p>
   <p class="question">Welk cijfer geef jij je dag?</p>
   <button class="vote">Stem › </button>
@@ -23,6 +24,9 @@
     font-size: 1rem;
     justify-content: space-between;
 
+    a {
+      color: white;
+    }
     .headertext {
       display: flex;
       margin: 0;
