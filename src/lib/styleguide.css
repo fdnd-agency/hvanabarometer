@@ -20,27 +20,33 @@
 
 
 
-	/* Lettertype */
+	/* Typografie */
 	--font-family: Georgia, serif; 
+
     --font-size: 20px; 
-    --font-style: normal; 
+	--font-size-small: 16px;
+
 	--font-size-h1: 40px;
 	--font-size-h2: 32px;
 	--font-size-h3: 26px;
+
 	--font-weight: 400; 
+	
 
 	--line-height: 1.5;
 	--line-height-heading: 1.2; 
 
 
-	/* Font weight */
-    --regular: 400;
-	--bold: 700;
-
-	/* Spacing (padding, margin etc) */
+	/* Spacing*/
+	--spacing-xs: 0.5rem;
+	--spacing-s: 1rem;
+	--spacing-m: 1.5rem;
+	--spacing-l: 2rem;
+	--spacing-xl: 3rem;
 	
 
 	/* Border radius */
+	--border-radius: 0.25rem;
 	
 }
 
@@ -55,10 +61,11 @@
 html {
     font-family: var(--font-family); 
     font-size: var(--font-size); 
-    font-style: var(--font-style); 
-    font-weight: var(--font-weight); 
+	font-style: normal;
+    font-weight: var(--font-weight);
+	line-height: var(--line-height); 
     background: var(--background-color); 
-    color: var(--text-color);
+    color: var(--text-color-dark);
 }
 
 ul {
@@ -71,10 +78,19 @@ a {
     cursor: pointer;
 }
 
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus-visible {
+	outline: 3px solid var(--primary-color);
+	outline-offset: 3px;
+}
+
 /* Headings */
 h1, h2, h3 {
   font-family: var(--font-family);
-  font-weight: var(--bold);
+  font-weight: var(--font-weight-bold);
   line-height: var(--line-height-heading);
 }
 
@@ -96,5 +112,30 @@ p {
   line-height: var(--line-height);
 }
 
-/*a:hover {
-}*/
+/* voor extra info of beschrijving */
+small {
+	font-size: var(--font-size-small);
+}
+
+/* form krijgt zelfde lettertype */
+input,
+textarea,
+button {
+	font: inherit;
+}
+
+/* invoervelden */
+input,
+textarea {
+	padding: var(--spacing-s);
+	border: 1px solid var(--text-color-dark);
+	border-radius: var(--border-radius);
+}
+
+/* toegankelijkheid van formulieren */
+input:focus-visible,
+textarea:focus-visible,
+button:focus-visible {
+	outline: 3px solid var(--primary-color);
+	outline-offset: 2px;
+}
