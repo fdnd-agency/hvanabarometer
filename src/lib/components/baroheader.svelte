@@ -1,6 +1,6 @@
 <header class="hva-meter">
   <p>
-    HvA-Meter
+    <strong>HvA-Meter</strong>
     <data class="score" value="7.2">7.2</data>
     <span class="voting">312 stemmen <span class="today">vandaag</span></span>
   </p>
