@@ -1,21 +1,23 @@
 :root {
 
 	/* Kleuren */
-	--black: #000000;
-	--white: #FFFFFF;
+	--black: hsl(0, 0%, 0%);
+	--white: hsl(0, 0%, 100%);
  
-	--blue: #0751D8;
-	--pink: #FF88C0;
-	--teal: #32DCB4;
-	--yellow: #FED200;
-	--orange: #FF5E31;
+	--blue: hsl(219, 94%, 44%);
+	--pink: hsl(332, 100%, 77%);
+	--teal: hsl(166, 71%, 53%);
+	--yellow: hsl(50, 100%, 50%);
+	--orange: hsl(13.11, 100%, 59.61%);
 
     
 	/* Kleurgebruik */ 
     --primary-color: var(--blue); 
     --secondary-color: var(--pink); 
     --background-color: var(--white); 
-    --text-color: var(--black);
+    --text-color-dark: var(--black);
+	--text-color-light: var(--white);
+
 
 
 	/* Lettertype */
