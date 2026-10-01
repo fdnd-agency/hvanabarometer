@@ -1,4 +1,4 @@
-<a href="#popup">
+<a href="#popup" class="hva-meterlink">
     <span>HvA-meter</span>
 </a>
 
@@ -87,3 +87,20 @@
         >
     </div>
 </div>
+
+<style>
+.hva-meterlink{
+    display:block;
+}
+
+    .popup{
+       position: fixed;
+    z-index: 2000;
+    visibility: hidden;
+
+    }
+    .popup:target{
+opacity:1;
+visibility: visible;
+    }
+</style>
