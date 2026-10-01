@@ -82,5 +82,33 @@
       }
     }
 
+    @media (min-width: 64rem) {
+      .hva-meter {
+        gap: 1.25rem;
+        height: 4rem;
+      }
+
+      .score {
+        font-size: 2.125rem;
+      }
+
+      strong {
+        font-size: 1.375rem;
+      }
+      .voting {
+        padding-left: 1.25rem;
+        font-size: 1.125rem;
+      }
+
+      .question {
+        display: inline;
+        margin-left: auto;
+        font-size: 1.125rem;
+      }
+
+      .vote {
+        margin-left: 1.75rem;
+      }
+    }
   }
 </style>
