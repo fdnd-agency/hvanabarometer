@@ -1,8 +1,10 @@
 <header class="hva-meter">
   <p>
-    <strong>HvA-Meter</strong>
-    <data class="score" value="7.2">7.2</data>
-    <span class="voting">312 stemmen <span class="today">vandaag</span></span>
+    <span class="headertext">
+      <strong>HvA-Meter</strong>
+      <data class="score" value="7.2">7.2</data>
+      <span class="voting">312 stemmen <span class="today">vandaag</span></span>
+    </span>
   </p>
   <p class="question">Welk cijfer geef jij je dag?</p>
   <button class="vote">Stem › </button>
@@ -19,8 +21,9 @@
     color: #fff;
     text-decoration: none;
     font-size: 1rem;
+    justify-content: space-between;
 
-    p:first-of-type {
+    .headertext {
       display: flex;
       margin: 0;
       align-items: center;
