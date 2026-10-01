@@ -122,7 +122,7 @@
         visibility: visible;
     }
 
-        .popup_inner {
+    .popup_inner {
         position: relative;
         width: 100%;
         max-width: 22rem;
@@ -204,6 +204,16 @@
         font-weight: 600;
     }
 
+    fieldset input:checked + span {
+        background: var(--blue);        
+        color: var(--white);
+    }
+
+    fieldset input:focus-visible + span {
+        outline: 3px solid var(--blue);
+        outline-offset: 2px;
+    }
+
      /* -- labels -- */
     .toelichting-tekst,
     .hva-email {
@@ -243,6 +253,12 @@
     .email_veld {
         margin-top: 0.5rem;
     }
+
+    .toelichting_veld:focus-visible,
+    .email_veld:focus-visible {
+        outline: 3px solid var(--blue);
+        outline-offset: 2px;
+    }
  
     /* -- knop -- */
     .verzend_knop {
@@ -256,5 +272,10 @@
         font-size: 1rem;
         font-weight: 700;
         cursor: pointer;
+    }
+   
+    .verzend_knop:focus-visible {
+        outline: 3px solid var(--black);
+        outline-offset: 3px;
     }
 </style>
