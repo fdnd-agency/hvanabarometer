@@ -20,7 +20,16 @@
     text-decoration: none;
     font-size: 1rem;
 
-    .vandaag,
+    p:first-of-type {
+      display: flex;
+      margin: 0;
+      align-items: center;
+      gap: 1rem;
+    }
+    strong {
+      font-size: 1.25rem;
+    }
+    .today,
     .question {
       display: none;
     }
