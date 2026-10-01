@@ -2,7 +2,7 @@
   <p>
     HvA-Meter
     <data class="score" value="7.2">7.2</data>
-    <span class="voting">312 stemmen <span class="vandaag">vandaag</span></span>
+    <span class="voting">312 stemmen <span class="today">vandaag</span></span>
   </p>
   <p class="question">Welk cijfer geef jij je dag?</p>
   <button class="vote">Stem › </button>
