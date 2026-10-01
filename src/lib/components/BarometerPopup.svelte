@@ -89,18 +89,172 @@
 </div>
 
 <style>
-.hva-meterlink{
-    display:block;
-}
-
-    .popup{
-       position: fixed;
-    z-index: 2000;
-    visibility: hidden;
-
+/**dit kan later weg als de styleguide is gemergd en nog veel meer van de styling*/
+  :root {
+        --blue: hsl(219, 94%, 44%);
+        --pink: hsl(332, 100%, 77%);
+        --teal: hsl(166, 71%, 53%);
+        --yellow: hsl(50, 100%, 50%);
+        --orange: hsl(13.11, 100%, 59.61%);
+        --black: hsl(0, 0%, 0%);
+        --white: hsl(0, 0%, 100%);
     }
+
+    .hva-meterlink{
+        display:block;
+    }
+
+    /* -- popup -- */
+    .popup{
+        position: fixed;
+        inset: 0;
+        z-index: 2000;
+        display: grid;
+        place-items: center;
+        padding: 1rem;
+        background: hsla(0, 0%, 0%, 0.5); /*zodat de achtergrond donker wordt*/
+        visibility: hidden;
+        opacity: 0;
+    }
+
     .popup:target{
-opacity:1;
-visibility: visible;
+        opacity:1;
+        visibility: visible;
+    }
+
+        .popup_inner {
+        position: relative;
+        width: 100%;
+        max-width: 22rem;
+        max-height: 100%;
+        overflow: auto;
+        box-sizing: border-box;
+        padding: 3.5rem 1.25rem 1.5rem;
+        background: var(--white);
+        color: var(--black);
+        border: 2px solid var(--black);
+        border-radius: 1rem;
+        font-family: system-ui, sans-serif;
+    }
+
+     .close_popup {
+        position: absolute;
+        top: 1.1rem;
+        left: 1.25rem;
+        color: var(--black);
+        font-weight: 700;
+        text-decoration: none;
+     }
+
+    /* -- titel -- */
+     h1 {
+        margin: 0 0 1rem;
+        font-family: "Arial Black", Impact, sans-serif;
+        font-size: 2rem;
+        line-height: 1;
+        transform: rotate(-3deg);
+        transform-origin: left center;
+    }
+
+      /* -- formulier -- */
+    .HVAmeter-form {
+        display: flex;
+        flex-direction: column;
+    }
+ 
+    fieldset {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem 0;
+        margin: 0 0 1rem;
+        padding: 0;
+        border: 0;
+    }
+ 
+    legend {
+        padding: 0;
+        margin-bottom: 1rem;
+        font-size: 0.85rem;
+        line-height: 1.4;
+    }
+ 
+    fieldset label {
+        flex: 0 0 20%; /*verdeling van de cijfers  */
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+    }
+
+    /* radio verbergen maar wel toegankelijk houden */
+    fieldset input {
+        position: absolute;
+        opacity: 0;
+        width: 1px;
+        height: 1px;
+    }
+ 
+    fieldset span {
+        display: grid;
+        place-items: center;
+        width: 2.5rem;
+        height: 2.5rem;
+        border: 2px solid var(--black);
+        border-radius: 50%;
+        background: var(--white);
+        font-weight: 600;
+    }
+
+     /* -- labels -- */
+    .toelichting-tekst,
+    .hva-email {
+        font-weight: 700;
+        font-size: 0.85rem;
+    }
+ 
+    .toelichting-tekst {
+        margin-bottom: 0.5rem;
+    }
+ 
+    .hva-verplicht {
+        margin-left: 0.4rem;
+        color: var(--blue);
+        font-size: 0.7rem;
+        font-weight: 600;
+    }
+
+    /* -- velden -- */
+    .toelichting_veld,
+    .email_veld {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0.75rem;
+        border: 2px solid var(--black);
+        border-radius: 0.5rem;
+        font: inherit;
+        font-size: 0.8rem;
+    }
+ 
+    .toelichting_veld {
+        min-height: 7rem;
+        margin-bottom: 1.25rem;
+        resize: vertical;
+    }
+ 
+    .email_veld {
+        margin-top: 0.5rem;
+    }
+ 
+    /* -- knop -- */
+    .verzend_knop {
+        margin-top: 1.5rem;
+        padding: 1rem;
+        border: 0;
+        border-radius: 0.3rem;
+        background: var(--blue);
+        color: var(--white);
+        font: inherit;
+        font-size: 1rem;
+        font-weight: 700;
+        cursor: pointer;
     }
 </style>
