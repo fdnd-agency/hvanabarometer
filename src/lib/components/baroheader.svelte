@@ -2,11 +2,10 @@
   <p>
     HvA-Meter
     <data class="score" value="7.2">7.2</data>
-    <span class="stemmen">312 stemmen <span class="vandaag">vandaag</span></span
-    >
+    <span class="voting">312 stemmen <span class="vandaag">vandaag</span></span>
   </p>
-  <p class="vraag">Welk cijfer geef jij je dag?</p>
-  <button class="stem">Stem › </button>
+  <p class="question">Welk cijfer geef jij je dag?</p>
+  <button class="vote">Stem › </button>
 </header>
 
 <style>
@@ -22,10 +21,10 @@
     font-size: 1rem;
 
     .vandaag,
-    .vraag {
+    .question {
       display: none;
     }
-    .stem {
+    .vote {
       background: none;
       border: none;
       color: white;
@@ -42,7 +41,7 @@
       font-weight: 900;
     }
 
-    .stemmen {
+    .voting {
       padding-left: 0.75rem;
       border-left: 1px solid rgba(255, 255, 255, 0.4);
     }
