@@ -38,7 +38,6 @@
       border: none;
       color: white;
       margin-top: 8px;
-      margin-left: auto;
       padding-bottom: 2px;
       border-bottom: 3px solid #ff7a3d;
       font-weight: 800;
