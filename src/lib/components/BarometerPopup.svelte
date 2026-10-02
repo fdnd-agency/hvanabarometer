@@ -1,9 +1,14 @@
-<a href="#popup" class="hva-meterlink">
-    <span>HvA-meter</span>
-</a>
+<button type="button" class="hva-meterlink" command="show-modal" commandfor="popup"> 
+    <span>HvA-meter</span> 
+</button>
 
-<div class="popup" id="popup">
-    <div class="popup_inner">
+<dialog class="popup" id="popup"> 
+    <div class="popup_inner"> 
+        <button 
+        type="button" class="close_popup" commandfor="popup" command="close">
+         ← Terug
+        </button>
+
         <h1>Geef je cijfer aan de HvA</h1>
 
         <form class="HVAmeter-form" action="/HVA-meter" method="POST">
@@ -13,94 +18,46 @@
                     Hoe voel je je vandaag over de HvA? Geef een cijfer van 1
                     tot 10 en licht toe waarom je dit cijfer kiest.
                 </legend>
+
+                {#each {length:10}, rating}
                 <label>
                     <!-- bron(over verschillende types in een form)https://formgent.com/types-of-forms/ -->
-                    <input type="radio" name="rating" value="1" required/>
-                    <span>1</span>
+                    <input 
+                    type="radio"
+                     name="rating" 
+                     value="{rating + 1}" 
+                     required={ rating == 0}/>
+                    <span>{rating + 1}</span>
                 </label>
-                <label>
-                    <input type="radio" name="rating" value="2" />
-                    <span>2</span>
-                </label>
-                <label>
-                    <input type="radio" name="rating" value="3" />
-                    <span>3</span>
-                </label>
-                <label>
-                    <input type="radio" name="rating" value="4" />
-                    <span>4</span>
-                </label>
-                <label>
-                    <input type="radio" name="rating" value="5" />
-                    <span>5</span>
-                </label>
-                <label>
-                    <input type="radio" name="rating" value="6" />
-                    <span>6</span>
-                </label>
-                <label>
-                    <input type="radio" name="rating" value="7" />
-                    <span>7</span>
-                </label>
-                <label>
-                    <input type="radio" name="rating" value="8" />
-                    <span>8</span>
-                </label>
-                <label>
-                    <input type="radio" name="rating" value="9" />
-                    <span>9</span>
-                </label>
-                <label>
-                    <input type="radio" name="rating" value="10" />
-                    <span>10</span>
-                </label>
+               {/each} 
             </fieldset>
 
             <input type="hidden" name="userId" value="" />
-            <label class="toelichting-tekst">
+            <label for="toelichting" class="toelichting-tekst">
                 Waarom geef je de HvA vandaag dit cijfer?</label
             >
             <textarea
+                id="toelichting"
                 class="toelichting_veld"
                 name="toelichting"
                 maxlength="500"
                 placeholder="Vertel kort waarom je voor dit cijfer hebt gekozen..."
             ></textarea>
 
-            <!-- required bron: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/required -->
-            <label>
+            <label for="email">
                 <span class="hva-email">HvA e-mailadres </span>
                 <span class="hva-verplicht">★ verplicht</span>
             </label>
             <input
+                id="email"
                 class="email_veld"
                 name="email"
                 type="email"
+                autocomplete="email"
                 placeholder="Jouw HvA e-mailadres"
                 required
             >
-
             <button type="submit" class="verzend_knop">Verzend</button>
         </form>
-        <a href="#WONTDO" class="close_popup"
-            >← Terug</a
-        >
     </div>
-</div>
-
-<style>
-.hva-meterlink{
-    display:block;
-}
-
-    .popup{
-       position: fixed;
-    z-index: 2000;
-    visibility: hidden;
-
-    }
-    .popup:target{
-opacity:1;
-visibility: visible;
-    }
-</style>
+</dialog>
