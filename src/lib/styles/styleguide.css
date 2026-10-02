@@ -1,41 +1,51 @@
 :root {
+	@font-face {
+		font-family: "U8 Bold web";
+		src: url("//hvana.nl/wp-content/uploads/2024/07/U8-Bold-web.woff") format("woff");
+		font-weight: 400;
+		font-style: normal;
+		font-display: swap;
+	}
+
+
 
 	/* Kleuren */
 	--black: hsl(0, 0%, 0%);
 	--white: hsl(0, 0%, 100%);
- 
+
 	--blue: hsl(219, 94%, 44%);
 	--pink: hsl(332, 100%, 77%);
 	--teal: hsl(166, 71%, 53%);
 	--yellow: hsl(50, 100%, 50%);
 	--orange: hsl(13.11, 100%, 59.61%);
 
-    
-	/* Kleurgebruik */ 
-    --primary-color: var(--blue); 
-    --secondary-color: var(--pink); 
-    --background-color: var(--white); 
-    --text-color-dark: var(--black);
+
+	/* Kleurgebruik */
+	--primary-color: var(--blue);
+	--secondary-color: var(--pink);
+	--background-color: var(--white);
+	--text-color-dark: var(--black);
 	--text-color-light: var(--white);
 
 
 
 	/* Typografie */
-	--font-family: Georgia, serif; 
+	--font-family: Georgia,
+	serif;
 
-    --font-size: 20px; 
+	--font-size: 20px;
 	--font-size-small: 16px;
 
 	--font-size-h1: 40px;
 	--font-size-h2: 32px;
 	--font-size-h3: 26px;
 
-	--font-weight: 400; 
+	--font-weight: 400;
 	--font-weight-bold: 700;
-	
+
 
 	--line-height: 1.5;
-	--line-height-heading: 1.2; 
+	--line-height-heading: 1.2;
 
 
 	/* Spacing*/
@@ -44,11 +54,11 @@
 	--spacing-m: 1.5rem;
 	--spacing-l: 2rem;
 	--spacing-xl: 3rem;
-	
+
 
 	/* Border radius */
 	--border-radius: 0.25rem;
-	
+
 }
 
 /* Globale styling */
@@ -60,13 +70,13 @@
 
 /* Basis HTML styling */
 html {
-    font-family: var(--font-family); 
-    font-size: var(--font-size); 
+	font-family: var(--font-family);
+	font-size: var(--font-size);
 	font-style: normal;
-    font-weight: var(--font-weight);
-	line-height: var(--line-height); 
-    background: var(--background-color); 
-    color: var(--text-color-dark);
+	font-weight: var(--font-weight);
+	line-height: var(--line-height);
+	background: var(--background-color);
+	color: var(--text-color-dark);
 }
 
 ul {
@@ -74,9 +84,9 @@ ul {
 }
 
 a {
-	color: var(--primary-color); 
-    text-decoration: none; 
-    cursor: pointer;
+	color: var(--primary-color);
+	text-decoration: none;
+	cursor: pointer;
 }
 
 a:hover {
@@ -89,28 +99,32 @@ a:focus-visible {
 }
 
 /* Headings */
-h1, h2, h3 {
-  font-family: var(--font-family);
-  font-weight: var(--font-weight-bold);
-  line-height: var(--line-height-heading);
+h1,
+h2,
+h3 {
+	font-family: var(--font-family);
+	font-weight: var(--font-weight-bold);
+	line-height: var(--line-height-heading);
+	font-family: "U8 Bold web", sans-serif;
 }
 
 h1 {
-  font-size: var(--font-size-h1);
+	font-size: var(--font-size-h1);
 }
 
 h2 {
-  font-size: var(--font-size-h2);
+	font-size: var(--font-size-h2);
 }
 
 h3 {
-  font-size: var(--font-size-h3);
+	font-size: var(--font-size-h3);
 }
 
 /* Lopende tekst */
 p {
-  font-size: var(--font-size);
-  line-height: var(--line-height);
+	font-family: Georgia, "Times New Roman", serif;
+	font-size: var(--font-size);
+	line-height: var(--line-height);
 }
 
 /* voor extra info of beschrijving */
