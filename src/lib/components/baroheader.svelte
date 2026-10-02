@@ -8,7 +8,7 @@
     >
   </p>
   <p class="question">Welk cijfer geef jij je dag?</p>
-  <button class="vote">Stem › </button>
+  <button class="vote">Stem ›</button>
 </header>
 
 <style>
