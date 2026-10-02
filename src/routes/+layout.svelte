@@ -6,7 +6,9 @@
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
+
 	<link rel="stylesheet" href="src/lib/styles/styleguide.css" />
+
 </svelte:head>
 
 {@render children()}
