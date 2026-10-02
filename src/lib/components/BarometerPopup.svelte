@@ -87,13 +87,6 @@
         place-items: center;
         padding: 1rem;
         background: hsla(0, 0%, 0%, 0.5); /*zodat de achtergrond donker wordt*/
-        visibility: hidden;
-        opacity: 0;
-    }
-
-    .popup:target{
-        opacity:1;
-        visibility: visible;
     }
 
     .popup_inner {
