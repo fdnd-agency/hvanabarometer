@@ -16,7 +16,11 @@
 
 .deco-wrapper{
 position:relative;
+transition: transform 0.3s ease-in-out;
 
+&:hover{
+transform: translateY(20px);
+}
 &::after{
 content: "";
 position: absolute;
