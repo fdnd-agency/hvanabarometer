@@ -62,10 +62,8 @@
     }
 
     @media (min-width: 48rem) {
-      .hva-meter {
-        gap: 1rem;
-        padding: 0 2rem;
-      }
+      gap: 1rem;
+      padding: 0 2rem;
       strong {
         font-size: 1.375rem;
       }
@@ -89,10 +87,8 @@
     }
 
     @media (min-width: 64rem) {
-      .hva-meter {
-        gap: 1.25rem;
-        height: 4rem;
-      }
+      gap: 1.25rem;
+      height: 4rem;
 
       .score {
         font-size: 2.125rem;
