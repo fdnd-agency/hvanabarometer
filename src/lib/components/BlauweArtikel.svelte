@@ -10,3 +10,40 @@
         </a>
     </article>
 </section>
+
+
+<style>
+
+.deco-wrapper{
+position:relative;
+
+&::after{
+content: "";
+position: absolute;
+inset: 0;
+background: linear-gradient( /* bron: hvana.nl code */
+180deg,
+transparent 60%,
+#0751D8 100%
+);
+cursor:pointer;
+}
+}
+
+.artikel-img {
+width: 100%;
+height: 500px;
+object-fit: cover;
+display: block;
+}
+
+q{
+position:absolute;
+bottom: 80px;
+left: 20px;
+color:white;
+font-weight: bolder;
+font-size: 30px;
+z-index: 10;
+}
+</style>
