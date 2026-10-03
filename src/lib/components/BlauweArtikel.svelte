@@ -5,6 +5,9 @@
                 class="artikel-img"
                 src="/assets/deco-img.jpg"
                 alt="student achter een laptop"
+                width="510"
+                height="520"
+                fetchpriority="high"
             />
             <h2>Steeds meer van mijn studie gebeurt achter een scherm.</h2>
         </a>
@@ -15,6 +18,8 @@
                 class="artikel-img"
                 src="/assets/deco-img.jpg"
                 alt="student achter een laptop"
+                width="510"
+                height="520"
             />
             <h2>Steeds meer van mijn studie gebeurt achter een scherm.</h2>
         </a>
@@ -26,6 +31,8 @@
                 class="artikel-img"
                 src="/assets/deco-img.jpg"
                 alt="student achter een laptop"
+                width="510"
+                height="520"
             />
             <h2>Steeds meer van mijn studie gebeurt achter een scherm.</h2>
         </a>
