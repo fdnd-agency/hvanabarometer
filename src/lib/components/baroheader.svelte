@@ -3,7 +3,7 @@
     <span class="headertext">
       <strong>HvA-Meter</strong>
       <data class="score" value="7.2">7.2</data>
-      <span class="voting"> <a href="#soon">312 stemmen</a> </span>
+      <span class="voting"> <a href="/barometer">312 stemmen</a> </span>
       <span class="today">vandaag</span></span
     >
   </p>
