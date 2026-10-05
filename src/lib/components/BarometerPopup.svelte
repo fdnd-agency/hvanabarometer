@@ -74,47 +74,47 @@
         --white: hsl(0, 0%, 100%);
     }
 
-    .hva-meterlink{
-        display:block;
-    }
-
     /* -- popup -- */
     .popup{
-        position: fixed;
-        inset: 0;
-        z-index: 2000;
-        display: grid;
-        place-items: center;
-        padding: 1rem;
-        background: hsla(0, 0%, 0%, 0.5); /*zodat de achtergrond donker wordt*/
+        width: 22rem;
+        max-width: 90%;
+        margin: auto;
+        padding: 0;
+        border: 0;
+        background: transparent;
+        overflow: visible;
+    }
+
+    .popup::backdrop{
+        background-color: hsla(0, 0%, 0%, 0.5);
     }
 
     .popup_inner {
         position: relative;
-        width: 100%;
-        max-width: 22rem;
-        max-height: 100%;
-        overflow: auto;
         box-sizing: border-box;
-        padding: 3.5rem 1.25rem 1.5rem;
+        max-height: 95vh;
+        overflow: auto;
+        padding: 3rem 1.25rem 1.5rem;
         background: var(--white);
         color: var(--black);
         border: 2px solid var(--black);
         border-radius: 1rem;
-        font-family: system-ui, sans-serif;
     }
 
      .close_popup {
         position: absolute;
         top: 1.1rem;
         left: 1.25rem;
+        padding: 0;
+        border: 0;
+        background: none;
         color: var(--black);
         font-weight: 700;
-        text-decoration: none;
+        cursor: pointer;
      }
 
     /* -- titel -- */
-     h1 {
+     .popup h1 {
         margin: 0 0 1rem;
         font-family: "Arial Black", Impact, sans-serif;
         font-size: 2rem;
@@ -146,6 +146,7 @@
     }
  
     fieldset label {
+        position: relative;
         flex: 0 0 20%; /*verdeling van de cijfers  */
         display: flex;
         justify-content: center;
@@ -172,7 +173,8 @@
     }
 
     fieldset input:checked + span {
-        background: var(--blue);        
+        background: var(--blue);  
+        border-color: var(--blue);      
         color: var(--white);
     }
 
