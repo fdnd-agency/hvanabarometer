@@ -1,14 +1,12 @@
 <script>
-	import favicon from "$lib/assets/favicon.svg";
+  import favicon from "$lib/assets/favicon.svg";
 
-	let { children } = $props();
+  let { children } = $props();
+  import "$lib/styles/styleguide.css";
 </script>
 
 <svelte:head>
-	<link rel="icon" href={favicon} />
-
-	<link rel="stylesheet" href="src/lib/styles/styleguide.css" />
-
+  <link rel="icon" href={favicon} />
 </svelte:head>
 
 {@render children()}
