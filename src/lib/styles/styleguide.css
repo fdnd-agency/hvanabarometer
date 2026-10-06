@@ -1,10 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap");
 @font-face {
-  font-family: "U8 Bold web";
-  src: url("//hvana.nl/wp-content/uploads/2024/07/U8-Bold-web.woff")
-    format("woff");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+  font-family: "U8-Regular";
+  src: url("https://db.onlinewebfonts.com/t/7017698b5c5a2cc397cd3b0c0984d76f.eot");
+  src:
+    url("https://db.onlinewebfonts.com/t/7017698b5c5a2cc397cd3b0c0984d76f.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/7017698b5c5a2cc397cd3b0c0984d76f.woff2")
+      format("woff2"),
+    url("https://db.onlinewebfonts.com/t/7017698b5c5a2cc397cd3b0c0984d76f.woff")
+      format("woff"),
+    url("https://db.onlinewebfonts.com/t/7017698b5c5a2cc397cd3b0c0984d76f.ttf")
+      format("truetype"),
+    url("https://db.onlinewebfonts.com/t/7017698b5c5a2cc397cd3b0c0984d76f.svg#U8-Regular")
+      format("svg");
 }
 
 :root {
@@ -27,6 +35,7 @@
 
   /* Typografie */
   --font-family: Georgia, serif;
+  --font-heading: "U8-Regular", sans-serif;
 
   --font-size: 20px;
   --font-size-small: 16px;
@@ -61,7 +70,6 @@
 
 /* Basis HTML styling */
 html {
-  font-family: var(--font-family);
   font-size: var(--font-size);
   font-style: normal;
   font-weight: var(--font-weight);
@@ -78,6 +86,7 @@ a {
   color: var(--primary-color);
   text-decoration: none;
   cursor: pointer;
+  font-weight: 600;
 }
 
 a:hover {
@@ -93,10 +102,9 @@ a:focus-visible {
 h1,
 h2,
 h3 {
-  font-family: var(--font-family);
   font-weight: var(--font-weight-bold);
   line-height: var(--line-height-heading);
-  font-family: "U8 Bold web", sans-serif;
+  font-family: var(--font-heading);
 }
 
 h1 {
@@ -113,8 +121,9 @@ h3 {
 
 /* Lopende tekst */
 p,
-a {
-  font-family: Georgia, "Times New Roman", serif;
+a,
+li {
+  font-family: "Montserrat", sans-serif;
   font-size: var(--font-size);
   line-height: var(--line-height);
 }
