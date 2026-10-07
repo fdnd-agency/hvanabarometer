@@ -2,11 +2,12 @@
   import Artikel from "$lib/components/Artikel.svelte";
   import Header from "$lib/components/Header.svelte";
   import Baroheader from "$lib/components/Baroheader.svelte";
+  import BlauweArtikel from "$lib/components/BlauweArtikel.svelte";
 </script>
 
 <Header />
 <Baroheader />
-
+<BlauweArtikel />
 <Artikel
   background="var(--white)"
   buttonColor="var(--primary-color)"
