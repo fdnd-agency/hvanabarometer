@@ -29,7 +29,7 @@
       src: "https://res.cloudinary.com/hvana/images/f_auto,q_auto/v1716889994/ysbreker/ysbreker.jpg?_i=AA",
       alt: "Basia Elting",
       title:
-        "Studentenkorting in Amsterdam: van gratis sporten tot film onder een tientje",
+        "Studentenkorting in Amsterdam: van gratis sporten tot film onder...",
     },
   ]}
 />
@@ -45,7 +45,7 @@
       src: "https://res.cloudinary.com/hvana/images/f_auto,q_auto/v1789470425/Suzanne_Okkes_kleiner/Suzanne_Okkes_kleiner.jpg?_i=AA",
       alt: "Christa Romp",
       title:
-        "‘Ik zal als docent altijd het gesprek aangaan over lhbti-rechten en Gaza’",
+        "‘Ik zal als docent altijd het gesprek aangaan over lhbti-rechten..’",
     },
     {
       src: "https://res.cloudinary.com/hvana/images/f_auto,q_auto/v1788782721/Jacob_Eikelboom_2627/Jacob_Eikelboom_2627.jpg?_i=AA",
