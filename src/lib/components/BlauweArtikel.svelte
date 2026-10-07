@@ -14,7 +14,7 @@
                 fetchpriority="high"
             />
             </picture>
-            <h2>Steeds meer van mijn studie gebeurt achter een scherm.</h2>
+            <h3>Steeds meer van mijn studie gebeurt achter een scherm.</h3>
         </a>
     </article>
         <article class="article">
@@ -31,7 +31,7 @@
                 height="520"
             />
         </picture>
-            <h2>Steeds meer van mijn studie gebeurt achter een scherm.</h2>
+            <h3>Steeds meer van mijn studie gebeurt achter een scherm.</h3>
         </a>
     </article>    
     
@@ -49,7 +49,7 @@
                 height="520"
             />
         </picture>
-            <h2>Steeds meer van mijn studie gebeurt achter een scherm.</h2>
+            <h3>Steeds meer van mijn studie gebeurt achter een scherm.</h3>
         </a>
     </article>
 </section>
@@ -65,7 +65,7 @@
       display: grid;
 grid-template-columns: 3fr 2fr;
 gap: 15px 10px;
-height: 100vh;
+height: 75vh;
     }
 }
 
@@ -111,7 +111,7 @@ display: block;
 }
 }
 
-h2{
+h3{
 position:absolute;
 bottom: 40px;
 left: 20px;
