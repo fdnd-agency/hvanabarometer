@@ -1,19 +1,32 @@
 <script>
   import ArtikelCard from "$lib/components/ArtikelCard.svelte";
+  let {
+    background = "#ff5a2e",
+    buttonColor = "white",
+    buttonTextColor = "white",
+    cardShadow = "6px 6px 0 #c9431f",
+    articles = [],
+  } = $props();
 </script>
 
-<section>
+<section
+  style="--bg: {background}; --btn-bg: {buttonColor}; --btn-color: {buttonTextColor}; --card-shadow: {cardShadow}"
+>
   <ul class="articlebox">
-    <li><ArtikelCard /></li>
-    <li><ArtikelCard /></li>
-    <li><ArtikelCard /></li>
+    {#each articles as article}
+      <li><ArtikelCard {...article} /></li>
+    {/each}
   </ul>
   <a class="clickmorebtn" href="#WONTDO">Meer columns</a>
 </section>
 
 <style>
+  .articlebox li {
+    flex: 1;
+    max-width: 400px;
+  }
   section {
-    background: #ff5a2e;
+    background: var(--bg);
     padding-bottom: 3rem;
   }
   .articlebox {
@@ -34,8 +47,8 @@
     width: fit-content;
     margin: 0 auto;
     padding: 16px 40px;
-    background: white;
-    color: black;
+    background: var(--btn-bg);
+    color: var(--btn-color);
     border-radius: 4px;
     text-decoration: none;
     text-transform: uppercase;
