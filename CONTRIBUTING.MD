@@ -165,3 +165,49 @@ Op iedere lesdag houden we een korte stand-up
 - Loop ik ergens op vast?
 - Heb ik hulp of feedback nodig?
  
+
+
+# Definition of Ready (DoR)
+
+Een taak of user story mag pas worden opgepakt als:
+
+- [ ] De user story is helder geschreven ("Als ... wil ik ... zodat ...")
+- [ ] Er zijn acceptatiecriteria, dus het is duidelijk wanneer het klaar is
+- [ ] Er is een ontwerp of voorbeeld beschikbaar (Figma, schets, wireframe)
+- [ ] Afhankelijkheden zijn bekend (andere taken, API's, toegang)
+- [ ] De prioriteit is bepaald
+- [ ] Er is een GitHub issue aangemaakt met label en estimate
+
+# Definition of Done (DoD)
+
+Een taak is pas klaar als:
+
+## Code
+
+- [ ] Code werkt zonder errors en is semantiek.
+- [ ] Geen onnodige comments
+- [ ] Code is netjes opgemaakt (Prettier format)
+- [ ] Code is Semantisch
+
+## Kwaliteit
+
+- [ ] Responsive en mobilefirst gebouwd.
+- [ ] Getest in meerdere browsers
+- [ ] Toegankelijkheid gecheckt (Lighthouse, toetsenbord, alt-teksten)
+- [ ] Performance gecheckt
+- [ ] Komt overeen met het ontwerp
+
+## GitHub
+
+- [ ] Werk staat in een pull request met duidelijke beschrijving
+- [ ] Code review is gedaan door een teamgenoot
+- [ ] Feedback is verwerkt
+- [ ] PR is gemerged naar `dev`
+- [ ] Issue is gekoppeld en gesloten
+- [ ] Branch is verwijderd
+
+## Oplevering
+
+- [ ] Heeft een live link
+- [ ] README is bijgewerkt 
+- [ ] Opdrachtgever heeft het gezien en akkoord gegeven
