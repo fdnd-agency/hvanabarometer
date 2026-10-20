@@ -3,10 +3,12 @@
   import Header from "$lib/components/Header.svelte";
   import Baroheader from "$lib/components/Baroheader.svelte";
   import BlauweArtikel from "$lib/components/BlauweArtikel.svelte";
+  import BarometerPopup from "$lib/components/BarometerPopup.svelte";
 </script>
 
 <Header />
 <Baroheader />
+<BarometerPopup />
 <BlauweArtikel />
 <Artikel
   background="var(--white)"
