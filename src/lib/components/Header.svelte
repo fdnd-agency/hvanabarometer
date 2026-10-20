@@ -210,8 +210,8 @@
         font-size: 24px; /*how to change color bron: https://www.youtube.com/watch?v=Ni49a8gZQxY*/
     }
 
-    button {
-        all: unset;
+    button{
+        all:unset;
         cursor: pointer;
         gap: 0;
     }
