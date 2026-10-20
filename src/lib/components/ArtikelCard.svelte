@@ -1,14 +1,19 @@
+<script>
+  let {
+    src = "https://picsum.photos/id/1005/600/400",
+    alt = "decoratieve-img",
+    tag = "Column",
+    title = "‘We laten studenten samenwerken zonder ze ooit te leren hoe je dat doet’",
+  } = $props();
+</script>
+
 <section>
   <article class="cards">
     <a class="card" href="#WONTDO">
-      <img
-        src="https://picsum.photos/id/1005/600/400"
-        alt="decoratieve-img"
-        loading="lazy"
-      />
-      <span class="tag">Column</span>
+      <img {src} {alt} />
+      <span class="tag">{tag}</span>
       <h3>
-        ‘We laten studenten samenwerken zonder ze ooit te leren hoe je dat doet’
+        {title}
       </h3>
     </a>
   </article>
@@ -26,7 +31,7 @@
       background: white;
       color: black;
       text-decoration: none;
-      box-shadow: 6px 6px 0 #c9431f;
+      box-shadow: var(--card-shadow, 6px 6px 0 #c9431f);
 
       img {
         width: 100%;

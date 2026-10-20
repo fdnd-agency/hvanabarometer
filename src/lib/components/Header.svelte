@@ -167,9 +167,7 @@
     .wrapper-icons a{
         color:var(--awb-color1);font-size:24px; /*how to change color bron: https://www.youtube.com/watch?v=Ni49a8gZQxY*/
     }
- .button-container{
-    display: flex;
- }
+
     button{
         all:unset;
         cursor: pointer;
