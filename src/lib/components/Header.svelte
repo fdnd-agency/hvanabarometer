@@ -189,5 +189,9 @@
     .search-img {
       filter: brightness(0) invert(1);
     }
+
+    header img {
+      filter: brightness(0) invert(1);
+    }
   }
 </style>
