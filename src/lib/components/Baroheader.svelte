@@ -50,6 +50,10 @@
       font-weight: 800;
       text-transform: uppercase;
       cursor: pointer;
+      transition: transform .2s ease;
+      &:hover{
+        transform:scale(1.1)
+      }
     }
 
     .score {
