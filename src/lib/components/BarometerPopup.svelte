@@ -178,6 +178,10 @@
     border-radius: 50%;
     background: var(--white);
     font-weight: 600;
+    &:hover{
+      background-color: var(--blue);
+      color: var(--white);
+    }
   }
 
   fieldset input:checked + span {
@@ -249,6 +253,9 @@
     font-size: 1rem;
     font-weight: 700;
     cursor: pointer;
+    &:hover{
+      background-color: hsl(245, 94%, 44%);
+    }
   }
 
   .verzend_knop:focus-visible {
