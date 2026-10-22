@@ -1,11 +1,3 @@
-<button
-  type="button"
-  class="hva-meterlink"
-  command="show-modal"
-  commandfor="popup"
->
-  <span>HvA-meter</span>
-</button>
 
 <dialog class="popup" id="popup">
   <div class="popup_inner">
