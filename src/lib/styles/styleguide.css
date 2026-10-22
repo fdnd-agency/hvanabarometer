@@ -63,7 +63,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background-color: #121212;
+    --background-color: hsl(0, 0%, 7.06%);
     --text: #ffffff;
   }
 }
