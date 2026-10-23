@@ -8,7 +8,7 @@
     >
   </p>
   <p class="question">Welk cijfer geef jij je dag?</p>
-  <button class="vote">Stem ›</button>
+  <button class="vote" command="show-modal" commandfor="popup">Stem ›</button>
 </header>
 
 <style>
@@ -49,6 +49,11 @@
       border-bottom: 3px solid #ff7a3d;
       font-weight: 800;
       text-transform: uppercase;
+      cursor: pointer;
+      transition: transform .2s ease;
+      &:hover{
+        transform:scale(1.1)
+      }
     }
 
     .score {
