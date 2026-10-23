@@ -57,5 +57,11 @@
       font-weight: bold;
       text-transform: uppercase;
     }
+    @media (prefers-color-scheme: dark) {
+      .card {
+        background: hsl(215, 62%, 8%);
+        color: white;
+      }
+    }
   }
 </style>

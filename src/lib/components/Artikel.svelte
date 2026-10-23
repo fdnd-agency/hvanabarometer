@@ -2,9 +2,11 @@
   import ArtikelCard from "$lib/components/ArtikelCard.svelte";
   let {
     background = "#ff5a2e",
+    darkBackground = "#121212",
     buttonColor = "white",
     buttonTextColor = "white",
     cardShadow = "6px 6px 0 #c9431f",
+    cardShadowDark = "6px 6px 0 #0751DA",
     articles = [],
   } = $props();
 </script>
@@ -53,5 +55,18 @@
     text-decoration: none;
     text-transform: uppercase;
     font-weight: bold;
+  }
+  @media (prefers-color-scheme: dark) {
+    section {
+      background: var(--bg-dark);
+    }
+
+    .clickmorebtn {
+      color: white;
+      background-color: var(--primary-color);
+    }
+    .articlebox {
+      --card-shadow: none;
+    }
   }
 </style>
