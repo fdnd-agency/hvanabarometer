@@ -61,4 +61,43 @@ h2{
     font-weight: 700;
     text-transform: uppercase;
 }
+
+/* APARTE COMPONENT MAKEN DIT IS DE ONDERKANTSTUK */
+.prompt {
+    position: fixed;
+    bottom: 10px;
+    left:0;
+    right:0;
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    width: 80%;
+    padding: 20px;
+    background: white;
+    border: 1px solid #0751d8;
+}
+
+.prompt h3,
+.prompt p {
+    grid-column: 1;
+}
+
+.prompt p {
+    margin-top: 5px;
+    color: #52617d;
+    font-size: 16px;
+}
+
+    .prompt-button {
+    grid-column: 1;
+    grid-row: auto;
+    padding: 11px 16px;
+    background: #0751d8;
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+    align-self: center;
+}
+
 </style>
