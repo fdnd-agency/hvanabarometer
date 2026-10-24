@@ -76,6 +76,12 @@ h2{
     padding: 20px;
     background: white;
     border: 1px solid #0751d8;
+
+        @media (min-width: 768px) {
+            bottom: 25px;
+            grid-template-columns: 1fr auto;
+
+}
 }
 
 .prompt h3,
@@ -98,6 +104,14 @@ h2{
     font-size: 16px;
     text-decoration: none;
     align-self: center;
+
+        &:hover {
+            background: #063fa8;
+}
+         @media (min-width:768px){
+            grid-column: 2;
+            grid-row: 1 / 3;
+}
 }
 
 </style>
