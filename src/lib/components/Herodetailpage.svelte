@@ -31,7 +31,7 @@
     .inner {
         display: grid;
         max-width: 1000px;
-        margin: auto;
+        margin-inline: auto;
 
         @media (min-width: 740px) {
         grid-template-columns: 1fr auto;
