@@ -14,3 +14,51 @@
         + HVA-METER INVULLEN
     </a>
 </section>
+
+<style>
+
+h2{
+    width: 80%;
+    margin-inline: auto;
+    margin-bottom: 25px;
+}
+.kaarten {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    grid-template-rows: auto auto;
+    column-gap: 20px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #e5eaf5;
+    width: 80%;
+    margin-inline: auto;
+}
+
+.kaarten span {
+    grid-column: 1;
+    grid-row: 1 / 3;
+    display: grid;
+    place-items: center;
+    width: 80px;
+    aspect-ratio: 1; /*dan blijft het blokje altijd vierkant ondanks de inhoud*/
+    background-color: #0751d8;
+    color: white;
+    font-weight: bolder;
+}
+
+.kaarten p {
+    grid-column: 2;
+    grid-row: 1;
+    margin: 0;
+    font-size: 18px;
+}
+
+.kaarten time {
+    grid-column: 2;
+    grid-row: 2;
+    margin: 0;
+    color: #687ba5;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+</style>
