@@ -61,6 +61,12 @@
   --border-radius: 0.25rem;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: hsl(0, 0%, 7.06%);
+    --text: var(--white);
+  }
+}
 /* Globale styling */
 * {
   box-sizing: border-box;
