@@ -19,7 +19,7 @@
 
 <style>
     section {
-        background: linear-gradient(var(--primary-color));
+        background: var(--primary-color);
         color: var(--text-color-light);
         padding: var(--spacing-l) var(--spacing-s);
 
