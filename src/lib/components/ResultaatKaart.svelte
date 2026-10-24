@@ -10,9 +10,9 @@
     <h3>Nog geen cijfer gegeven vandaag?</h3>
     <p>Het kost je minder dan een minuut en je blijft anoniem.</p>
 
-    <a class="prompt-button" href="/popupsomethingidk">
+    <button  command="show-modal" commandfor="popup" class="prompt-button" >
         + HVA-METER INVULLEN
-    </a>
+    </button>
 </section>
 
 <style>
@@ -102,9 +102,8 @@ h2{
     background: #0751d8;
     color: white;
     font-size: 16px;
-    text-decoration: none;
     align-self: center;
-
+    border: none;
         &:hover {
             background: #063fa8;
 }
