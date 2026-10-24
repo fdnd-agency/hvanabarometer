@@ -20,6 +20,7 @@
       </li>
     </ul>
   </nav>
+  <a href="/">
   <img
     class="hvana-logo"
     width="667"
@@ -29,6 +30,7 @@
     data-orig-src="https://hvana.nl/wp-content/uploads/2023/03/hvana_logo_wit-2025.svg"
     fetchpriority="high"
   />
+  </a>
   <div class="container-icons-search">
     <div class="wrapper-icons">
       <a
