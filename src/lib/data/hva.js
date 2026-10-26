@@ -1,0 +1,16 @@
+export const gebouwen = [
+  "Amstelcampus",
+  "Benno Premselahuis (BPH)",
+  "Jakoba Mulderhuis (JMH)",
+  "Koetsier-Montaignehuis (KMH)",
+  "Kohnstammhuis (KSH)",
+  "Muller-Lulofshuis (MLH)",
+  "Theo Thijssenhuis (TTH)",
+  "Wibauthuis (WBH)",
+  "Buisnesscampus",
+  "Corry Tendelooshuis (CTH)",
+  "Gezondheidscampus",
+  "Nicolaes Tulphuis en Tania Leonhuis (NTH en TLH)",
+  "Sportcampus",
+  "Dr. Meurerhuis (DMH)",
+];
