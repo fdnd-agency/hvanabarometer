@@ -1,10 +1,20 @@
+<script>
+    let {responses = []} = $props();
+</script>
 <h2>Alle uitslagen</h2>
 
+{#each responses as response (response.id)}
 <section class="kaarten">
-    <span>8</span>
-    <p>Leuke gastspreker op school gekomen</p>
-    <time>vandaag 10:30</time>
+    <span>{response.score}</span>
+    <p>{response.explanation ||"Geen toelichting gegeven"}</p>
+    <time datetime="{response.submitted_at}">Vandaag {new Date(response.submitted_at).toLocaleString("nl-NL",{
+        hour: "2-digit",
+        minute: "2-digit",
+})}</time>
 </section>
+{:else}
+<p>Er zijn nog geen uitslagen</p>
+{/each}
 
 <section class="prompt">
     <h3>Nog geen cijfer gegeven vandaag?</h3>
