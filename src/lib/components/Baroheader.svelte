@@ -1,11 +1,14 @@
 <header class="hva-meter">
   <p>
+    
     <span class="headertext">
       <strong>HvA-Meter</strong>
       <data class="score" value="7.2">7.2</data>
-      <span class="voting"> <a href="/barometer">312 stemmen</a> </span>
-      <span class="today">vandaag</span></span
-    >
+      <a class="voting" href="/barometer">
+        <span class="view">Bekijk</span> 312 stemmen
+      </a>
+      <span class="today">vandaag</span>
+    </span>  
   </p>
   <p class="question">Welk cijfer geef jij je dag?</p>
   <button class="vote" command="show-modal" commandfor="popup">Stem ›</button>
