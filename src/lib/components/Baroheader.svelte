@@ -37,10 +37,11 @@
     .headertext {
       display: flex;
       align-items: center;
-      gap: 1rem;
+      gap: 0.5rem;
     }
     strong {
       font-size: 1.25rem;
+      white-space: nowrap;
     }
 
     .view,
@@ -49,6 +50,9 @@
       display: none;
     }
     .vote {
+      font-size: 0.9rem;
+      white-space: nowrap;
+      flex-shrink: 0;
       padding: 0.15rem 0.4rem;
       border: none;
       border-radius: 50px;
