@@ -74,10 +74,8 @@ h2{
 
 /* APARTE COMPONENT MAKEN DIT IS DE ONDERKANTSTUK */
 .prompt {
-    position: fixed;
-    bottom: 10px;
-    left:0;
-    right:0;
+    margin-top:auto;
+    margin-bottom: 20px;
     margin-inline: auto;
     display: grid;
     grid-template-columns: 1fr;
