@@ -57,6 +57,7 @@
         autocomplete="off"
         placeholder="Bijv. Wibautstraat"
       />
+      <datalist id="gebouwen"></datalist>
 
       <label for="opleiding" class="veld-label">
         Welke opleiding volg je?
