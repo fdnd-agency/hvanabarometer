@@ -129,7 +129,7 @@
     align-items: center;
     justify-content: space-between;
     top: 0;
-    z-index: 10;
+    z-index: 2;
     background-color: var(--background-color);
     padding: 10px 20px;
     @media (min-width: 810px) {
