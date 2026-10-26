@@ -31,6 +31,7 @@ h2{
     width: 80%;
     margin-inline: auto;
     margin-bottom: 25px;
+    color: var(--text);
 }
 .kaarten {
     display: grid;
@@ -41,6 +42,7 @@ h2{
     border-bottom: 1px solid #e5eaf5;
     width: 80%;
     margin-inline: auto;
+    margin-bottom: 15px;
 }
 
 .kaarten span {
@@ -60,6 +62,7 @@ h2{
     grid-row: 1;
     margin: 0;
     font-size: 18px;
+    color: var(--text);
 }
 
 .kaarten time {
@@ -82,7 +85,7 @@ h2{
     gap: 12px;
     width: 80%;
     padding: 20px;
-    background: white;
+    background: var(--background-color);
     border: 1px solid #0751d8;
 
         @media (min-width: 768px) {
@@ -95,6 +98,7 @@ h2{
 .prompt h3,
 .prompt p {
     grid-column: 1;
+    color: var(--text);
 }
 
 .prompt p {
@@ -104,6 +108,7 @@ h2{
 }
 
     .prompt-button {
+    cursor:pointer;
     grid-column: 1;
     grid-row: auto;
     padding: 11px 16px;
