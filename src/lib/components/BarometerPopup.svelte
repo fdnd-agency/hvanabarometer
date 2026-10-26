@@ -44,6 +44,35 @@
         placeholder="Vertel kort waarom je voor dit cijfer hebt gekozen..."
       ></textarea>
 
+      <label for="gebouw" class="veld-label">
+        In welk HvA-gebouw studeer je?
+      </label>
+
+      <input
+        id="gebouw"
+        class="tekst_veld"
+        name="gebouw"
+        type="text"
+        list="gebouwen"
+        autocomplete="off"
+        placeholder="Bijv. Wibautstraat"
+      />
+
+      <label for="opleiding" class="veld-label">
+        Welke opleiding volg je?
+      </label>
+
+      <input
+        id="opleiding"
+        class="tekst_veld"
+        name="opleiding"
+        type="text"
+        list="opleidingen"
+        autocomplete="off"
+        placeholder="Bijv. FDND"
+      />
+      <datalist id="opleidingen"></datalist>
+
       <label for="email">
         <span class="hva-email">HvA e-mailadres </span>
         <span class="hva-verplicht">★ verplicht</span>
@@ -189,7 +218,8 @@
 
   /* -- labels -- */
   .toelichting-tekst,
-  .hva-email {
+  .hva-email,
+  .veld-label {
     font-weight: 700;
     font-size: 0.85rem;
   }
@@ -207,7 +237,8 @@
 
   /* -- velden -- */
   .toelichting_veld,
-  .email_veld {
+  .email_veld,
+  .tekst_veld {
     width: 100%;
     box-sizing: border-box;
     padding: 0.75rem;
@@ -215,6 +246,10 @@
     border-radius: 0.5rem;
     font: inherit;
     font-size: 0.8rem;
+  }
+
+  .tekst_veld {
+    margin: 0.5rem 0 1.25rem;
   }
 
   .toelichting_veld {
@@ -228,7 +263,8 @@
   }
 
   .toelichting_veld:focus-visible,
-  .email_veld:focus-visible {
+  .email_veld:focus-visible,
+  .tekst_veld:focus-visible {
     outline: 3px solid var(--blue);
     outline-offset: 2px;
   }
