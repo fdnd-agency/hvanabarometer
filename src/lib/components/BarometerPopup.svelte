@@ -1,3 +1,7 @@
+<script>
+  import { gebouwen, opleidingen } from "$lib/data/hva.js";
+</script>
+
 
 <dialog class="popup" id="popup">
   <div class="popup_inner">
@@ -57,7 +61,11 @@
         autocomplete="off"
         placeholder="Bijv. Wibautstraat"
       />
-      <datalist id="gebouwen"></datalist>
+      <datalist id="gebouwen">
+        {#each gebouwen as gebouw}
+          <option value={gebouw}></option>
+        {/each}
+      </datalist>
 
       <label for="opleiding" class="veld-label">
         Welke opleiding volg je?
@@ -72,7 +80,11 @@
         autocomplete="off"
         placeholder="Bijv. FDND"
       />
-      <datalist id="opleidingen"></datalist>
+      <datalist id="opleidingen">
+        {#each opleidingen as opleiding}
+          <option value={opleiding}></option>
+        {/each}
+      </datalist>
 
       <label for="email">
         <span class="hva-email">HvA e-mailadres </span>
