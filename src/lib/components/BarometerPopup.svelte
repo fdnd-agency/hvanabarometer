@@ -99,6 +99,12 @@
         placeholder="Jouw HvA e-mailadres"
         required
       />
+
+      <label class="toestemming">
+        <input type="checkbox" name="toestemming" required />
+        <span>Ik geef toestemming om mijn HvA-e-mailadres te bewaren voor de verwerking van de resultaten.</span>
+      </label>
+
       <button type="submit" class="verzend_knop">Verzend</button>
     </form>
   </div>
@@ -275,9 +281,29 @@
     margin-top: 0.5rem;
   }
 
+  /* -- toestemming -- */
+  .toestemming {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+    font-size: 0.75rem;
+    line-height: 1.4;
+    cursor: pointer;
+  }
+
+  .toestemming input {
+    flex-shrink: 0;
+    width: 1rem;
+    height: 1rem;
+    margin: 0.1rem 0 0;
+    accent-color: var(--blue);
+  }
+
   .toelichting_veld:focus-visible,
   .email_veld:focus-visible,
-  .tekst_veld:focus-visible {
+  .tekst_veld:focus-visible,
+  .toestemming input:focus-visible  {
     outline: 3px solid var(--blue);
     outline-offset: 2px;
   }
