@@ -13,7 +13,7 @@
       ← Terug
     </button>
 
-    <h1>Geef je cijfer aan de HvA</h1>
+    <h2>Geef je cijfer aan de HvA</h2>
 
     <form class="HVAmeter-form" action="/?/hvameter" method="POST">
       <fieldset>
@@ -108,7 +108,7 @@
   }
 
   /* -- titel -- */
-  .popup h1 {
+  .popup h2 {
     margin-bottom: var(--spacing-s);
     transform: rotate(-3deg);
     transform-origin: left center;
