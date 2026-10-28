@@ -10,7 +10,7 @@
       commandfor="popup"
       command="close"
     >
-      ← Terug
+     ➜] Sluiten
     </button>
 
     <h2>Geef je cijfer aan de HvA</h2>
