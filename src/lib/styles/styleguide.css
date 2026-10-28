@@ -19,6 +19,7 @@
 
 :root {
   /* Kleuren */
+  --border-color:black;
   --black: hsl(0, 0%, 0%);
   --white: hsl(0, 0%, 100%);
 
@@ -67,6 +68,7 @@
   :root {
     --background-color: hsl(0, 0%, 7.06%);
     --text: var(--white);
+    --border-color: var(--white);
   }
 }
 /* Globale styling */

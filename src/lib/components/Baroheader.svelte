@@ -4,7 +4,7 @@
     <span class="headertext">
       <strong>HvA-Meter</strong>
       <data class="score" value="7.2">7.2</data>
-      <a class="voting" href="/barometer">
+      <a class="voting" href="/meter-uitslag">
         312 stemmen
       </a>
       <span class="today">vandaag</span>

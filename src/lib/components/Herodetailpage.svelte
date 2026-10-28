@@ -20,17 +20,15 @@
 <style>
     section {
         background: var(--primary-color);
-        color: var(--text-color-light);
-        padding: var(--spacing-l) var(--spacing-s);
+         color: var(--text-color-light);
+            padding-bottom: var(--spacing-l);
+         padding-top: var(--spacing-xl) ;
 
-        @media (min-width: 740px) {
-        padding: var(--spacing-xl) 2.5rem;
-        }
     }
 
     .inner {
         display: grid;
-        max-width: 1000px;
+        width: 80%;
         margin-inline: auto;
 
         @media (min-width: 740px) {
