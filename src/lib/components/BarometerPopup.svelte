@@ -6,7 +6,7 @@
   <div class="popup_inner">
     <button
       type="button"
-      class="close_popup"
+      class="close_button"
       commandfor="popup"
       command="close"
     >
@@ -15,7 +15,7 @@
 
     <h2>Geef je cijfer aan de HvA</h2>
 
-    <form class="HVAmeter-form" action="/?/hvameter" method="POST">
+    <form class="vote_form" action="/?/hvameter" method="POST">
       <fieldset>
         <legend>
           Hoe voel je je vandaag over de HvA? Geef een cijfer van 1 tot 10 en
@@ -36,12 +36,12 @@
       </fieldset>
 
       <input type="hidden" name="userId" value="" />
-      <label for="toelichting" class="toelichting-tekst">
+      <label for="toelichting" class="explanation_label">
         Waarom geef je de HvA vandaag dit cijfer?</label
       >
       <textarea
         id="toelichting"
-        class="toelichting_veld"
+        class="explanation_field"
         name="toelichting"
         maxlength="500"
         placeholder="Vertel kort waarom je voor dit cijfer hebt gekozen..."
@@ -49,18 +49,18 @@
 
       <label for="email">
         <span class="hva-email">HvA e-mailadres </span>
-        <span class="hva-verplicht">★ verplicht</span>
+        <span class="required_mark">★ verplicht</span>
       </label>
       <input
         id="email"
-        class="email_veld"
+        class="email_field"
         name="email"
         type="email"
         autocomplete="email"
         placeholder="Jouw HvA e-mailadres"
         required
       />
-      <button type="submit" class="verzend_knop">Verzend</button>
+      <button type="submit" class="submit_button">Verzend</button>
     </form>
   </div>
 </dialog>
@@ -95,7 +95,7 @@
 
   }
 
-  .close_popup {
+  .close_button {
     position: absolute;
     top: var(--spacing-s);
     left: var(--spacing-s);
@@ -115,7 +115,7 @@
   }
 
   /* -- formulier -- */
-  .HVAmeter-form {
+  .vote_form {
     display: flex;
     flex-direction: column;
   }
@@ -178,17 +178,17 @@
   }
 
   /* -- labels -- */
-  .toelichting-tekst,
+  .explanation_label,
   .hva-email {
     font-weight: var(--font-weight-bold);
     font-size: var(--font-size-small);
   }
 
-  .toelichting-tekst {
+  .explanation_label {
     margin-bottom: var(--spacing-xs);
   }
 
-  .hva-verplicht {
+  .required_mark {
     margin-left: var(--spacing-xs);
     color: var(--primary-color);
     font-size: 0.7rem;
@@ -196,26 +196,26 @@
   }
 
   /* -- velden -- */
-  .toelichting_veld,
-  .email_veld {
+  .explanation_field,
+  .email_field {
     width: 100%;
     border: 2px solid var(--text-color-dark);
     background-color: var(--background-color);
     font-size: var(--font-size-small);
   }
 
-  .toelichting_veld {
+  .explanation_field {
     min-height: 6rem;
     margin-bottom: var(--spacing-s);
     resize: vertical;
   }
 
-  .email_veld {
+  .email_field {
     margin-top: var(--spacing-xs);
   }
 
   /* -- knop -- */
-  .verzend_knop {
+  .submit_button {
     margin-top: var(--spacing-m);
     padding: var(--spacing-s);
     border: 0;
@@ -226,7 +226,7 @@
     cursor: pointer;
 
     &:hover{
-      background-color: var(--primary-color);
+      background-color: darkblue;
     }
   }
 </style>
