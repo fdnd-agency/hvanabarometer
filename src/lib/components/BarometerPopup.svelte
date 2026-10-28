@@ -57,6 +57,8 @@
         type="email"
         autocomplete="email"
         placeholder="Jouw HvA e-mailadres"
+        pattern="[^@\s]+@(student\.)?hva\.nl"
+        title="Gebruik je HvA e-mailadres (...@hva.nl)"
         required
       />
       <button type="submit" class="submit_button">Verzend</button>
