@@ -24,7 +24,7 @@
     <p>Het kost je minder dan een minuut en je blijft anoniem.</p>
 
     <button  command="show-modal" commandfor="popup" class="prompt-button" >
-        + HVA-METER INVULLEN
+        + Hva-meter invullen
     </button>
 </section>
 
@@ -57,8 +57,8 @@ h2{
     place-items: center;
     width: 80px;
     aspect-ratio: 1; /*dan blijft het blokje altijd vierkant ondanks de inhoud*/
-    background-color: #0751d8;
-    color: white;
+    background-color: var(--blue);
+    color: var(--white);
     font-weight: bolder;
 }
 
@@ -82,7 +82,7 @@ h2{
 
 /* APARTE COMPONENT MAKEN DIT IS DE ONDERKANTSTUK */
 .prompt {
-    margin-top:auto;
+    margin-top:50px;
     margin-bottom: 20px;
     margin-inline: auto;
     display: grid;
@@ -91,7 +91,7 @@ h2{
     width: 80%;
     padding: 20px;
     background: var(--background-color);
-    border: 1px solid #0751d8;
+    border: 1px solid var(--blue);
 
         @media (min-width: 768px) {
             bottom: 25px;
@@ -117,10 +117,11 @@ h2{
     grid-column: 1;
     grid-row: auto;
     padding: 11px 16px;
-    background: #0751d8;
-    color: white;
+    background:var(--blue);
+    color: var(--white);
     font-size: 16px;
     align-self: center;
+    text-transform: uppercase;
     border: none;
         &:hover {
             background: #063fa8;
