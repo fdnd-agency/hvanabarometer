@@ -1,20 +1,23 @@
 <script>
     let {responses = []} = $props();
 </script>
+
+<section class="result-section">
 <h2>Alle uitslagen</h2>
 
 {#each responses as response (response.id)}
-<section class="kaarten">
+<article class="cards">
     <span>{response.score}</span>
     <p>{response.explanation ||"Geen toelichting gegeven"}</p>
     <time datetime="{response.submitted_at}">Vandaag {new Date(response.submitted_at).toLocaleString("nl-NL",{
         hour: "2-digit",
         minute: "2-digit",
 })}</time>
-</section>
+</article>
 {:else}
 <p>Er zijn nog geen uitslagen</p>
 {/each}
+</section>
 
 <section class="prompt">
     <h3>Nog geen cijfer gegeven vandaag?</h3>
@@ -26,14 +29,16 @@
 </section>
 
 <style>
-
+.result-section{
+    margin-top: 50px;
+}
 h2{
     width: 80%;
     margin-inline: auto;
     margin-bottom: 25px;
     color: var(--text);
 }
-.kaarten {
+.cards {
     display: grid;
     grid-template-columns: 80px 1fr;
     grid-template-rows: auto auto;
@@ -45,7 +50,7 @@ h2{
     margin-bottom: 15px;
 }
 
-.kaarten span {
+.cards span {
     grid-column: 1;
     grid-row: 1 / 3;
     display: grid;
@@ -57,7 +62,7 @@ h2{
     font-weight: bolder;
 }
 
-.kaarten p {
+.cards p {
     grid-column: 2;
     grid-row: 1;
     margin: 0;
@@ -65,7 +70,7 @@ h2{
     color: var(--text);
 }
 
-.kaarten time {
+.cards time {
     grid-column: 2;
     grid-row: 2;
     margin: 0;
