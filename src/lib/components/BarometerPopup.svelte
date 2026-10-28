@@ -35,7 +35,6 @@
         {/each}
       </fieldset>
 
-      <input type="hidden" name="userId" value="" />
       <label for="toelichting" class="explanation_label">
         Waarom geef je de HvA vandaag dit cijfer?</label
       >
