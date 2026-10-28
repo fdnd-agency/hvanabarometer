@@ -103,6 +103,7 @@
       <label class="toestemming">
         <input type="checkbox" name="toestemming" required />
         <span>Ik geef toestemming om mijn HvA-e-mailadres te bewaren voor de verwerking van de resultaten.</span>
+        <span class="hva-verplicht">★ verplicht</span>
       </label>
 
       <button type="submit" class="verzend_knop">Verzend</button>
