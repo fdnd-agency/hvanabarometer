@@ -1,3 +1,6 @@
+<script>
+  import "../styles/styleguide.css";
+</script>
 
 <dialog class="popup" id="popup">
   <div class="popup_inner">
@@ -63,17 +66,6 @@
 </dialog>
 
 <style>
-  /**dit kan later weg als de styleguide is gemergd en nog veel meer van de styling*/
-  :root {
-    --blue: hsl(219, 94%, 44%);
-    --pink: hsl(332, 100%, 77%);
-    --teal: hsl(166, 71%, 53%);
-    --yellow: hsl(50, 100%, 50%);
-    --orange: hsl(13.11, 100%, 59.61%);
-    --black: hsl(0, 0%, 0%);
-    --white: hsl(0, 0%, 100%);
-  }
-
   /* -- popup -- */
   .popup {
     width: 22rem;
@@ -94,31 +86,30 @@
     box-sizing: border-box;
     max-height: 95vh;
     overflow: auto;
-    padding: 3rem 1.25rem 1.5rem;
-    background: var(--white);
-    color: var(--black);
-    border: 2px solid var(--black);
+    padding: var(--spacing-xl) var(--spacing-s) var(--spacing-m);
+    background: var(--background-color);
+    color: var(--text-color-dark);
+    border: 2px solid var(--text-color-dark);
     border-radius: 1rem;
+    font-family: "Montserrat", sans-serif;
+
   }
 
   .close_popup {
     position: absolute;
-    top: 1.1rem;
-    left: 1.25rem;
+    top: var(--spacing-s);
+    left: var(--spacing-s);
     padding: 0;
     border: 0;
     background: none;
-    color: var(--black);
-    font-weight: 700;
+    color: var(--text-color-dark);
+    font-weight: var(--font-weight-bold);
     cursor: pointer;
   }
 
   /* -- titel -- */
   .popup h1 {
-    margin: 0 0 1rem;
-    font-family: "Arial Black", Impact, sans-serif;
-    font-size: 2rem;
-    line-height: 1;
+    margin-bottom: var(--spacing-s);
     transform: rotate(-3deg);
     transform-origin: left center;
   }
@@ -132,17 +123,15 @@
   fieldset {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.75rem 0;
-    margin: 0 0 1rem;
+    gap: var(--spacing-xs) 0;
+    margin: 0 0 var(--spacing-s);
     padding: 0;
     border: 0;
   }
 
   legend {
-    padding: 0;
-    margin-bottom: 1rem;
-    font-size: 0.85rem;
-    line-height: 1.4;
+    margin-bottom: var(--spacing-s);
+    font-size: var(--font-size-small);
   }
 
   fieldset label {
@@ -166,41 +155,42 @@
     place-items: center;
     width: 2.5rem;
     height: 2.5rem;
-    border: 2px solid var(--black);
+    border: 2px solid var(--text-color-dark);
     border-radius: 50%;
-    background: var(--white);
+    background: var(--background-color);
     font-weight: 600;
+    
     &:hover{
-      background-color: var(--blue);
-      color: var(--white);
+      background-color: var(--primary-color);
+      color: var(--text-color-light);
     }
   }
 
   fieldset input:checked + span {
-    background: var(--blue);
-    border-color: var(--blue);
-    color: var(--white);
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--text-color-light);
   }
 
   fieldset input:focus-visible + span {
-    outline: 3px solid var(--blue);
+    outline: 3px solid var(--primary-color);
     outline-offset: 2px;
   }
 
   /* -- labels -- */
   .toelichting-tekst,
   .hva-email {
-    font-weight: 700;
-    font-size: 0.85rem;
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-small);
   }
 
   .toelichting-tekst {
-    margin-bottom: 0.5rem;
+    margin-bottom: var(--spacing-xs);
   }
 
   .hva-verplicht {
-    margin-left: 0.4rem;
-    color: var(--blue);
+    margin-left: var(--spacing-xs);
+    color: var(--primary-color);
     font-size: 0.7rem;
     font-weight: 600;
   }
@@ -209,49 +199,34 @@
   .toelichting_veld,
   .email_veld {
     width: 100%;
-    box-sizing: border-box;
-    padding: 0.75rem;
-    border: 2px solid var(--black);
-    border-radius: 0.5rem;
-    font: inherit;
-    font-size: 0.8rem;
+    border: 2px solid var(--text-color-dark);
+    background-color: var(--background-color);
+    font-size: var(--font-size-small);
   }
 
   .toelichting_veld {
-    min-height: 7rem;
-    margin-bottom: 1.25rem;
+    min-height: 6rem;
+    margin-bottom: var(--spacing-s);
     resize: vertical;
   }
 
   .email_veld {
-    margin-top: 0.5rem;
-  }
-
-  .toelichting_veld:focus-visible,
-  .email_veld:focus-visible {
-    outline: 3px solid var(--blue);
-    outline-offset: 2px;
+    margin-top: var(--spacing-xs);
   }
 
   /* -- knop -- */
   .verzend_knop {
-    margin-top: 1.5rem;
-    padding: 1rem;
+    margin-top: var(--spacing-m);
+    padding: var(--spacing-s);
     border: 0;
-    border-radius: 0.3rem;
-    background: var(--blue);
-    color: var(--white);
-    font: inherit;
-    font-size: 1rem;
-    font-weight: 700;
+    border-radius: var(--border-radius);
+    background: var(--primary-color);
+    color: var(--text-color-light);
+    font-weight: var(--font-weight-bold);
     cursor: pointer;
-    &:hover{
-      background-color: hsl(245, 94%, 44%);
-    }
-  }
 
-  .verzend_knop:focus-visible {
-    outline: 3px solid var(--black);
-    outline-offset: 3px;
+    &:hover{
+      background-color: var(--primary-color);
+    }
   }
 </style>
