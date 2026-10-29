@@ -1,5 +1,5 @@
 <script>
-    import MeterUitslag from "$lib/components/MeterUitslag.svelte";
+    import MeterUitslag from "$lib/organisms/MeterUitslag.svelte";
   let { data } = $props();
 
 </script>

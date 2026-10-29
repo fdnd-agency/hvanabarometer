@@ -1,7 +1,7 @@
 <script>
   import Artikel from "$lib/molecules/Artikel.svelte";
-  import Header from "$lib/organisms/Header.svelte";
-  import Baroheader from "$lib/organisms/Baroheader.svelte";
+  import Header from "$lib/molecules/Header.svelte";
+  import Baroheader from "$lib/molecules/Baroheader.svelte";
   import BlauweArtikel from "$lib/molecules/BlauweArtikel.svelte";
   import BarometerPopup from "$lib/molecules/BarometerPopup.svelte";
 </script>
