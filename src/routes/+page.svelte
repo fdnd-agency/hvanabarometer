@@ -1,5 +1,5 @@
 <script>
-  import Homepage from "$lib/components/HomePage.svelte";
+  import Homepage from "$lib/organisms/HomePage.svelte"
 </script>
 
 <Homepage />

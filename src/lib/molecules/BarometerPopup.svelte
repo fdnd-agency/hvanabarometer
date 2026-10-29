@@ -1,3 +1,42 @@
+<!-- <script>
+  async function verstuurFormulier(event) {
+    event.preventDefault();
+
+    const form = event.currentTarget;
+    const button = event.submitter;
+
+    if (button.disabled) return;
+
+    button.classList.remove("opgeslagen", "error");
+    button.classList.add("laden");
+    button.disabled = true;
+    button.textContent = "Verzenden...";
+
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: new URLSearchParams(formData)
+      });
+
+      if (!response.ok) {
+        throw new Error("Verzenden mislukt");
+      }
+
+      button.classList.remove("laden");
+      button.classList.add("opgeslagen");
+      button.textContent = "Verzonden ✔";
+
+    } catch (error) {
+      button.classList.remove("laden");
+      button.classList.add("error");
+      button.disabled = false;
+      button.textContent = "Opnieuw proberen";
+
+      console.error("Fout bij verzenden:", error);
+    }}
+</script> -->
 
 <dialog class="popup" id="popup">
   <div class="popup_inner">

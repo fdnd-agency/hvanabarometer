@@ -1,9 +1,9 @@
 <script>
-  import Artikel from "$lib/components/Artikel.svelte";
-  import Header from "$lib/components/Header.svelte";
-  import Baroheader from "$lib/components/Baroheader.svelte";
-  import BlauweArtikel from "$lib/components/BlauweArtikel.svelte";
-  import BarometerPopup from "$lib/components/BarometerPopup.svelte";
+  import Artikel from "$lib/molecules/Artikel.svelte";
+  import Header from "$lib/organisms/Header.svelte";
+  import Baroheader from "$lib/organisms/Baroheader.svelte";
+  import BlauweArtikel from "$lib/molecules/BlauweArtikel.svelte";
+  import BarometerPopup from "$lib/molecules/BarometerPopup.svelte";
 </script>
 
 <Header />
