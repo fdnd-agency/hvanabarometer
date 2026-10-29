@@ -1,22 +1,25 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
+
 @font-face {
-  font-family: "U8-Regular";
-  src: url("https://db.onlinewebfonts.com/t/7017698b5c5a2cc397cd3b0c0984d76f.eot");
-  src:
-    url("https://db.onlinewebfonts.com/t/7017698b5c5a2cc397cd3b0c0984d76f.eot?#iefix")
-      format("embedded-opentype"),
-    url("https://db.onlinewebfonts.com/t/7017698b5c5a2cc397cd3b0c0984d76f.woff2")
-      format("woff2"),
-    url("https://db.onlinewebfonts.com/t/7017698b5c5a2cc397cd3b0c0984d76f.woff")
-      format("woff"),
-    url("https://db.onlinewebfonts.com/t/7017698b5c5a2cc397cd3b0c0984d76f.ttf")
-      format("truetype"),
-    url("https://db.onlinewebfonts.com/t/7017698b5c5a2cc397cd3b0c0984d76f.svg#U8-Regular")
-      format("svg");
+  font-family: "U8 Regular web";
+  src: url("/assets/fonts/U8-Regular-web.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "U8 Bold web";
+  src: url("/assets/fonts/U8-Bold-web.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
 }
 
 :root {
   /* Kleuren */
+  --border-color:black;
   --black: hsl(0, 0%, 0%);
   --white: hsl(0, 0%, 100%);
 
@@ -35,7 +38,7 @@
 
   /* Typografie */
   --font-family: Georgia, serif;
-  --font-heading: "U8-Regular", sans-serif;
+  --font-heading: "U8 Bold web", sans-serif;
 
   --font-size: 20px;
   --font-size-small: 16px;
@@ -65,6 +68,7 @@
   :root {
     --background-color: hsl(0, 0%, 7.06%);
     --text: var(--white);
+    --border-color: var(--white);
   }
 }
 /* Globale styling */

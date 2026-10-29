@@ -102,17 +102,7 @@
 </dialog>
 
 <style>
-  /**dit kan later weg als de styleguide is gemergd en nog veel meer van de styling*/
-  :root {
-    --blue: hsl(219, 94%, 44%);
-    --pink: hsl(332, 100%, 77%);
-    --teal: hsl(166, 71%, 53%);
-    --yellow: hsl(50, 100%, 50%);
-    --orange: hsl(13.11, 100%, 59.61%);
-    --black: hsl(0, 0%, 0%);
-    --white: hsl(0, 0%, 100%);
-  }
-
+  
   /* -- popup -- */
   .popup {
     width: 22rem;
@@ -134,9 +124,9 @@
     max-height: 95vh;
     overflow: auto;
     padding: 3rem 1.25rem 1.5rem;
-    background: var(--white);
-    color: var(--black);
-    border: 2px solid var(--black);
+    background: var(--background-color);
+    color: var(--text);
+    border: 2px solid var(--text);
     border-radius: 1rem;
   }
 
@@ -147,7 +137,7 @@
     padding: 0;
     border: 0;
     background: none;
-    color: var(--black);
+    color: var(--text);
     font-weight: 700;
     cursor: pointer;
   }
@@ -205,9 +195,9 @@
     place-items: center;
     width: 2.5rem;
     height: 2.5rem;
-    border: 2px solid var(--black);
+    border: 2px solid var(--border-color);
     border-radius: 50%;
-    background: var(--white);
+    background: var(--background-color);
     font-weight: 600;
     &:hover{
       background-color: var(--blue);
@@ -250,7 +240,8 @@
     width: 100%;
     box-sizing: border-box;
     padding: 0.75rem;
-    border: 2px solid var(--black);
+    border: 2px solid var(--border-color);
+    background-color: var(--background-color);
     border-radius: 0.5rem;
     font: inherit;
     font-size: 0.8rem;

@@ -116,6 +116,6 @@
     left: 20px;
     color: white;
     font-weight: bolder;
-    z-index: 10;
+    z-index: 1;
   }
 </style>
