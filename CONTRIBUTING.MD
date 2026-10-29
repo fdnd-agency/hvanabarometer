@@ -165,3 +165,19 @@ Op iedere lesdag houden we een korte stand-up
 - Loop ik ergens op vast?
 - Heb ik hulp of feedback nodig?
  
+### Atomic design opstelling
+- Atoms:	
+    Kleinste bouwstenen, volledig generiek>	
+        Button.svelte, Input.svelte, Badge.svelte, Icon.svelte
+- Molecules:	
+    Combinaties van atoms>	
+        SearchBar.svelte, FormField.svelte, NavItem.svelte
+- Organisms:	
+    Complexe blokken met context>	
+        Navbar.svelte, LoginForm.svelte, Card.svelte
+- Templates:	
+    Pagina-layouts>	
+        +layout.svelte, +layout.server.js
+- Pages:	
+    In SvelteKit je pagina bestanden>
+    	+page.svelte, +page.server.js
