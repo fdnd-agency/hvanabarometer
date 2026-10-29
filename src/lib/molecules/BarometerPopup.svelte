@@ -1,42 +1,48 @@
-<!-- <script>
-  async function verstuurFormulier(event) {
-    event.preventDefault();
+<script>
+async function verstuurFormulier(event) {
+  event.preventDefault();
 
-    const form = event.currentTarget;
-    const button = event.submitter;
+  const form = event.currentTarget;
+  const button = event.submitter;
 
-    if (button.disabled) return;
+  if (button.disabled) return;
 
-    button.classList.remove("opgeslagen", "error");
-    button.classList.add("laden");
-    button.disabled = true;
-    button.textContent = "Verzenden...";
+  button.classList.remove("opgeslagen", "error");
+  button.classList.add("laden");
+  button.disabled = true;
+  button.textContent = "Verzenden...";
 
-    const formData = new FormData(form);
+  const formData = new FormData(form);
 
-    try {
-      const response = await fetch(form.action, {
-        method: form.method,
-        body: new URLSearchParams(formData)
-      });
+  try {
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: new URLSearchParams(formData)
+    });
 
-      if (!response.ok) {
-        throw new Error("Verzenden mislukt");
-      }
+    if (!response.ok) {
+      throw new Error("Verzenden mislukt");
+    }
 
-      button.classList.remove("laden");
-      button.classList.add("opgeslagen");
-      button.textContent = "Verzonden ✔";
+    button.classList.remove("laden");
+    button.classList.add("opgeslagen");
+    button.textContent = "Verzonden ✔";
 
-    } catch (error) {
-      button.classList.remove("laden");
-      button.classList.add("error");
-      button.disabled = false;
-      button.textContent = "Opnieuw proberen";
+setTimeout(() => {
+  const popup = document.querySelector("#popup");
+  popup.close();
+}, 1000);
 
-      console.error("Fout bij verzenden:", error);
-    }}
-</script> -->
+  } catch (error) {
+    button.classList.remove("laden");
+    button.classList.add("error");
+    button.disabled = false;
+    button.textContent = "Opnieuw proberen";
+
+    console.error("Fout bij verzenden:", error);
+  }
+}
+</script>
 
 <dialog class="popup" id="popup">
   <div class="popup_inner">
@@ -51,7 +57,8 @@
 
     <h1>Geef je cijfer aan de HvA</h1>
 
-    <form class="HVAmeter-form" action="/?/hvameter" method="POST">
+    <form class="HVAmeter-form" action="/?/hvameter"   onsubmit={verstuurFormulier}
+ method="POST">
       <fieldset>
         <legend>
           Hoe voel je je vandaag over de HvA? Geef een cijfer van 1 tot 10 en
@@ -242,6 +249,7 @@
     padding: 0.75rem;
     border: 2px solid var(--border-color);
     background-color: var(--background-color);
+    color:var(--text);
     border-radius: 0.5rem;
     font: inherit;
     font-size: 0.8rem;
