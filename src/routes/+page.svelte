@@ -3,6 +3,3 @@
 </script>
 
 <Homepage />
-
-<style>
-</style>
