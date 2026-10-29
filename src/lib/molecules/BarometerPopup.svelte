@@ -57,7 +57,7 @@ setTimeout(() => {
 
     <h1>Geef je cijfer aan de HvA</h1>
 
-    <form class="HVAmeter-form" action="/?/hvameter"   onsubmit={verstuurFormulier}
+    <form class="HVAmeter-form" action="?/hvameter"   onsubmit={verstuurFormulier}
  method="POST">
       <fieldset>
         <legend>
