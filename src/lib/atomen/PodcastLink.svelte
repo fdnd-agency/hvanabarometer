@@ -7,11 +7,19 @@
         font-size: 20px;
         a {
             text-decoration: none;
-            color: var(--white);
+            color: var(--blue);
 
             &:hover {
                 text-decoration: underline;
             }
         }
     }
+
+   
+@media (prefers-color-scheme: dark){
+    li a{
+        color: var(--text);
+    }
+}
+
 </style>

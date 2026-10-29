@@ -1,8 +1,8 @@
 <script>
-  import Header from "$lib/components/Header.svelte";
+  import Header from "$lib/organisms/Header.svelte";
   import Herodetailpagina from "$lib/components/Herodetailpage.svelte";
   import ResultaatKaart from "$lib/components/ResultaatKaart.svelte";
-  import BarometerPopup from "$lib/components/BarometerPopup.svelte";
+  import BarometerPopup from "$lib/molecules/BarometerPopup.svelte";
   let {data}= $props();
 </script>
 <Header/>

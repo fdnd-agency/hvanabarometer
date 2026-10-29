@@ -17,7 +17,7 @@
 </nav>
 
 <style>
-      nav {
+      nav {   
     @media (min-width: 810px) {
       grid-column: 1;
       grid-row: 1;
@@ -33,4 +33,5 @@
       gap: 15px;
     }
   }
+ 
 </style>

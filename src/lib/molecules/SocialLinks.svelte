@@ -93,7 +93,14 @@
       display: none;
     }
   }
-
+img {
+    filter: brightness(0) saturate(100%) invert(20%) sepia(69%) saturate(6268%)
+      hue-rotate(218deg) brightness(90%) contrast(94%);
+    height: 24px;
+    width: 24px;
+  }
+  
+  
   @media (prefers-color-scheme: dark) {
      a {
       color: var(--text);
@@ -102,13 +109,7 @@
     .search-img {
       filter: brightness(0) invert(1);
     }
-img {
-    filter: brightness(0) saturate(100%) invert(20%) sepia(69%) saturate(6268%)
-      hue-rotate(218deg) brightness(90%) contrast(94%);
-    height: 24px;
-    width: 24px;
-  }
-    img {
+      img {
       filter: brightness(0) invert(1);
     }
   }
