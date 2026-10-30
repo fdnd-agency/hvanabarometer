@@ -1,4 +1,6 @@
 <script>
+  import "../styles/styleguide.css";
+
 async function verstuurFormulier(event) {
   event.preventDefault();
 
@@ -48,17 +50,16 @@ setTimeout(() => {
   <div class="popup_inner">
     <button
       type="button"
-      class="close_popup"
+      class="close_button"
       commandfor="popup"
       command="close"
     >
-      ← Terug
+     ➜] Sluiten
     </button>
 
-    <h1>Geef je cijfer aan de HvA</h1>
+    <h2>Geef je cijfer aan de HvA</h2>
 
-    <form class="HVAmeter-form" action="?/hvameter"   onsubmit={verstuurFormulier}
- method="POST">
+    <form class="HVAmeter-form" action="/?/hvameter" method="POST">
       <fieldset>
         <legend>
           Hoe voel je je vandaag over de HvA? Geef een cijfer van 1 tot 10 en
@@ -78,13 +79,12 @@ setTimeout(() => {
         {/each}
       </fieldset>
 
-      <input type="hidden" name="userId" value="" />
-      <label for="toelichting" class="toelichting-tekst">
+      <label for="toelichting" class="explanation_label">
         Waarom geef je de HvA vandaag dit cijfer?</label
       >
       <textarea
         id="toelichting"
-        class="toelichting_veld"
+        class="explanation_field"
         name="toelichting"
         maxlength="500"
         placeholder="Vertel kort waarom je voor dit cijfer hebt gekozen..."
@@ -92,24 +92,25 @@ setTimeout(() => {
 
       <label for="email">
         <span class="hva-email">HvA e-mailadres </span>
-        <span class="hva-verplicht">★ verplicht</span>
+        <span class="required_mark">★ verplicht</span>
       </label>
       <input
         id="email"
-        class="email_veld"
+        class="email_field"
         name="email"
         type="email"
         autocomplete="email"
         placeholder="Jouw HvA e-mailadres"
+        pattern="[^@\s]+@(student\.)?hva\.nl"
+        title="Gebruik je HvA e-mailadres (...@hva.nl)"
         required
       />
-      <button type="submit" class="verzend_knop">Verzend</button>
+      <button type="submit" class="submit_button">Verzend</button>
     </form>
   </div>
 </dialog>
 
 <style>
-  
   /* -- popup -- */
   .popup {
     width: 22rem;
@@ -130,37 +131,36 @@ setTimeout(() => {
     box-sizing: border-box;
     max-height: 95vh;
     overflow: auto;
-    padding: 3rem 1.25rem 1.5rem;
+    padding: var(--spacing-xl) var(--spacing-s) var(--spacing-m);
     background: var(--background-color);
-    color: var(--text);
-    border: 2px solid var(--text);
+    color: var(--text-color-dark);
+    border: 2px solid var(--text-color-dark);
     border-radius: 1rem;
+    font-family: "Montserrat", sans-serif;
+
   }
 
-  .close_popup {
+  .close_button {
     position: absolute;
-    top: 1.1rem;
-    left: 1.25rem;
+    top: var(--spacing-s);
+    left: var(--spacing-s);
     padding: 0;
     border: 0;
     background: none;
-    color: var(--text);
-    font-weight: 700;
+    color: var(--text-color-dark);
+    font-weight: var(--font-weight-bold);
     cursor: pointer;
   }
 
   /* -- titel -- */
-  .popup h1 {
-    margin: 0 0 1rem;
-    font-family: "Arial Black", Impact, sans-serif;
-    font-size: 2rem;
-    line-height: 1;
+  .popup h2 {
+    margin-bottom: var(--spacing-s);
     transform: rotate(-3deg);
     transform-origin: left center;
   }
 
   /* -- formulier -- */
-  .HVAmeter-form {
+  .vote_form {
     display: flex;
     flex-direction: column;
   }
@@ -168,17 +168,15 @@ setTimeout(() => {
   fieldset {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.75rem 0;
-    margin: 0 0 1rem;
+    gap: var(--spacing-xs) 0;
+    margin: 0 0 var(--spacing-s);
     padding: 0;
     border: 0;
   }
 
   legend {
-    padding: 0;
-    margin-bottom: 1rem;
-    font-size: 0.85rem;
-    line-height: 1.4;
+    margin-bottom: var(--spacing-s);
+    font-size: var(--font-size-small);
   }
 
   fieldset label {
@@ -202,94 +200,81 @@ setTimeout(() => {
     place-items: center;
     width: 2.5rem;
     height: 2.5rem;
-    border: 2px solid var(--border-color);
+    border: 2px solid var(--text-color-dark);
     border-radius: 50%;
     background: var(--background-color);
     font-weight: 600;
+    
     &:hover{
-      background-color: var(--blue);
-      color: var(--white);
+      background-color: var(--primary-color);
+      color: var(--text-color-light);
     }
   }
 
   fieldset input:checked + span {
-    background: var(--blue);
-    border-color: var(--blue);
-    color: var(--white);
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--text-color-light);
   }
 
   fieldset input:focus-visible + span {
-    outline: 3px solid var(--blue);
+    outline: 3px solid var(--primary-color);
     outline-offset: 2px;
   }
 
   /* -- labels -- */
-  .toelichting-tekst,
+  .explanation_label,
   .hva-email {
-    font-weight: 700;
-    font-size: 0.85rem;
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-small);
   }
 
-  .toelichting-tekst {
-    margin-bottom: 0.5rem;
+  .explanation_label {
+    margin-bottom: var(--spacing-xs);
   }
 
-  .hva-verplicht {
-    margin-left: 0.4rem;
-    color: var(--blue);
+  .required_mark {
+    margin-left: var(--spacing-xs);
+    color: var(--primary-color);
     font-size: 0.7rem;
     font-weight: 600;
   }
 
   /* -- velden -- */
-  .toelichting_veld,
-  .email_veld {
+  .explanation_field,
+  .email_field {
     width: 100%;
-    box-sizing: border-box;
-    padding: 0.75rem;
-    border: 2px solid var(--border-color);
+    border: 2px solid var(--text-color-dark);
     background-color: var(--background-color);
     color:var(--text);
     border-radius: 0.5rem;
     font: inherit;
-    font-size: 0.8rem;
+    font-size: var(--font-size-small);
   }
 
-  .toelichting_veld {
-    min-height: 7rem;
-    margin-bottom: 1.25rem;
+  .explanation_field {
+    min-height: 6rem;
+    margin-bottom: var(--spacing-s);
     resize: vertical;
   }
 
-  .email_veld {
-    margin-top: 0.5rem;
-  }
-
-  .toelichting_veld:focus-visible,
-  .email_veld:focus-visible {
-    outline: 3px solid var(--blue);
-    outline-offset: 2px;
+  .email_field {
+    margin-top: var(--spacing-xs);
   }
 
   /* -- knop -- */
-  .verzend_knop {
-    margin-top: 1.5rem;
-    padding: 1rem;
+  .submit_button {
+    margin-top: var(--spacing-m);
+    padding: var(--spacing-s);
     border: 0;
-    border-radius: 0.3rem;
-    background: var(--blue);
-    color: var(--white);
-    font: inherit;
-    font-size: 1rem;
-    font-weight: 700;
+    border-radius: var(--border-radius);
+    background: var(--primary-color);
+    color: var(--text-color-light);
+    font-weight: var(--font-weight-bold);
     cursor: pointer;
-    &:hover{
-      background-color: hsl(245, 94%, 44%);
-    }
-  }
 
-  .verzend_knop:focus-visible {
-    outline: 3px solid var(--black);
-    outline-offset: 3px;
+    &:hover{
+      background-color: darkblue;
+    }
   }
 </style>
