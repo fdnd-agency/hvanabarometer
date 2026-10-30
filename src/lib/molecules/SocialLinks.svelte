@@ -1,36 +1,4 @@
-<header>
-  <nav>
-    <ul>
-      <li>
-        <a href="#Niews">Nieuws</a>
-      </li>
-
-      <li>
-        <a href="#Video">Video</a>
-      </li>
-      <li>
-        <a href="#Columns">Columns</a>
-      </li>
-
-      <li>
-        <a href="#Opinie">Opinie</a>
-      </li>
-      <li>
-        <a href="#Podcast">Podcast</a>
-      </li>
-    </ul>
-  </nav>
-  <a href="/">
-  <img
-    class="hvana-logo"
-    width="667"
-    height="202"
-    alt="HvanA"
-    src="https://hvana.nl/wp-content/uploads/2023/03/hvana_logo_wit-2025.svg"
-    data-orig-src="https://hvana.nl/wp-content/uploads/2023/03/hvana_logo_wit-2025.svg"
-    fetchpriority="high"
-  />
-  </a>
+     
   <div class="container-icons-search">
     <div class="wrapper-icons">
       <a
@@ -87,66 +55,9 @@
       <img class="menu-img" src="/assets/menu.png" alt="menu-icon" />
     </button>
   </div>
-</header>
 
-<style>
-  nav {
-    @media (min-width: 810px) {
-      grid-column: 1;
-      grid-row: 1;
-    }
-  }
-
-  ul {
-    list-style: none;
-    display: none;
-    padding: 0;
-    @media (min-width: 1120px) {
-      display: flex;
-      gap: 15px;
-    }
-  }
-
-  li {
-    font-size: 20px;
-    color: var(--primary-color);
-    a {
-      text-decoration: none;
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-  }
-  header img {
-    filter: brightness(0) saturate(100%) invert(20%) sepia(69%) saturate(6268%)
-      hue-rotate(218deg) brightness(90%) contrast(94%);
-    height: 24px;
-    width: 24px;
-  }
-  header {
-    position: sticky;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    top: 0;
-    z-index: 2;
-    background-color: var(--background-color);
-    padding: 10px 20px;
-    @media (min-width: 810px) {
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
-      padding: 10px 40px;
-    }
-  }
-
-  .hvana-logo {
-    width: clamp(7.75rem, 5.9583rem + 8.9583vw, 13.125rem);
-    height: clamp(2.3125rem, 1.75rem + 2.8125vw, 4rem);
-    @media (min-width: 810px) {
-      grid-column: 2;
-      grid-row: 1;
-    }
-  }
+  <style>
+    
   .container-icons-search {
     display: flex;
     gap: clamp(0.625rem, 0rem + 3.125vw, 2.5rem);
@@ -182,18 +93,24 @@
       display: none;
     }
   }
-
+img {
+    filter: brightness(0) saturate(100%) invert(20%) sepia(69%) saturate(6268%)
+      hue-rotate(218deg) brightness(90%) contrast(94%);
+    height: 24px;
+    width: 24px;
+  }
+  
+  
   @media (prefers-color-scheme: dark) {
-    header a {
+     a {
       color: var(--text);
     }
     .wrapper-icons img,
     .search-img {
       filter: brightness(0) invert(1);
     }
-
-    header img {
+      img {
       filter: brightness(0) invert(1);
     }
   }
-</style>
+  </style>

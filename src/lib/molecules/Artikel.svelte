@@ -1,5 +1,5 @@
 <script>
-  import ArtikelCard from "$lib/components/ArtikelCard.svelte";
+  import ArtikelCard from "$lib/atomen/ArtikelCard.svelte";
   let {
     background = "#ff5a2e",
     darkBackground = "#121212",

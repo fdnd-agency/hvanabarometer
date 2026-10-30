@@ -1,5 +1,49 @@
 <script>
   import "../styles/styleguide.css";
+
+async function verstuurFormulier(event) {
+  event.preventDefault();
+
+  const form = event.currentTarget;
+  const button = event.submitter;
+
+  if (button.disabled) return;
+
+  button.classList.remove("opgeslagen", "error");
+  button.classList.add("laden");
+  button.disabled = true;
+  button.textContent = "Verzenden...";
+
+  const formData = new FormData(form);
+
+  try {
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: new URLSearchParams(formData)
+    });
+
+    if (!response.ok) {
+      throw new Error("Verzenden mislukt");
+    }
+
+    button.classList.remove("laden");
+    button.classList.add("opgeslagen");
+    button.textContent = "Verzonden ✔";
+
+setTimeout(() => {
+  const popup = document.querySelector("#popup");
+  popup.close();
+}, 1000);
+
+  } catch (error) {
+    button.classList.remove("laden");
+    button.classList.add("error");
+    button.disabled = false;
+    button.textContent = "Opnieuw proberen";
+
+    console.error("Fout bij verzenden:", error);
+  }
+}
 </script>
 
 <dialog class="popup" id="popup">
@@ -15,7 +59,7 @@
 
     <h2>Geef je cijfer aan de HvA</h2>
 
-    <form class="vote_form" action="/?/hvameter" method="POST">
+    <form class="HVAmeter-form" action="/?/hvameter" method="POST">
       <fieldset>
         <legend>
           Hoe voel je je vandaag over de HvA? Geef een cijfer van 1 tot 10 en
@@ -202,6 +246,9 @@
     width: 100%;
     border: 2px solid var(--text-color-dark);
     background-color: var(--background-color);
+    color:var(--text);
+    border-radius: 0.5rem;
+    font: inherit;
     font-size: var(--font-size-small);
   }
 
