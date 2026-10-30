@@ -59,7 +59,8 @@ setTimeout(() => {
 
     <h2>Geef je cijfer aan de HvA</h2>
 
-    <form class="HVAmeter-form" action="/?/hvameter" method="POST">
+    <form 
+    class="HVAmeter-form" action="?/hvameter"   onsubmit={verstuurFormulier} method="POST">
       <fieldset>
         <legend>
           Hoe voel je je vandaag over de HvA? Geef een cijfer van 1 tot 10 en
@@ -147,7 +148,7 @@ setTimeout(() => {
     padding: 0;
     border: 0;
     background: none;
-    color: var(--text-color-dark);
+    color: var(--text);
     font-weight: var(--font-weight-bold);
     cursor: pointer;
   }
@@ -157,6 +158,7 @@ setTimeout(() => {
     margin-bottom: var(--spacing-s);
     transform: rotate(-3deg);
     transform-origin: left center;
+    color:var(--text);
   }
 
   /* -- formulier -- */
@@ -177,6 +179,7 @@ setTimeout(() => {
   legend {
     margin-bottom: var(--spacing-s);
     font-size: var(--font-size-small);
+    color: var(--text);
   }
 
   fieldset label {
@@ -185,6 +188,7 @@ setTimeout(() => {
     display: flex;
     justify-content: center;
     cursor: pointer;
+    color: var(--text);
   }
 
   /* radio verbergen maar wel toegankelijk houden */
@@ -200,7 +204,7 @@ setTimeout(() => {
     place-items: center;
     width: 2.5rem;
     height: 2.5rem;
-    border: 2px solid var(--text-color-dark);
+    border: 2px solid var(--border-color);
     border-radius: 50%;
     background: var(--background-color);
     font-weight: 600;
@@ -227,6 +231,7 @@ setTimeout(() => {
   .hva-email {
     font-weight: var(--font-weight-bold);
     font-size: var(--font-size-small);
+    color: var(--text);
   }
 
   .explanation_label {
@@ -244,7 +249,7 @@ setTimeout(() => {
   .explanation_field,
   .email_field {
     width: 100%;
-    border: 2px solid var(--text-color-dark);
+    border: 2px solid var(--border-color);
     background-color: var(--background-color);
     color:var(--text);
     border-radius: 0.5rem;
