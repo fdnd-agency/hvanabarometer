@@ -9,8 +9,8 @@
     fetchpriority="high"
   />
 </a>
-  <style>
-    
+
+<style>
   .hvana-logo {
     width: clamp(7.75rem, 5.9583rem + 8.9583vw, 13.125rem);
     height: clamp(2.3125rem, 1.75rem + 2.8125vw, 4rem);
@@ -21,11 +21,12 @@
       grid-row: 1;
     }
   }
-  a{
-        text-decoration: none;
-    }
-@media (prefers-color-scheme: dark) {
-      .hvana-logo {
+  a {
+    text-decoration: none;
+  }
+  @media (prefers-color-scheme: dark) {
+    .hvana-logo {
       filter: brightness(0) invert(1);
     }
-  }  </style>
+  }
+</style>

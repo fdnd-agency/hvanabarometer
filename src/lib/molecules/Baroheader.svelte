@@ -1,14 +1,11 @@
 <header class="hva-meter">
   <p>
-    
     <span class="headertext">
       <strong>HvA-Meter</strong>
       <data class="score" value="7.2">7.2</data>
-      <a class="voting" href="/meter-uitslag">
-        312 stemmen
-      </a>
+      <a class="voting" href="/meter-uitslag"> 312 stemmen </a>
       <span class="today">vandaag</span>
-    </span>  
+    </span>
   </p>
   <p class="question">Welk cijfer geef jij je dag?</p>
   <button class="vote" command="show-modal" commandfor="popup">Stem ➔</button>
@@ -27,7 +24,7 @@
     font-size: 1rem;
     justify-content: space-between;
 
-    p{
+    p {
       margin: 0;
     }
 
@@ -57,17 +54,17 @@
       border: none;
       border-radius: 50px;
       background-color: rgb(255, 255, 255);
-      color:#1450d2;
+      color: #1450d2;
       font-weight: 800;
       text-transform: uppercase;
       cursor: pointer;
-      transition: transform .2s ease;
-      
-      &:hover{
-        transform:scale(1.1)
+      transition: transform 0.2s ease;
+
+      &:hover {
+        transform: scale(1.1);
       }
 
-      &:focus-visible{
+      &:focus-visible {
         outline: 2px solid white;
         outline-offset: 3px;
       }
@@ -87,14 +84,14 @@
       text-decoration: none;
       transition: background-color 0.2s ease;
 
-        &:hover {
-          background-color: rgba(138, 222, 255, 0.15);
-        }
- 
-        &:focus-visible {
-          outline: 2px solid #fff;
-          outline-offset: 3px;
-        }
+      &:hover {
+        background-color: rgba(138, 222, 255, 0.15);
+      }
+
+      &:focus-visible {
+        outline: 2px solid #fff;
+        outline-offset: 3px;
+      }
     }
 
     @media (min-width: 48rem) {
@@ -137,7 +134,7 @@
       strong {
         font-size: 1.375rem;
       }
-      
+
       .question {
         display: inline;
         margin-left: auto;

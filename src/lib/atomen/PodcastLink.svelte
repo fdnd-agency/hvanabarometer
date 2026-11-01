@@ -15,11 +15,9 @@
         }
     }
 
-   
-@media (prefers-color-scheme: dark){
-    li a{
-        color: var(--text);
+    @media (prefers-color-scheme: dark) {
+        li a {
+            color: var(--text);
+        }
     }
-}
-
 </style>

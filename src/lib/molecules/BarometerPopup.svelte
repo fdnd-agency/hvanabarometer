@@ -1,49 +1,48 @@
 <script>
   import "../styles/styleguide.css";
 
-async function verstuurFormulier(event) {
-  event.preventDefault();
+  async function verstuurFormulier(event) {
+    event.preventDefault();
 
-  const form = event.currentTarget;
-  const button = event.submitter;
+    const form = event.currentTarget;
+    const button = event.submitter;
 
-  if (button.disabled) return;
+    if (button.disabled) return;
 
-  button.classList.remove("opgeslagen", "error");
-  button.classList.add("laden");
-  button.disabled = true;
-  button.textContent = "Verzenden...";
+    button.classList.remove("opgeslagen", "error");
+    button.classList.add("laden");
+    button.disabled = true;
+    button.textContent = "Verzenden...";
 
-  const formData = new FormData(form);
+    const formData = new FormData(form);
 
-  try {
-    const response = await fetch(form.action, {
-      method: form.method,
-      body: new URLSearchParams(formData)
-    });
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: new URLSearchParams(formData),
+      });
 
-    if (!response.ok) {
-      throw new Error("Verzenden mislukt");
+      if (!response.ok) {
+        throw new Error("Verzenden mislukt");
+      }
+
+      button.classList.remove("laden");
+      button.classList.add("opgeslagen");
+      button.textContent = "Verzonden ✔";
+
+      setTimeout(() => {
+        const popup = document.querySelector("#popup");
+        popup.close();
+      }, 1000);
+    } catch (error) {
+      button.classList.remove("laden");
+      button.classList.add("error");
+      button.disabled = false;
+      button.textContent = "Opnieuw proberen";
+
+      console.error("Fout bij verzenden:", error);
     }
-
-    button.classList.remove("laden");
-    button.classList.add("opgeslagen");
-    button.textContent = "Verzonden ✔";
-
-setTimeout(() => {
-  const popup = document.querySelector("#popup");
-  popup.close();
-}, 1000);
-
-  } catch (error) {
-    button.classList.remove("laden");
-    button.classList.add("error");
-    button.disabled = false;
-    button.textContent = "Opnieuw proberen";
-
-    console.error("Fout bij verzenden:", error);
   }
-}
 </script>
 
 <dialog class="popup" id="popup">
@@ -54,13 +53,17 @@ setTimeout(() => {
       commandfor="popup"
       command="close"
     >
-     ➜] Sluiten
+      ➜] Sluiten
     </button>
 
     <h2>Geef je cijfer aan de HvA</h2>
 
-    <form 
-    class="HVAmeter-form" action="?/hvameter"   onsubmit={verstuurFormulier} method="POST">
+    <form
+      class="HVAmeter-form"
+      action="?/hvameter"
+      onsubmit={verstuurFormulier}
+      method="POST"
+    >
       <fieldset>
         <legend>
           Hoe voel je je vandaag over de HvA? Geef een cijfer van 1 tot 10 en
@@ -138,7 +141,6 @@ setTimeout(() => {
     border: 2px solid var(--text-color-dark);
     border-radius: 1rem;
     font-family: "Montserrat", sans-serif;
-
   }
 
   .close_button {
@@ -158,7 +160,7 @@ setTimeout(() => {
     margin-bottom: var(--spacing-s);
     transform: rotate(-3deg);
     transform-origin: left center;
-    color:var(--text);
+    color: var(--text);
   }
 
   /* -- formulier -- */
@@ -208,8 +210,8 @@ setTimeout(() => {
     border-radius: 50%;
     background: var(--background-color);
     font-weight: 600;
-    
-    &:hover{
+
+    &:hover {
       background-color: var(--primary-color);
       color: var(--text-color-light);
     }
@@ -251,7 +253,7 @@ setTimeout(() => {
     width: 100%;
     border: 2px solid var(--border-color);
     background-color: var(--background-color);
-    color:var(--text);
+    color: var(--text);
     border-radius: 0.5rem;
     font: inherit;
     font-size: var(--font-size-small);
@@ -278,7 +280,7 @@ setTimeout(() => {
     font-weight: var(--font-weight-bold);
     cursor: pointer;
 
-    &:hover{
+    &:hover {
       background-color: darkblue;
     }
   }

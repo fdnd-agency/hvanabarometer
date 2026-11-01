@@ -3,9 +3,12 @@
   import Herodetailpagina from "$lib/molecules/Herodetailpage.svelte";
   import ResultaatKaart from "$lib/molecules/ResultaatKaart.svelte";
   import BarometerPopup from "$lib/molecules/BarometerPopup.svelte";
-  let {data}= $props();
+  let { data } = $props();
 </script>
-<Header/>
-<Herodetailpagina/>
-<ResultaatKaart responses={data.responses}/>
-<BarometerPopup/>
+
+<Header />
+<main>
+  <Herodetailpagina />
+  <ResultaatKaart responses={data.responses} />
+  <BarometerPopup />
+</main>
