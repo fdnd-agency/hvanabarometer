@@ -1,11 +1,12 @@
 # HvA-meter
-De HvanA-website heeft nog geen barometer. In dit project voegen we die toe onder de naam HvA-meter. Daarvoor hebben we de hele homepage nagebouwd, zodat de HvA-meter in de bestaande opzet past. De naam hebben we later gekozen, omdat je er elke dag meet hoe studenten hun dag op de HvA hebben ervaren. In het begin heette het project gewoon “barometer”
+De HvanA-website heeft nog geen barometer. In dit project voegen we die toe onder de naam HvA-meter. Daarvoor hebben we de hele homepage nagebouwd, zodat de HvA-meter in de bestaande opzet past.
 
 ## Inhoudsopgave
 
 - [Live link](#live-link)
 - [Installatie instructies](#installatie-instructies)
 - [Beschrijving van de site](#beschrijving-van-de-site)
+- [Pagina's](#pagina's)
 - [Eindresultaat](#eindresultaat)
 - [Ontwerp](#ontwerp)
 - [Gebruik van de site](#gebruik-van-de-site)
@@ -82,9 +83,35 @@ Studenten kiezen een cijfer van 1 tot en met 10 en geven in een kort tekstveld e
 - Een detailpagina met een hero en alle uitslagen
 - Een styleguide met kleuren, fonts en spacing
 
+## Pagina's
+
+### Homepage met HvA-meter
+
+De homepage is een nagebouwde versie van de HvanA-homepage, aangevuld met de HvA-meter. In de HvA-meter-balk zie je het gemiddelde cijfer en het aantal stemmen. Met de knop "Stemmen" open je de HvA-meter, een `<dialog>` waarin een student een cijfer van 1 tot en met 10 kiest, een korte toelichting schrijft en het HvA-e-mailadres invult. Met "Verzend" wordt de stem opgeslagen.
+
+<img width="947" height="434" alt="Homepage met de HvA-meter-balk" src="https://github.com/user-attachments/assets/6469502e-acfb-458d-9d13-ce6cc4299c74" />
+
+<img width="945" height="428" alt="De HvA-meter dialog om een cijfer te geven" src="https://github.com/user-attachments/assets/495ccf4a-e0c2-49eb-9bed-3b75bd77f797" />
+
+### Detailpagina
+
+De detailpagina bereik je door in de HvA-meter-balk op het aantal stemmen te klikken. Bovenaan staat een hero met het gemiddelde cijfer, daaronder zie je alle uitslagen. De hero is een herbruikbare component, net als de header.
+
+<img width="942" height="435" alt="Detailpagina met alle uitslagen" src="https://github.com/user-attachments/assets/c04fc53e-2a7b-4bb2-9838-0cbab4c5fa00" />
+
 ## Eindresultaat
 
-Studenten geven snel aan hoe ze hun dag op de HvA hebben ervaren. De HvA-meter toont het gemiddelde cijfer en het aantal stemmen. Een student stemt via een korte dialog en bekijkt de uitslagen op de detailpagina.
+Het eindresultaat is een website waarop studenten zelf iets kunnen doen. Met de HvA-meter geven ze in een paar klikken aan hoe ze hun dag op de HvA hebben ervaren, en ze zien meteen wat anderen vonden. Zo is de HvanA-website van een site waar je alleen informatie leest veranderd in een site waar studenten ook interactie hebben.
+
+De onderdelen zijn uiteindelijk één geheel geworden:
+
+- **Homepage met HvA-meter-balk:** de nagebouwde homepage met het gemiddelde cijfer en het aantal stemmen.
+- **De HvA-meter (dialog):** een korte dialog waarin een student een cijfer kiest, een toelichting schrijft en het HvA-e-mailadres invult.
+- **Detailpagina:** een pagina met een hero en alle uitslagen, bereikbaar via de HvA-meter-balk.
+- **Directus:** alle stemmen worden opgeslagen en weer opgehaald, zodat het gemiddelde cijfer en het aantal stemmen altijd actueel zijn.
+- **Styleguide en components:** de herbruikbare header, hero en andere onderdelen zorgen dat alle pagina's er hetzelfde uitzien.
+
+De opdrachtgever was tevreden met het resultaat.
 
 <img width="947" height="434" alt="Homepage met de HvA-meter" src="https://github.com/user-attachments/assets/6469502e-acfb-458d-9d13-ce6cc4299c74" />
 
