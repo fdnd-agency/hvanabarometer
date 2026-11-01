@@ -1,16 +1,16 @@
 <script>
   import NavHeader from "$lib/molecules/NavHeader.svelte";
   import HvanaLogo from "$lib/atomen/HvanaLogo.svelte";
-    import SocialLinks from "$lib/molecules/SocialLinks.svelte";
+  import SocialLinks from "$lib/molecules/SocialLinks.svelte";
 </script>
+
 <header>
-<NavHeader/>
-<HvanaLogo/>
-<SocialLinks/>
+  <NavHeader />
+  <HvanaLogo />
+  <SocialLinks />
 </header>
 
 <style>
-  
   header {
     position: sticky;
     display: flex;
@@ -26,5 +26,4 @@
       padding: 10px 40px;
     }
   }
-
 </style>

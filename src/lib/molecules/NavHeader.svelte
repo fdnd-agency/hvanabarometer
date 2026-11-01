@@ -1,23 +1,23 @@
 <script>
-    import NiewsLink from "$lib/atomen/NiewsLink.svelte";
-    import VideoLink from "$lib/atomen/VideoLink.svelte";
-    import ColumnLink from "$lib/atomen/ColumnLink.svelte";
-    import OpinieLink from "$lib/atomen/OpinieLink.svelte";
-    import PodcastLink from "$lib/atomen/PodcastLink.svelte";
+  import NiewsLink from "$lib/atomen/NiewsLink.svelte";
+  import VideoLink from "$lib/atomen/VideoLink.svelte";
+  import ColumnLink from "$lib/atomen/ColumnLink.svelte";
+  import OpinieLink from "$lib/atomen/OpinieLink.svelte";
+  import PodcastLink from "$lib/atomen/PodcastLink.svelte";
 </script>
 
 <nav>
-<ul>
+  <ul>
     <NiewsLink />
     <VideoLink />
     <ColumnLink />
     <OpinieLink />
     <PodcastLink />
-    </ul>
+  </ul>
 </nav>
 
 <style>
-      nav {   
+  nav {
     @media (min-width: 810px) {
       grid-column: 1;
       grid-row: 1;
@@ -33,5 +33,4 @@
       gap: 15px;
     }
   }
- 
 </style>

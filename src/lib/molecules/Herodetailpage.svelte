@@ -1,29 +1,27 @@
 <section>
-  <div class="inner">
-    <span class="label">Barometer</span>
+    <div class="inner">
+        <span class="label">Barometer</span>
 
-    <h1>Hoe ervaren studenten de HvA vandaag?</h1>
+        <h1>Hoe ervaren studenten de HvA vandaag?</h1>
 
-    <p class="intro">
-      Elke dag geven HvA-studenten anoniem een cijfer aan hun dag op de
-      hogeschool. Hieronder alle uitslagen op een rij.
-    </p>
+        <p class="intro">
+            Elke dag geven HvA-studenten anoniem een cijfer aan hun dag op de
+            hogeschool. Hieronder alle uitslagen op een rij.
+        </p>
 
-    <p class="score">
-      <span class="number">6,5</span>
-      <span class="score-info">gemiddeld cijfer · 10 reacties</span>
-    </p>
-  </div>
+        <p class="score">
+            <span class="number">6,5</span>
+            <span class="score-info">gemiddeld cijfer · 10 reacties</span>
+        </p>
+    </div>
 </section>
-
 
 <style>
     section {
         background: var(--primary-color);
-         color: var(--text-color-light);
-            padding-bottom: var(--spacing-l);
-         padding-top: var(--spacing-xl) ;
-
+        color: var(--text-color-light);
+        padding-bottom: var(--spacing-l);
+        padding-top: var(--spacing-xl);
     }
 
     .inner {
@@ -32,9 +30,9 @@
         margin-inline: auto;
 
         @media (min-width: 740px) {
-        grid-template-columns: 1fr auto;
-        column-gap: var(--spacing-xl);
-        align-items: center;
+            grid-template-columns: 1fr auto;
+            column-gap: var(--spacing-xl);
+            align-items: center;
         }
     }
 
@@ -54,7 +52,7 @@
         margin: var(--spacing-xs) 0 var(--spacing-s);
 
         @media (min-width: 740px) {
-        font-size: 45px;
+            font-size: 45px;
         }
     }
 
@@ -70,9 +68,9 @@
         margin-top: var(--spacing-l);
 
         @media (min-width: 740px) {
-        grid-column: 2;
-        grid-row: 1 / 4;
-        margin-top: 0;
+            grid-column: 2;
+            grid-row: 1 / 4;
+            margin-top: 0;
         }
     }
 
@@ -82,8 +80,7 @@
         line-height: 1.2;
 
         @media (min-width: 740px) {
-        font-size: 100px;
+            font-size: 100px;
         }
     }
-    
 </style>

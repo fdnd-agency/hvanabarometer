@@ -19,7 +19,7 @@
 
 :root {
   /* Kleuren */
-  --border-color:black;
+  --border-color: black;
   --black: hsl(0, 0%, 0%);
   --white: hsl(0, 0%, 100%);
 
@@ -71,6 +71,7 @@
     --border-color: var(--white);
   }
 }
+
 /* Globale styling */
 * {
   box-sizing: border-box;

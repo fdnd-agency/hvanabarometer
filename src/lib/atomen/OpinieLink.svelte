@@ -1,7 +1,7 @@
-  <li>
-        <a href="#Opinie">Opinie</a>
-      </li>
-     
+<li>
+    <a href="#Opinie">Opinie</a>
+</li>
+
 <style>
     li {
         font-size: 20px;
@@ -14,9 +14,9 @@
             }
         }
     }
-@media (prefers-color-scheme: dark){
-    li a{
-        color: var(--text);
+    @media (prefers-color-scheme: dark) {
+        li a {
+            color: var(--text);
+        }
     }
-}
 </style>

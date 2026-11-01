@@ -1,6 +1,6 @@
-    <li>
-        <a href="#Columns">Columns</a>
-      </li>
+<li>
+    <a href="#Columns">Columns</a>
+</li>
 
 <style>
     li {
@@ -14,9 +14,9 @@
             }
         }
     }
-@media (prefers-color-scheme: dark){
-    li a{
-        color: var(--text);
+    @media (prefers-color-scheme: dark) {
+        li a {
+            color: var(--text);
+        }
     }
-}
 </style>
