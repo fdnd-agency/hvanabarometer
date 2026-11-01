@@ -7,6 +7,8 @@
 </script>
 
 <Header />
-<Herodetailpagina />
-<ResultaatKaart responses={data.responses} />
-<BarometerPopup />
+<main>
+  <Herodetailpagina />
+  <ResultaatKaart responses={data.responses} />
+  <BarometerPopup />
+</main>
