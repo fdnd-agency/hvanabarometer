@@ -24,7 +24,7 @@
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    height: 3.5rem;
+    min-height: 3.5rem;
     padding: 0 1rem;
     background: #1450d2;
     color: #fff;
@@ -39,11 +39,15 @@
     a {
       color: white;
     }
+
     .headertext {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      flex-wrap: wrap;
+      gap: 0.25rem 0.5rem;
+      min-width: 0;
     }
+
     strong {
       font-size: 1.25rem;
       white-space: nowrap;
@@ -54,6 +58,7 @@
     .question {
       display: none;
     }
+
     .vote {
       font-size: 0.9rem;
       white-space: nowrap;
@@ -103,10 +108,11 @@
     }
 
     @media (min-width: 48rem) {
-      .hva-meter {
+      hva-meter {
         gap: 1rem;
         padding: 0 2rem;
       }
+      
       strong {
         font-size: 1.375rem;
       }
@@ -130,7 +136,7 @@
     }
 
     @media (min-width: 64rem) {
-      .hva-meter {
+      hva-meter {
         gap: 1.25rem;
         height: 4rem;
       }
