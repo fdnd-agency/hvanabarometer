@@ -43,13 +43,13 @@
     .headertext {
       display: flex;
       align-items: center;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
       gap: 0.25rem 0.5rem;
       min-width: 0;
     }
 
     strong {
-      font-size: 1.25rem;
+      font-size: 1rem;
       white-space: nowrap;
     }
 
@@ -60,7 +60,7 @@
     }
 
     .vote {
-      font-size: 0.9rem;
+      font-size: 0.8rem;
       white-space: nowrap;
       flex-shrink: 0;
       padding: 0.15rem 0.4rem;
@@ -84,12 +84,13 @@
     }
 
     .score {
-      font-size: 1.6rem;
+      font-size: 1rem;
       font-weight: 900;
     }
 
     .voting {
       padding: 0.25rem 0.6rem;
+      font-size: 0.7rem;
       border: 1.5px solid rgba(255, 255, 255, 0.8);
       border-radius: 50rem;
       color: white;
