@@ -1,3 +1,7 @@
+<script>
+  let { average, voteCount } = $props();
+</script>
+
 <header class="hva-meter">
   <p>
     <span class="headertext">
