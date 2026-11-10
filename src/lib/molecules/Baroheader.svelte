@@ -1,5 +1,5 @@
 <script>
-  let { average, voteCount } = $props();
+  let { average = null, voteCount = 0 } = $props();
 </script>
 
 <header class="hva-meter">
