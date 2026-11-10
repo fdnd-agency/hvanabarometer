@@ -3,6 +3,28 @@ import { fail } from "@sveltejs/kit";
 const BASE_URL = "https://fdnd-agency.directus.app/items";
 const headers = { "Content-Type": "application/json" };
 
+export async function load({ fetch }) {
+  // Alle scores ophalen (limit=-1 zodat je niet maar 100 items krijgt)
+  const response = await fetch(
+    `${BASE_URL}/hvana_barometer_responses?fields=score&limit=1000`,
+  );
+
+  if (!response.ok) {
+    console.error(await response.text());
+    return { average: null, voteCount: 0 };
+  }
+
+  const { data: votes } = await response.json();
+
+  const total = votes.reduce((sum, vote) => sum + vote.score, 0);
+  const average = votes.length ? (total / votes.length).toFixed(1) : null;
+
+  return {
+    average,
+    voteCount: votes.length,
+  };
+}
+
 export const actions = {
   hvameter: async ({ request, fetch }) => {
     const formData = await request.formData();

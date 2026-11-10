@@ -1,9 +1,17 @@
+<script>
+  let { average = null, voteCount = 0 } = $props();
+</script>
+
 <header class="hva-meter">
   <p>
     <span class="headertext">
       <strong>HvA-Meter</strong>
-      <data class="score" value="7.2">7.2</data>
-      <a class="voting" href="/meter-uitslag"> 312 stemmen </a>
+      {#if average}
+        <data class="score" value={average}>{average}</data>
+      {:else}
+        <span class="score">*</span>
+      {/if}
+      <a class="voting" href="/meter-uitslag">{voteCount} stemmen</a>
       <span class="today">vandaag</span>
     </span>
   </p>
