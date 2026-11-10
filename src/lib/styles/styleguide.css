@@ -53,22 +53,22 @@
   --line-height: 1.5;
   --line-height-heading: 1.2;
 
-  /* Spacing*/
-  ---space-xs: 0.5rem;
   /* 8px */
-  --space-s: 1rem;
+  --spacing-xs: 0.5rem;
   /* 16px */
-  --space-m: 1.5rem;
+  --spacing-s: 1rem;
   /* 24px */
-  --space-l: 2rem;
+  --spacing-m: 1.5rem;
   /* 32px */
-  --space-xl: 3rem;
+  --spacing-l: 2rem;
   /* 48px */
-  --space-xxl: 5rem;
-  /* 80px */
+  --spacing-xl: 3rem;
 
   /* Border radius */
   --border-radius: 0.25rem;
+
+
+
 }
 
 @media (prefers-color-scheme: dark) {
