@@ -10,25 +10,19 @@ export async function load({ fetch }) {
       `${BASE_URL}/hvana_barometer_responses?fields=id,score,explanation,submitted_at&sort=-submitted_at&limit=-1`
     );
 
-    console.log("Status:", response.status);
-
-    const result = await response.json();
-    console.log("Directus antwoord:", result);
-
     if (!response.ok) {
       return { responses: [], average: null, voteCount: 0 };
     }
 
-    const responses = result.data ?? [];
-    const scores = responses
-      .map((item) => item.score)
-      .filter((score) => typeof score === "number");
-    const total = scores.reduce((sum, score) => sum + score, 0);
+    const { data } = await response.json();
+    const responses = data ?? [];
+
+    const total = responses.reduce((sum, item) => sum + item.score, 0);
 
     return { 
       responses,
-      average: scores.length ? total / scores.length : null,
-      voteCount: scores.length,
+      average: responses.length ? total / responses.length : null,
+      voteCount: responses.length,
     };
   } catch (error) {
     console.error("Fout bij laden uitslagen:", error);
