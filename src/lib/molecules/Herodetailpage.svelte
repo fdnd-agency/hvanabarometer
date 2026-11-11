@@ -1,3 +1,16 @@
+<script>
+    let { average = null, voteCount = 0 } = $props();
+
+    const formattedAverage = $derived(
+        average === null
+            ? "*"
+            : average.toLocaleString("nl-NL", {
+                  minimumFractionDigits: 1,
+                  maximumFractionDigits: 1,
+              }),
+    );
+</script>
+
 <section>
     <div class="inner">
         <span class="label">Barometer</span>
