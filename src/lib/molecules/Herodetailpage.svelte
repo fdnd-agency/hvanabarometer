@@ -23,8 +23,11 @@
         </p>
 
         <p class="score">
-            <span class="number">6,5</span>
-            <span class="score-info">gemiddeld cijfer · 10 reacties</span>
+            <span class="number">{formattedAverage}</span>
+            <span class="score-info">
+                gemiddeld cijfer · {voteCount}
+                {voteCount === 1 ? "reactie" : "reacties"}
+            </span>
         </p>
     </div>
 </section>
