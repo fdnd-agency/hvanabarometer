@@ -1,9 +1,17 @@
+<script>
+  let { average = null, voteCount = 0 } = $props();
+</script>
+
 <header class="hva-meter">
   <p>
     <span class="headertext">
       <strong>HvA-Meter</strong>
-      <data class="score" value="7.2">7.2</data>
-      <a class="voting" href="/meter-uitslag"> 312 stemmen </a>
+      {#if average}
+        <data class="score" value={average}>{average}</data>
+      {:else}
+        <span class="score">*</span>
+      {/if}
+      <a class="voting" href="/meter-uitslag">{voteCount} stemmen</a>
       <span class="today">vandaag</span>
     </span>
   </p>
@@ -16,7 +24,7 @@
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    height: 3.5rem;
+    min-height: 3.5rem;
     padding: 0 1rem;
     background: #1450d2;
     color: #fff;
@@ -31,23 +39,29 @@
     a {
       color: white;
     }
+
     .headertext {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      flex-wrap: nowrap;
+      gap: 0.25rem 0.5rem;
+      min-width: 0;
     }
+
     strong {
-      font-size: 1.25rem;
+      font-size: 1rem;
       white-space: nowrap;
     }
 
     .view,
     .today,
-    .question {
+    .question,
+    .voting {
       display: none;
     }
+
     .vote {
-      font-size: 0.9rem;
+      font-size: 0.8rem;
       white-space: nowrap;
       flex-shrink: 0;
       padding: 0.15rem 0.4rem;
@@ -71,12 +85,13 @@
     }
 
     .score {
-      font-size: 1.6rem;
+      font-size: 1rem;
       font-weight: 900;
     }
 
     .voting {
       padding: 0.25rem 0.6rem;
+      font-size: 0.7rem;
       border: 1.5px solid rgba(255, 255, 255, 0.8);
       border-radius: 50rem;
       color: white;
@@ -95,10 +110,9 @@
     }
 
     @media (min-width: 48rem) {
-      .hva-meter {
         gap: 1rem;
         padding: 0 2rem;
-      }
+
       strong {
         font-size: 1.375rem;
       }
@@ -108,6 +122,7 @@
       }
 
       .voting {
+        display: inline;
         padding-left: 1rem;
         font-size: 1.0625rem;
       }
@@ -122,10 +137,8 @@
     }
 
     @media (min-width: 64rem) {
-      .hva-meter {
         gap: 1.25rem;
-        height: 4rem;
-      }
+        min-height: 4rem;
 
       .score {
         font-size: 1.85rem;
