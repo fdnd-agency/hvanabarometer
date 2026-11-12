@@ -7,7 +7,7 @@
     <span class="headertext">
       <strong>HvA-Meter</strong>
       {#if average}
-        <data class="score" value={average}>{average}</data>
+        <data class="score" value={average}>{average.replace(".", ",")}</data>
       {:else}
         <span class="score">*</span>
       {/if}
