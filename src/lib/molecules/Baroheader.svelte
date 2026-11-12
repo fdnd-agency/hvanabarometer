@@ -11,7 +11,10 @@
       {:else}
         <span class="score">*</span>
       {/if}
-      <a class="voting" href="/meter-uitslag">{voteCount} stemmen</a>
+      <a class="voting" href="/meter-uitslag">
+        {voteCount}
+        {voteCount === 1 ? "stem" : "stemmen"}
+      </a>
       <span class="today">vandaag</span>
     </span>
   </p>
