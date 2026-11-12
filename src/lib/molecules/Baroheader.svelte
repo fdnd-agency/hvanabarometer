@@ -55,7 +55,8 @@
 
     .view,
     .today,
-    .question {
+    .question,
+    .voting {
       display: none;
     }
 
@@ -121,6 +122,7 @@
       }
 
       .voting {
+        display: inline;
         padding-left: 1rem;
         font-size: 1.0625rem;
       }
