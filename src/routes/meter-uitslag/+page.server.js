@@ -7,22 +7,26 @@ const BASE_URL = "https://fdnd-agency.directus.app/items";
 export async function load({ fetch }) {
   try {
     const response = await fetch(
-      `${BASE_URL}/hvana_barometer_responses?fields=id,score,explanation,submitted_at&sort=-submitted_at`
+      `${BASE_URL}/hvana_barometer_responses?fields=id,score,explanation,submitted_at&sort=-submitted_at&limit=-1`
     );
 
-    console.log("Status:", response.status);
-
-    const result = await response.json();
-    console.log("Directus antwoord:", result);
-
     if (!response.ok) {
-      return { responses: [] };
+      return { responses: [], average: null, voteCount: 0 };
     }
 
-    return { responses: result.data ?? [] };
+    const { data } = await response.json();
+    const responses = data ?? [];
+
+    const total = responses.reduce((sum, item) => sum + item.score, 0);
+
+    return { 
+      responses,
+      average: responses.length ? total / responses.length : null,
+      voteCount: responses.length,
+    };
   } catch (error) {
     console.error("Fout bij laden uitslagen:", error);
-    return { responses: [] };
+    return { responses: [], average: null, voteCount: 0 };
   }
 }
 
