@@ -80,7 +80,41 @@ export const actions = {
       user = (await createUser.json()).data;
     }
 
-    // 3. Response opslaan, gekoppeld aan de gebruiker
+  //3. in deze code kijken we of de gebruiker al heeft gestemd vandaag
+  
+      //ophalen van de datum van vandaag
+  const today = new Intl.DateTimeFormat("en-CA", { //in de format jaar-maand-dag
+    timeZone: "Europe/Amsterdam",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).format(new Date()); //haalt de huidige datum en tijd op
+  
+  //kijken via userid vanaf vandaag 00.00 of al gestemd is
+      const checkResponse = await fetch(
+        `${BASE_URL}/hvana_barometer_responses?filter[user][_eq]=${user.id}&filter[submitted_at][_gte]=${today}T00:00:00&limit=1`,
+      );
+  
+      //controleer of get goed is gegaan
+      if (!checkResponse.ok) { // als het verzoek niet goed is verlopen dan gebeurt er dit
+        return fail(500, {
+          error: "Kon eerdere stemmen niet controleren.",
+        });
+      }
+  
+      //gegeveens uit directus ophalen
+      const { data: responses } = await checkResponse.json();
+
+      
+  //kijken of er al een stem bestaat
+      if (responses.length > 0) {
+        return fail(400, {
+          error: "Je hebt vandaag al een stem ingestuurd.",
+        });
+      }
+  
+
+    // 4. Response opslaan, gekoppeld aan de gebruiker
     const response = await fetch(`${BASE_URL}/hvana_barometer_responses`, {
       method: "POST",
       headers,
