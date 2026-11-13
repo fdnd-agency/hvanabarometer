@@ -1,6 +1,8 @@
 <script>
   import "../styles/styleguide.css";
+ import { deserialize } from "$app/forms";
 
+ let melding = $state ("");
   async function verstuurFormulier(event) {
     event.preventDefault();
 
@@ -9,9 +11,10 @@
 
     if (button.disabled) return;
 
+    melding = ""; 
     button.classList.remove("opgeslagen", "error");
     button.classList.add("laden");
-    button.disabled = true;
+    button.disabled = false;
     button.textContent = "Verzenden...";
 
     const formData = new FormData(form);
@@ -22,10 +25,17 @@
         body: new URLSearchParams(formData),
       });
 
-      if (!response.ok) {
-        throw new Error("Verzenden mislukt");
-      }
+      const result = deserialize(await response.text());
+     if (result.type === "failure") {
+  melding = result.data.error;
 
+  button.classList.remove("laden");
+  button.classList.add("error");
+  button.disabled = true;
+  button.textContent = "Al gestemd vandaag";
+
+  return;
+}
       button.classList.remove("laden");
       button.classList.add("opgeslagen");
       button.textContent = "Verzonden ✔";
@@ -35,9 +45,11 @@
         popup.close();
       }, 1000);
     } catch (error) {
+      melding = "Er ging iets mis bij het versturen";
+
       button.classList.remove("laden");
       button.classList.add("error");
-      button.disabled = false;
+      button.disabled = true;
       button.textContent = "Opnieuw proberen";
 
       console.error("Fout bij verzenden:", error);
@@ -110,6 +122,9 @@
         required
       />
       <button type="submit" class="submit_button">Verzend</button>
+      <p class="form_message" aria-live="polite">
+  {melding}
+</p>
     </form>
   </div>
 </dialog>
