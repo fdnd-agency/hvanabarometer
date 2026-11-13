@@ -299,4 +299,12 @@
       background-color: darkblue;
     }
   }
+  button:disabled {
+  cursor: none;
+  pointer-events: none;
+  opacity: 0.6;
+}
+ .form_message{
+color:red;
+  }
 </style>
