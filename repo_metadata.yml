@@ -3,5 +3,5 @@ client: 'HvanA'
 status: 'active'
 years: [2]
 main_link: ''
-dev_link: ''
+dev_link: 'https://hvana.netlify.app/'
 tech_stack: ['SvelteKit', 'WordPress', 'Directus']
