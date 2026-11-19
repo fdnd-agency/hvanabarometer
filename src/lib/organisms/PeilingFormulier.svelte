@@ -6,3 +6,16 @@
   import ToelichtingVragen from "$lib/molecules/ToelichtingVragen.svelte";
   import InplanButton from "$lib/molecules/InplanButton.svelte";
 </script>
+
+<main>
+  <RedactieHeader />
+
+  <form method="post" action="/redactie/peilingen">
+    <PeilingInfo />
+    <PeilingVragen />
+    <PeilingDoelgroep />
+    <ToelichtingVragen />
+    <InplanButton />
+  </form>
+</main>
+
