@@ -1,3 +1,48 @@
+<script>
+  import { onMount } from "svelte";
+  import { addQuestion, removeQuestion, getQuestions } from "$lib/molecules/PeilingVragen.svelte";
+
+  // Draait pas in de browser, als de HTML er staat
+  onMount(() => {
+    // 1. Variabelen
+    const stepper = document.querySelector(".stepper");
+    const questionCount = document.querySelector("#question-count");
+    const minQuestions = Number(questionCount.min);
+    const maxQuestions = Number(questionCount.max);
+    const pollTitle = document.querySelector("#poll-title");
+    const titleOutput = document.querySelector('output[for="poll-title"]');
+
+    const actions = {
+      decrease: () => removeQuestion(),
+      increase: addQuestion,
+    };
+
+    // 2. Logica
+    // Alles tonen wat alleen met JavaScript werkt (aantal vragen, tekenteller)
+    stepper.hidden = false;
+    titleOutput.hidden = false;
+
+    stepper.addEventListener("click", (event) => {
+      const button = event.target.closest('button[type="button"]');
+      if (button) actions[button.value]?.(button);
+    });
+
+    // Aantal vragen intypen
+    questionCount.addEventListener("change", () => {
+      const wantedCount = Math.min(Math.max(Number(questionCount.value) || minQuestions, minQuestions), maxQuestions);
+
+      while (getQuestions().length < wantedCount) addQuestion();
+      while (getQuestions().length > wantedCount) removeQuestion();
+      questionCount.focus();
+    });
+
+    // Tekenteller, bijvoorbeeld "12/80"
+    pollTitle.addEventListener("input", () => {
+      titleOutput.value = `${pollTitle.value.length}/${pollTitle.maxLength}`;
+    });
+  });
+</script>
+
 <p>
   <label for="poll-title">Titel</label>
   <input
