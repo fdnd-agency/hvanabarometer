@@ -89,3 +89,10 @@
         outline: 0;
       }
     }
+
+    label:has(> [type="radio"]:focus-visible) {
+      outline: 3px solid var(--primary-color);
+      outline-offset: 2px;
+    }
+  }
+
