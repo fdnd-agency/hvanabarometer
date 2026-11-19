@@ -8,7 +8,7 @@
 
 <Header />
 <main>
-  <Herodetailpagina />
+  <Herodetailpagina average={data.average} voteCount={data.voteCount} />
   <ResultaatKaart responses={data.responses} />
   <BarometerPopup />
 </main>
