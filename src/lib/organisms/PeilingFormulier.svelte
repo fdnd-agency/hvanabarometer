@@ -49,3 +49,14 @@
     }
   }
 
+  /* Desktop layout */
+  @media (min-width: 64em) {
+    :global(:root) {
+      --page-width: 52rem;
+    }
+
+    :global(html) {
+      font-size: 112.5%;
+    }
+  }
+</style>
