@@ -107,13 +107,9 @@
     gap: var(--spacing-xs);
   }
 
-  label {
-    font-weight: var(--font-weight-bold);
-
-    span {
-      font-weight: var(--font-weight);
-      color: var(--text-color-muted);
-    }
+  label span {
+    font-weight: var(--font-weight);
+    color: var(--text-color-muted);
   }
 
   /* :where() heeft geen specificity, zodat bijvoorbeeld .stepper input dit kan overschrijven */
@@ -135,21 +131,6 @@
     color: var(--text-color-muted);
   }
 
-  /* Uit base.css, staat niet in styleguide.css */
-  input:not([type="radio"], [type="checkbox"]),
-  textarea {
-    border: var(--border);
-    background: var(--background-color);
-
-    &:hover {
-      border-color: var(--primary-color);
-    }
-
-    /* De standaard placeholderkleur van browsers heeft te weinig contrast */
-    &::placeholder {
-      color: var(--text-color-muted);
-    }
-  }
 
   /* Uit base.css: knoppen zijn minimaal 44px (aanraakpunt) */
   button {

@@ -25,19 +25,6 @@
 </fieldset>
 
 <style>
-  fieldset {
-    display: grid;
-    gap: var(--spacing-xs);
-    min-inline-size: 0;
-    border: 0;
-  }
-
-  /* float haalt de legend uit de "rendered legend"-modus, zodat hij een normaal grid item wordt */
-  legend {
-    float: left;
-    font-weight: var(--font-weight-bold);
-  }
-
   small {
     display: flex;
     flex-wrap: wrap;
@@ -77,8 +64,6 @@
       block-size: var(--control-size);
       border: 1.5px solid var(--text-color-muted);
       border-radius: 50%;
-      /* styleguide.css geeft elke input padding, een radio button niet */
-      padding: 0;
 
       &:checked {
         border: 5px solid var(--primary-color);

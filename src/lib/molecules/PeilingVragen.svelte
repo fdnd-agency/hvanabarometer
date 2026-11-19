@@ -264,27 +264,10 @@
 {/each}
 
 <style>
-  fieldset {
-    display: grid;
-    gap: var(--spacing-xs);
-    min-inline-size: 0;
-    border: 0;
-  }
-
-  /* float haalt de legend uit de "rendered legend"-modus, zodat hij een normaal grid item wordt */
-  legend {
-    float: left;
-    font-weight: var(--font-weight-bold);
-  }
-
   p {
     display: grid;
     justify-items: start;
     gap: var(--spacing-xs);
-  }
-
-  label {
-    font-weight: var(--font-weight-bold);
   }
 
   input:not([type="radio"], [type="checkbox"]) {
@@ -305,16 +288,6 @@
   button[value^="remove"] {
     border: var(--border);
     border-radius: var(--border-radius);
-    background: var(--background-color);
-
-    &:hover {
-      border-color: var(--primary-color);
-    }
-  }
-
-  /* Uit base.css, staat niet in styleguide.css */
-  input:not([type="radio"], [type="checkbox"]) {
-    border: var(--border);
     background: var(--background-color);
 
     &:hover {
@@ -396,8 +369,6 @@
       block-size: var(--control-size);
       border: 1.5px solid var(--text-color-muted);
       border-radius: 50%;
-      /* styleguide.css geeft elke input padding, een radio button niet */
-      padding: 0;
 
       &:checked {
         border: 5px solid var(--primary-color);
