@@ -1,3 +1,204 @@
+<script module>
+  // Progressive enhancement: zonder JavaScript staan er 5 vragen met 6 opties klaar en verstuur je het formulier gewoon.
+  // Met JavaScript ruim je lege vragen op, kies je zelf het aantal en lopen de tekentellers mee.
+  // Deze functies staan in <script module>, zodat PeilingInfo (de stepper) ze kan importeren.
+
+  // 1. Variabelen
+  const minOptions = 2;
+  const maxOptions = 6;
+  const renumberedAttributes = ["id", "for", "name"];
+
+  // 3. Functies
+  // Het invoerveld "Aantal vragen" staat in PeilingInfo
+  function getQuestionCount() {
+    return document.querySelector("#question-count");
+  }
+
+  export function getQuestions() {
+    return document.querySelectorAll(".question");
+  }
+
+  // Haalt lege items van achter naar voren weg, maar laat er altijd "minimum" staan
+  function removeEmptyItems(getItems, minimum) {
+    const itemsFromLast = [...getItems()].reverse();
+
+    itemsFromLast.forEach((item) => {
+      const isEmpty = item.querySelector("input").value.trim() === "";
+      if (isEmpty && getItems().length > minimum) item.remove();
+    });
+  }
+
+  // Vervangt een nummer in id, for en name, bijvoorbeeld "question-3" → "question-2"
+  function renumberAttributes(element, prefix, number) {
+    const pattern = new RegExp(`${prefix}-\\d+`);
+
+    element.querySelectorAll("[id], [for], [name]").forEach((child) => {
+      renumberedAttributes.forEach((attribute) => {
+        const value = child.getAttribute(attribute);
+        if (value) child.setAttribute(attribute, value.replace(pattern, `${prefix}-${number}`));
+      });
+    });
+  }
+
+  function numberQuestion(question, number, total) {
+    question.querySelector("legend").textContent = `Vraag ${number} van ${total}`;
+    // De alt van het icoon is de toegankelijke naam van de knop
+    question.querySelector('[value="remove-question"] img').alt = `Verwijder vraag ${number}`;
+    renumberAttributes(question, "question", number);
+  }
+
+  function updateQuestions() {
+    const questionCount = getQuestionCount();
+    const questions = getQuestions();
+    const isMinimum = questions.length <= Number(questionCount.min);
+
+    questions.forEach((question, index) => {
+      numberQuestion(question, index + 1, questions.length);
+      // Met JavaScript is elke zichtbare vraag verplicht, lege zijn toch al weggehaald
+      question.querySelector("input").required = true;
+      question.querySelector('[value="remove-question"]').disabled = isMinimum;
+    });
+
+    // De stepper staat in PeilingInfo
+    questionCount.value = questions.length;
+    document.querySelector('[value="decrease"]').disabled = isMinimum;
+    document.querySelector('[value="increase"]').disabled = questions.length >= Number(questionCount.max);
+  }
+
+  function updateOptions(answerOptions) {
+    const options = answerOptions.querySelectorAll("p");
+
+    options.forEach((option, index) => {
+      const number = index + 1;
+      const removeButton = option.querySelector("button");
+
+      option.querySelector("label").textContent = `Optie ${number}`;
+      removeButton.querySelector("img").alt = `Verwijder optie ${number}`;
+      removeButton.disabled = options.length <= minOptions;
+      renumberAttributes(option, "option", number);
+    });
+
+    answerOptions.querySelector('[value="add-option"]').disabled = options.length >= maxOptions;
+  }
+
+  export function addQuestion() {
+    const questions = getQuestions();
+    if (questions.length >= Number(getQuestionCount().max)) return;
+
+    const lastQuestion = questions[questions.length - 1];
+    const newQuestion = lastQuestion.cloneNode(true);
+    const questionInput = newQuestion.querySelector("input");
+    const extraOptions = [...newQuestion.querySelectorAll(".answer-options p")].slice(minOptions);
+
+    // Leeg maken en een standaard type kiezen
+    newQuestion.querySelectorAll('input[type="text"]').forEach((input) => {
+      input.value = "";
+    });
+    newQuestion.querySelector('[value="multiple-choice"]').checked = true;
+    newQuestion.querySelector("output").value = `0/${questionInput.maxLength}`;
+    extraOptions.forEach((option) => option.remove());
+
+    // Eerst hernummeren, anders delen de radio buttons hun name met de vorige vraag
+    numberQuestion(newQuestion, questions.length + 1, questions.length + 1);
+    lastQuestion.after(newQuestion);
+
+    updateOptions(newQuestion.querySelector(".answer-options"));
+    updateQuestions();
+    questionInput.focus();
+  }
+
+  export function removeQuestion(question = getQuestions()[getQuestions().length - 1]) {
+    if (getQuestions().length <= Number(getQuestionCount().min)) return;
+
+    question.remove();
+    updateQuestions();
+  }
+
+  function addOption(button) {
+    const answerOptions = button.closest(".answer-options");
+    const options = answerOptions.querySelectorAll("p");
+    if (options.length >= maxOptions) return;
+
+    const lastOption = options[options.length - 1];
+    const newOption = lastOption.cloneNode(true);
+
+    newOption.querySelector("input").value = "";
+    lastOption.after(newOption);
+
+    updateOptions(answerOptions);
+    newOption.querySelector("input").focus();
+  }
+
+  function removeOption(button) {
+    const answerOptions = button.closest(".answer-options");
+
+    button.closest("p").remove();
+    updateOptions(answerOptions);
+    // Focus niet kwijtraken nadat de knop is verdwenen
+    answerOptions.querySelector('[value="add-option"]').focus();
+  }
+</script>
+
+<script>
+  import { onMount } from "svelte";
+
+  // Zonder JavaScript staan er 5 vragen klaar; de eerste is een voorbeeld en verplicht
+  const maxQuestionLength = 120;
+  const questions = [
+    { text: "Hoe was je tentamenweek?", type: "grade" },
+    { text: "", type: "multiple-choice" },
+    { text: "", type: "multiple-choice" },
+    { text: "", type: "multiple-choice" },
+    { text: "", type: "multiple-choice" },
+  ];
+  const questionTypes = [
+    { value: "multiple-choice", label: "Meerkeuze" },
+    { value: "grade", label: "Rapportcijfer (1–10)" },
+    { value: "agree", label: "Eens / oneens" },
+  ];
+
+  // 2. Logica (draait pas in de browser, als de HTML er staat)
+  onMount(() => {
+    const form = document.querySelector("form");
+    const questionCount = getQuestionCount();
+
+    const actions = {
+      "remove-question": (button) => {
+        removeQuestion(button.closest(".question"));
+        questionCount.focus();
+      },
+      "add-option": addOption,
+      "remove-option": removeOption,
+    };
+
+    // Alles tonen wat alleen met JavaScript werkt (knoppen, tekentellers)
+    form.querySelectorAll(".question [hidden]").forEach((element) => {
+      element.hidden = false;
+    });
+
+    removeEmptyItems(getQuestions, Number(questionCount.min));
+
+    form.querySelectorAll(".answer-options").forEach((answerOptions) => {
+      removeEmptyItems(() => answerOptions.querySelectorAll("p"), minOptions);
+      updateOptions(answerOptions);
+    });
+
+    updateQuestions();
+
+    form.addEventListener("click", (event) => {
+      const button = event.target.closest('.question button[type="button"]');
+      if (button) actions[button.value]?.(button);
+    });
+
+    // Tekentellers bij de vragen, bijvoorbeeld "24/120"
+    form.addEventListener("input", (event) => {
+      if (!event.target.closest(".question")) return;
+      const output = form.querySelector(`output[for="${event.target.id}"]`);
+      if (output) output.value = `${event.target.value.length}/${event.target.maxLength}`;
+    });
+  });
+</script>
+
 {#each questions as question, index}
   {@const number = index + 1}
   <fieldset class="question">
