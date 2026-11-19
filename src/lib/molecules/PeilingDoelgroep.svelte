@@ -38,3 +38,11 @@
     font-weight: var(--font-weight-bold);
   }
 
+  small {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: var(--spacing-xs);
+    justify-self: stretch;
+    color: var(--text-color-muted);
+  }
