@@ -61,3 +61,13 @@
     justify-items: start;
     gap: var(--spacing-xs);
   }
+
+  label {
+    font-weight: var(--font-weight-bold);
+
+    span {
+      font-weight: var(--font-weight);
+      color: var(--text-color-muted);
+    }
+  }
+
