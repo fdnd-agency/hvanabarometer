@@ -46,3 +46,26 @@
     justify-self: stretch;
     color: var(--text-color-muted);
   }
+
+  .choices {
+    label {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-xs);
+      min-block-size: var(--target-size);
+      padding-inline: var(--spacing-s);
+      border: var(--border);
+      border-radius: var(--border-radius);
+      background: var(--background-color);
+      font-weight: var(--font-weight);
+      white-space: nowrap;
+      cursor: pointer;
+
+      &:hover {
+        border-color: var(--primary-color);
+      }
+
+      &:has(:checked) {
+        box-shadow: inset 0 0 0 1px var(--border-color);
+      }
+    }
