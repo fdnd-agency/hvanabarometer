@@ -96,3 +96,14 @@
     }
   }
 
+  @media (min-width: 48em) {
+    .choices {
+      grid-template-columns: repeat(3, minmax(min-content, 1fr));
+
+      legend,
+      small {
+        grid-column: 1 / -1;
+      }
+    }
+  }
+</style>
