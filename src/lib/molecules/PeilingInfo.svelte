@@ -150,3 +150,9 @@
       text-align: center;
     }
 
+    /* Zonder JavaScript verborgen: display: flex mag hidden niet overschrijven */
+    &[hidden] {
+      display: none;
+    }
+  }
+</style>
