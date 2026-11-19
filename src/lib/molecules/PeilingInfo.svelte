@@ -47,3 +47,11 @@
     elkaar.</small
   >
 </p>
+
+<noscript>
+  <p>
+    Je kunt maximaal 5 vragen stellen. Laat een vraag leeg als je hem
+    niet nodig hebt.
+  </p>
+</noscript>
+
