@@ -69,3 +69,23 @@
         box-shadow: inset 0 0 0 1px var(--border-color);
       }
     }
+
+    [type="radio"] {
+      flex-shrink: 0;
+      appearance: none;
+      inline-size: var(--control-size);
+      block-size: var(--control-size);
+      border: 1.5px solid var(--text-color-muted);
+      border-radius: 50%;
+      /* styleguide.css geeft elke input padding, een radio button niet */
+      padding: 0;
+
+      &:checked {
+        border: 5px solid var(--primary-color);
+      }
+
+      /* De focus komt op het label, omdat dat het klikbare vak is */
+      &:focus-visible {
+        outline: 0;
+      }
+    }
