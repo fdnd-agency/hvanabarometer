@@ -105,3 +105,16 @@
       color: var(--text-color-muted);
     }
   }
+
+  /* Uit base.css: knoppen zijn minimaal 44px (aanraakpunt) */
+  button {
+    min-inline-size: var(--target-size);
+    min-block-size: var(--target-size);
+    color: inherit;
+    cursor: pointer;
+
+    &:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+  }
