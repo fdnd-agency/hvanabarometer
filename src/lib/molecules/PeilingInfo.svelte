@@ -76,3 +76,8 @@
     inline-size: 100%;
   }
 
+  textarea {
+    min-block-size: 6rem;
+    resize: vertical;
+  }
+
