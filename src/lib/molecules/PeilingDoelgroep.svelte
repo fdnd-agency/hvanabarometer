@@ -32,3 +32,9 @@
     border: 0;
   }
 
+  /* float haalt de legend uit de "rendered legend"-modus, zodat hij een normaal grid item wordt */
+  legend {
+    float: left;
+    font-weight: var(--font-weight-bold);
+  }
+
