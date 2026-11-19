@@ -23,3 +23,12 @@
     is student, voorletter.achternaam@ is medewerker.</small
   >
 </fieldset>
+
+<style>
+  fieldset {
+    display: grid;
+    gap: var(--spacing-xs);
+    min-inline-size: 0;
+    border: 0;
+  }
+
