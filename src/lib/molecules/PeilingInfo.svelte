@@ -125,3 +125,28 @@
     margin-inline: auto;
   }
 
+  /* Geen align-items: center, zo stretchen de knoppen naar de hoogte van het invoerveld */
+  .stepper {
+    display: flex;
+    flex-wrap: wrap;
+
+    label,
+    small {
+      flex-basis: 100%;
+    }
+
+    button {
+      border: var(--border-thick);
+      border-radius: var(--border-radius);
+      background: var(--background-color);
+
+      &:hover {
+        border-color: var(--primary-color);
+      }
+    }
+
+    input {
+      inline-size: 5rem;
+      text-align: center;
+    }
+
