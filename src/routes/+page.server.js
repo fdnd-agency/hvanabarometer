@@ -1,50 +1,70 @@
 import { fail } from "@sveltejs/kit";
 
+// Basis-URL van de Directus API en standaard headers voor POST-requests
 const BASE_URL = "https://fdnd-agency.directus.app/items";
 const headers = { "Content-Type": "application/json" };
 
+// LOAD: haalt de scores op en berekent het gemiddelde voor de barometer-header
 export async function load({ fetch }) {
-  // Alle scores ophalen (limit=-1 zodat je niet maar 100 items krijgt)
-  const response = await fetch(
-    `${BASE_URL}/hvana_barometer_responses?fields=score&limit=1000`,
-  );
+  try {
+    // Alle scores ophalen (alleen het veld 'score', max 1000 items)
+    const response = await fetch(
+      `${BASE_URL}/hvana_barometer_responses?fields=score&limit=1000`,
+    );
 
-  if (!response.ok) {
-    console.error(await response.text());
+    // Directus reageert, maar met een foutcode (bijv. 403 of 500)
+    if (!response.ok) {
+      console.error(await response.text());
+      return { average: null, voteCount: 0 };
+    }
+
+    const { data: votes } = await response.json();
+
+    // Alle scores bij elkaar optellen
+    const total = votes.reduce((sum, vote) => sum + vote.score, 0);
+
+    // Gemiddelde berekenen en afronden op 1 decimaal (null als er geen stemmen zijn)
+    const average = votes.length ? (total / votes.length).toFixed(1) : null;
+
+    return {
+      average,
+      voteCount: votes.length,
+    };
+  } catch (error) {
+    // Netwerkfout: Directus is onbereikbaar, dus fallback teruggeven in plaats van een 500-pagina
+    console.error(error);
     return { average: null, voteCount: 0 };
   }
-
-  const { data: votes } = await response.json();
-
-  const total = votes.reduce((sum, vote) => sum + vote.score, 0);
-  const average = votes.length ? (total / votes.length).toFixed(1) : null;
-
-  return {
-    average,
-    voteCount: votes.length,
-  };
 }
 
+// ACTIONS: verwerkt het stemformulier
 export const actions = {
   hvameter: async ({ request, fetch }) => {
     const formData = await request.formData();
 
+    // Formulierdata ophalen en opschonen
     const score = Number(formData.get("rating"));
     const explanation = formData.get("toelichting")?.toString().trim() ?? "";
     const email = formData.get("email")?.toString().trim().toLowerCase() ?? "";
 
-    // Validatie
+    // Validatie: cijfer moet tussen 1 en 10 liggen
     if (!score || score < 1 || score > 10) {
       return fail(400, { error: "Kies een cijfer van 1 tot 10." });
     }
+
+    // Validatie: e-mail moet ingevuld zijn
     if (!email) {
       return fail(400, { error: "Vul je HvA e-mailadres in." });
     }
+
+    // Validatie: alleen HvA e-mailadressen toegestaan
     if (!email.endsWith("@hva.nl")) {
       return fail(400, {
         error: "Gebruik je HvA e-mailadres (eindigt op @hva.nl).",
       });
     }
+
+    // Validatie: toelichting mag niet te lang zijn
     if (explanation.length > 500) {
       return fail(400, {
         error: "Je toelichting mag maximaal 500 tekens zijn.",
@@ -80,7 +100,7 @@ export const actions = {
       user = (await createUser.json()).data;
     }
 
-    // 3. Response opslaan, gekoppeld aan de gebruiker
+    // 3. Stem opslaan, gekoppeld aan de gebruiker
     const response = await fetch(`${BASE_URL}/hvana_barometer_responses`, {
       method: "POST",
       headers,
