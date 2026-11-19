@@ -100,3 +100,8 @@
       border-color: var(--primary-color);
     }
 
+    /* De standaard placeholderkleur van browsers heeft te weinig contrast */
+    &::placeholder {
+      color: var(--text-color-muted);
+    }
+  }
