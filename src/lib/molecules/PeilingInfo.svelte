@@ -118,3 +118,10 @@
       cursor: not-allowed;
     }
   }
+
+  /* Icoonknoppen: de alt van het <img> is de toegankelijke naam van de knop */
+  button img {
+    display: block;
+    margin-inline: auto;
+  }
+
