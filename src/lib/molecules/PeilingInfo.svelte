@@ -90,3 +90,13 @@
     color: var(--text-color-muted);
   }
 
+  /* Uit base.css, staat niet in styleguide.css */
+  input:not([type="radio"], [type="checkbox"]),
+  textarea {
+    border: var(--border);
+    background: var(--background-color);
+
+    &:hover {
+      border-color: var(--primary-color);
+    }
+
