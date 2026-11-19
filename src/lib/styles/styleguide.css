@@ -48,7 +48,15 @@
   --font-size-h3: 26px;
 
   --font-weight: 400;
+  --font-weight-semibold: 600;
   --font-weight-bold: 700;
+
+  --letter-spacing-caps: 0.1em;
+
+  /* Tekstkleuren */
+  --text-color: var(--black);
+  --text-color-muted: hsl(0, 0%, 36%);
+  --text-on-primary: var(--white);
 
   --line-height: 1.5;
   --line-height-heading: 1.2;
@@ -67,6 +75,13 @@
   /* Border radius */
   --border-radius: 0.25rem;
 
+  /* Randen */
+  --border: 1px solid var(--border-color);
+  --border-thick: 2px solid var(--border-color);
+
+  /* Toegankelijkheid: minimale grootte van een aanraakpunt (44px) */
+  --target-size: 2.75rem;
+
 
 
 }
@@ -76,6 +91,8 @@
     --background-color: hsl(0, 0%, 7.06%);
     --text: var(--white);
     --border-color: var(--white);
+    --text-color: var(--white);
+    --text-color-muted: hsl(0, 0%, 72%);
   }
 }
 
