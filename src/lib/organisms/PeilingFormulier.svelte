@@ -38,3 +38,14 @@
     gap: var(--spacing-m);
   }
 
+  /* Middle layout: alle maten zijn in rem, dus een grotere basis schaalt de hele pagina mee */
+  @media (min-width: 48em) {
+    :global(html) {
+      font-size: 106.25%;
+    }
+
+    main {
+      padding-inline: var(--spacing-l);
+    }
+  }
+
