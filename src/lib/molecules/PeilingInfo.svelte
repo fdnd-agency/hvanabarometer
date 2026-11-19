@@ -71,3 +71,8 @@
     }
   }
 
+  /* :where() heeft geen specificity, zodat bijvoorbeeld .stepper input dit kan overschrijven */
+  :where(input:not([type="radio"], [type="checkbox"]), textarea) {
+    inline-size: 100%;
+  }
+
