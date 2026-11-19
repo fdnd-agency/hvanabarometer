@@ -55,3 +55,9 @@
   </p>
 </noscript>
 
+<style>
+  p {
+    display: grid;
+    justify-items: start;
+    gap: var(--spacing-xs);
+  }
