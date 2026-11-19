@@ -13,3 +13,17 @@
     <output hidden for="poll-title">12/80</output></small
   >
 </p>
+
+<p>
+  <label for="poll-intro">Intro <span>(optioneel)</span></label>
+  <textarea
+    id="poll-intro"
+    name="poll-intro"
+    maxlength="280"
+    placeholder="Schrijf een korte intro…"
+  ></textarea>
+  <small
+    >Verschijnt onder de titel, boven de vragen. Maximaal 280
+    tekens.</small
+  >
+</p>
