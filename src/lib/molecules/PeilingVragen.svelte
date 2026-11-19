@@ -55,6 +55,22 @@
         <output hidden for="question-{number}-text">{question.text.length}/{maxQuestionLength}</output></small
       >
     </p>
+
+    <fieldset class="choices">
+      <legend>Type</legend>
+      {#each questionTypes as type}
+        <label
+          ><input
+            type="radio"
+            name="question-{number}-type"
+            value={type.value}
+            checked={type.value === question.type}
+          />
+          {type.label}</label
+        >
+      {/each}
+    </fieldset>
+
   </fieldset>
 {/each}
 
