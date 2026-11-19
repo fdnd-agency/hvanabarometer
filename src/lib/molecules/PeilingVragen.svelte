@@ -17,3 +17,28 @@
       <output hidden for="question-1-text">24/120</output></small
     >
   </p>
+
+  <fieldset class="choices">
+    <legend>Type</legend>
+    <label
+      ><input
+        type="radio"
+        name="question-1-type"
+        value="multiple-choice"
+      />
+      Meerkeuze</label
+    >
+    <label
+      ><input
+        type="radio"
+        name="question-1-type"
+        value="grade"
+        checked
+      />
+      Rapportcijfer (1–10)</label
+    >
+    <label
+      ><input type="radio" name="question-1-type" value="agree" /> Eens
+      / oneens</label
+    >
+  </fieldset>
