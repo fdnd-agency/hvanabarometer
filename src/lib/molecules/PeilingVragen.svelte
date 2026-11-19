@@ -71,6 +71,21 @@
       {/each}
     </fieldset>
 
+    <fieldset class="answer-options">
+      <legend>Antwoordopties</legend>
+      {#each { length: maxOptions }, optionIndex}
+        {@const optionNumber = optionIndex + 1}
+        <p>
+          <label for="question-{number}-option-{optionNumber}">Optie {optionNumber}</label>
+          <input
+            type="text"
+            id="question-{number}-option-{optionNumber}"
+            name="question-{number}-option"
+            maxlength="60"
+          />
+          <button type="button" value="remove-option" hidden><img src="/assets/icons/cross.svg" alt="Verwijder optie {optionNumber}" width="24" height="24" /></button>
+        </p>
+      {/each}
   </fieldset>
 {/each}
 
