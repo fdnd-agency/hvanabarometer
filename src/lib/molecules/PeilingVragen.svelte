@@ -86,6 +86,15 @@
           <button type="button" value="remove-option" hidden><img src="/assets/icons/cross.svg" alt="Verwijder optie {optionNumber}" width="24" height="24" /></button>
         </p>
       {/each}
+      <button type="button" value="add-option" hidden>
+        + Optie toevoegen
+      </button>
+      <small
+        >2 tot 6 opties, maximaal 60 tekens per optie.<noscript>
+          Lege opties tellen niet mee.</noscript
+        ></small
+      >
+    </fieldset>
   </fieldset>
 {/each}
 
