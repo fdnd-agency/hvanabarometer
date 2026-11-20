@@ -155,7 +155,16 @@ h3 {
 }
 
 /* Lopende tekst en formuliertekst krijgen Montserrat */
-p, a, li, label, legend, small { font-family: "Montserrat", sans-serif; }
+p,
+a,
+li,
+label,
+legend,
+small,
+button,
+form {
+  font-family: "Montserrat", sans-serif;
+}
 
 /* Lopende tekst */
 p,
@@ -178,10 +187,22 @@ button {
 }
 
 /* fieldset zonder browserstijl */
-fieldset { display: grid; gap: var(--spacing-xs); min-inline-size: 0; border: 0; }
+fieldset {
+  display: grid;
+  gap: var(--spacing-xs);
+  min-inline-size: 0;
+  border: 0;
+}
+
 /* float haalt de legend uit de "rendered legend"-modus, zodat hij een normaal grid item wordt */
-legend { float: left; font-weight: var(--font-weight-bold); }
-label { font-weight: var(--font-weight-bold); }
+legend {
+  float: left;
+  font-weight: var(--font-weight-bold);
+}
+
+label {
+  font-weight: var(--font-weight-bold);
+}
 
 /* invoervelden (radio's en checkboxes niet) */
 input:not([type="radio"], [type="checkbox"]),
@@ -191,9 +212,14 @@ textarea {
   border-radius: var(--border-radius);
   background: var(--background-color);
 
-  &:hover { border-color: var(--primary-color); }
+  &:hover {
+    border-color: var(--primary-color);
+  }
+
   /* De standaard placeholderkleur van browsers heeft te weinig contrast */
-  &::placeholder { color: var(--text-color-muted); }
+  &::placeholder {
+    color: var(--text-color-muted);
+  }
 }
 
 /* toegankelijkheid van formulieren */

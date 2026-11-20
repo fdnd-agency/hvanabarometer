@@ -33,7 +33,6 @@
 
   /* styleguide.css geeft alleen p, a en li Montserrat, labels en legends in een fieldset ook */
   form {
-    font-family: "Montserrat", sans-serif;
     display: grid;
     gap: var(--spacing-m);
   }
