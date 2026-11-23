@@ -28,6 +28,7 @@
   --teal: hsl(166, 71%, 53%);
   --yellow: hsl(50, 100%, 50%);
   --orange: hsl(13.11, 100%, 59.61%);
+  --light-blue: hsl(220, 75%, 97%);
 
   /* Kleurgebruik */
   --primary-color: var(--blue);
