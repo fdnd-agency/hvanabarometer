@@ -7,3 +7,17 @@
     { label: "Barometer gem.", value: "6,8" },
   ];
 </script>
+
+<section>
+  <h1>Goedemiddag, redactie</h1>
+  <p>Wat leeft er vandaag onder studenten en medewerkers?</p>
+
+  <dl>
+    {#each stats as stat}
+      <div>
+        <dt>{stat.label}</dt>
+        <dd>{stat.value}</dd>
+      </div>
+    {/each}
+  </dl>
+</section>
