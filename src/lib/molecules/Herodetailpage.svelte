@@ -11,6 +11,10 @@
     );
 </script>
 
+<svelte:head>
+    <title>HvA-Meter</title>
+</svelte:head>
+
 <section>
     <div class="inner">
         <p class="label">Barometer</p>
