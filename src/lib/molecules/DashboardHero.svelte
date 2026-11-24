@@ -86,3 +86,21 @@
       color: var(--primary-color);
     }
 
+    @media (min-width: 48em) {
+      --stat-padding: var(--spacing-m);
+
+      padding-inline: var(--spacing-m);
+
+      h1 {
+        font-size: var(--font-size-h2);
+      }
+
+      dl {
+        margin-top: var(--spacing-l);
+      }
+
+      dd {
+        font-size: var(--font-size-h1);
+      }
+    }
+
