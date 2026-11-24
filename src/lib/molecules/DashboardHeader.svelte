@@ -107,3 +107,25 @@
       display: none;
     }
 
+    @media (min-width: 48em) {
+      --header-padding-inline: var(--spacing-l);
+
+      nav {
+        gap: var(--spacing-l);
+        min-height: 4.5rem;
+      }
+
+      img {
+        height: var(--spacing-m);
+      }
+
+      span {
+        display: inline;
+      }
+    }
+
+    @media (min-width: 64em) {
+      --header-padding-inline: var(--spacing-xl);
+    }
+  }
+</style>
