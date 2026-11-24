@@ -56,6 +56,7 @@ export const actions = {
       });
     }
 
+    try {
     // 1. Gebruiker opzoeken op e-mail
     const userResponse = await fetch(
       `${BASE_URL}/hvana_barometer_users?filter[email][_eq]=${encodeURIComponent(email)}&limit=1`,
@@ -104,5 +105,11 @@ export const actions = {
     }
 
     return { success: true };
+    } catch (error) {
+      console.error("Fout bij versturen stem:", error);
+      return fail(500, {
+        error: "De server is tijdelijk niet bereikbaar. Probeer het later opnieuw.",
+      });
+    }
   },
 };
