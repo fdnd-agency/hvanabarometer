@@ -1,6 +1,23 @@
+<script>
+    let { average = null, voteCount = 0 } = $props();
+
+    const formattedAverage = $derived(
+        average === null
+            ? "*"
+            : average.toLocaleString("nl-NL", {
+                  minimumFractionDigits: 1,
+                  maximumFractionDigits: 1,
+              }),
+    );
+</script>
+
+<svelte:head>
+    <title>HvA-Meter</title>
+</svelte:head>
+
 <section>
     <div class="inner">
-        <span class="label">Barometer</span>
+        <p class="label">Barometer</p>
 
         <h1>Hoe ervaren studenten de HvA vandaag?</h1>
 
@@ -10,8 +27,11 @@
         </p>
 
         <p class="score">
-            <span class="number">6,5</span>
-            <span class="score-info">gemiddeld cijfer · 10 reacties</span>
+            <strong class="number">{formattedAverage}</strong>
+            <span class="score-info">
+                gemiddeld cijfer · {voteCount}
+                {voteCount === 1 ? "reactie" : "reacties"}
+            </span>
         </p>
     </div>
 </section>
@@ -45,6 +65,7 @@
 
     .label {
         text-transform: uppercase;
+        margin: 0;
     }
 
     h1 {
@@ -76,6 +97,7 @@
 
     .number {
         font-family: "U8 Bold web", sans-serif;
+        font-weight: var(--font-weight-bold);
         font-size: 80px;
         line-height: 1.2;
 
