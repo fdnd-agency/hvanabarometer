@@ -50,3 +50,146 @@
     </table>
   </div>
 </section>
+
+<style>
+  section {
+    width: 90%;
+    margin-inline: auto;
+    padding-block: 305px var(--spacing-l);  /* voor nu tijdelijk */
+  }
+
+  .heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--spacing-s);
+    margin-bottom: var(--spacing-s);
+  }
+
+  .add-button {
+    padding: 0.5rem;
+    border-radius: 8px;
+    background: var(--primary-color);
+    color: var(--text-color-light);
+    font-weight: var(--font-weight-bold);
+    text-decoration: none;
+  }
+
+  .table-wrap {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  th,
+  td {
+    padding: var(--spacing-s);
+    text-align: left;
+  }
+
+  tbody tr {
+    position: relative; 
+    border-top: 1px solid var(--light-blue);
+  }
+
+  tbody tr:hover {
+    background: var(--light-blue);
+  }
+
+  th {
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #585d6b;
+  }
+
+  /* Mobile */
+  .type,
+  .audience,
+  .actions {
+    display: none;
+  }
+
+  .total {
+    text-align: right;
+    font-weight: var(--font-weight-bold);
+  }
+
+  th.total {
+    font-weight: var(--font-weight-bold);
+  }
+
+  .question a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  /* alles klikbaar */
+  .question a::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+  }
+
+  .question a:focus-visible {
+    outline: none;
+  }
+
+  .question a:focus-visible::after {
+    outline: 3px solid var(--primary-color);
+    outline-offset: -3px;
+  }
+
+  /* Desktop */
+  @media (min-width: 740px) {
+    th,
+    td {
+      padding: var(--spacing-s) var(--spacing-m, 1.5rem);
+    }
+
+    .type,
+    .audience,
+    .actions {
+      display: table-cell;
+    }
+
+    td.type,
+    td.audience {
+      color: #585d6b;
+    }
+
+    .actions {
+      text-align: right;
+    }
+
+    .actions-inner {
+      display: flex;
+      justify-content: flex-end;
+      gap: var(--spacing-s);
+      position: relative;
+      z-index: 1;
+    }
+
+    .actions a {
+      color: var(--primary-color);
+      font-weight: var(--font-weight-bold);
+    }
+
+    .delete {
+      background: none;
+      border: none;
+      padding: 0;
+      font: inherit;
+      font-weight: var(--font-weight-bold);
+      color: rgba(209, 13, 13, 0.646);
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+</style>
