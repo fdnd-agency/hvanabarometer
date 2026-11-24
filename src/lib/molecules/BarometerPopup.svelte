@@ -14,7 +14,7 @@
     melding = ""; 
     button.classList.remove("opgeslagen", "error");
     button.classList.add("laden");
-    button.disabled = false;
+    button.disabled = true;
     button.textContent = "Verzenden...";
 
     const formData = new FormData(form);
@@ -31,8 +31,14 @@
 
   button.classList.remove("laden");
   button.classList.add("error");
-  button.disabled = true;
-  button.textContent = "Al gestemd vandaag";
+
+  if (result.data.alGestemd) {
+    button.disabled = true;
+    button.textContent = "Al gestemd vandaag";
+  } else {
+    button.disabled = false;
+    button.textContent = "Verzend";
+  }
 
   return;
 }
@@ -49,7 +55,7 @@
 
       button.classList.remove("laden");
       button.classList.add("error");
-      button.disabled = true;
+      button.disabled = false;
       button.textContent = "Opnieuw proberen";
 
       console.error("Fout bij verzenden:", error);
@@ -300,7 +306,7 @@
     }
   }
   button:disabled {
-  cursor: none;
+  cursor: not-allowed;
   pointer-events: none;
   opacity: 0.6;
 }

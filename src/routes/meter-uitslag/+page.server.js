@@ -111,6 +111,7 @@ const today = new Intl.DateTimeFormat("en-CA", { //in de format jaar-maand-dag
     if (responses.length > 0) {
       return fail(400, {
         error: "Je hebt vandaag al een stem ingestuurd.",
+        alGestemd: true,
       });
     }
 
