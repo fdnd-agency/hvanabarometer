@@ -13,7 +13,7 @@
 
 <section>
     <div class="inner">
-        <span class="label">Barometer</span>
+        <p class="label">Barometer</p>
 
         <h1>Hoe ervaren studenten de HvA vandaag?</h1>
 
@@ -61,6 +61,7 @@
 
     .label {
         text-transform: uppercase;
+        margin: 0;
     }
 
     h1 {
