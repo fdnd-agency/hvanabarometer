@@ -1,3 +1,11 @@
+<script>
+  import { page } from "$app/state";
+
+  let { userName = "Paul" } = $props();
+
+  const dashboardUrl = "/redactie/dashboard";
+</script>
+
 <header>
   <nav>
     <a href={dashboardUrl}>
@@ -9,3 +17,14 @@
       />
       Redactie
     </a>
+
+    <ul>
+      <li>
+        <a
+          href={dashboardUrl}
+          aria-current={page.url.pathname === dashboardUrl ? "page" : undefined}
+        >
+          Peilingen
+        </a>
+      </li>
+    </ul>
