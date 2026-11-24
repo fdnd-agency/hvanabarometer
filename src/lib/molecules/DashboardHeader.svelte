@@ -28,3 +28,11 @@
         </a>
       </li>
     </ul>
+
+    <p>
+      <span>{userName}</span>
+      <a href="/">Uitloggen</a>
+    </p>
+  </nav>
+</header>
+
