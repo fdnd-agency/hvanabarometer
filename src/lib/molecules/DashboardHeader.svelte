@@ -36,3 +36,74 @@
   </nav>
 </header>
 
+<style>
+  header {
+    --header-padding-inline: 1.25rem;
+
+    padding-inline: var(--header-padding-inline);
+    font-family: var(--font-heading);
+    color: var(--text-color-light);
+    background-color: var(--blue);
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-s);
+      min-height: 4rem;
+    }
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--spacing-xs);
+      min-height: 1.5rem;
+      /* Overschrijft de globale a-styling, zodat links even groot zijn als de tekst ernaast */
+      font: inherit;
+      color: inherit;
+      text-decoration: none;
+      text-underline-offset: 0.3em;
+
+      &:hover,
+      &[aria-current="page"] {
+        text-decoration: underline;
+      }
+
+      &:focus-visible {
+        outline: 2px solid var(--text-color-light);
+        outline-offset: 4px;
+      }
+    }
+
+    nav > a {
+      font-size: var(--font-size-small);
+    }
+
+    img {
+      width: auto;
+      height: 1.375rem;
+    }
+
+    ul {
+      margin: 0 auto 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    nav p {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-s);
+      margin: 0;
+    }
+
+    li,
+    nav p {
+      font-family: inherit;
+      font-size: var(--font-size-small);
+    }
+
+    /* De naam van de gebruiker staat in het design alleen op grotere schermen */
+    span {
+      display: none;
+    }
+
