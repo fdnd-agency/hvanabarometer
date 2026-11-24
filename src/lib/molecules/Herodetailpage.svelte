@@ -23,7 +23,7 @@
         </p>
 
         <p class="score">
-            <span class="number">{formattedAverage}</span>
+            <strong class="number">{formattedAverage}</strong>
             <span class="score-info">
                 gemiddeld cijfer · {voteCount}
                 {voteCount === 1 ? "reactie" : "reacties"}
@@ -93,6 +93,7 @@
 
     .number {
         font-family: "U8 Bold web", sans-serif;
+        font-weight: var(--font-weight-bold);
         font-size: 80px;
         line-height: 1.2;
 
