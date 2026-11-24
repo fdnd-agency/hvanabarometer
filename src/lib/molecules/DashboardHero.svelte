@@ -104,3 +104,27 @@
       }
     }
 
+    @media (min-width: 64em) {
+      --stat-padding: var(--spacing-l);
+
+      padding: var(--spacing-xl) var(--spacing-l) 0;
+
+      h1 {
+        font-size: var(--font-size-h1);
+      }
+
+      dl {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      /* Op desktop één rij: alleen lijnen tussen de vakken */
+      div:nth-child(-n + 2) {
+        border-block-end: none;
+      }
+
+      div:not(:last-child) {
+        border-inline-end: var(--stat-border);
+      }
+    }
+  }
+</style>
