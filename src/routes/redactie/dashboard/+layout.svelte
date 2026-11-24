@@ -1,9 +1,14 @@
 <script>
+  import DashboardHero from "$lib/molecules/DashboardHero.svelte";
+
   let { children } = $props();
 </script>
 
 <div class="dashboard">
-  {@render children()}
+  <main>
+    <DashboardHero />
+    {@render children()}
+  </main>
 </div>
 
 <style>
