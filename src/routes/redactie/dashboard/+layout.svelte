@@ -1,8 +1,11 @@
 <script>
+  import DashboardHeader from "$lib/molecules/DashboardHeader.svelte";
+
   let { children } = $props();
 </script>
 
 <div class="dashboard">
+  <DashboardHeader />
   {@render children()}
 </div>
 
