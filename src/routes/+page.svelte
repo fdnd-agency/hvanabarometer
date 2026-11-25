@@ -4,10 +4,11 @@
   import Baroheader from "$lib/molecules/Baroheader.svelte";
   import BlauweArtikel from "$lib/molecules/BlauweArtikel.svelte";
   import BarometerPopup from "$lib/molecules/BarometerPopup.svelte";
+  let { data } = $props();
 </script>
 
 <Header />
-<Baroheader />
+<Baroheader average={data.average} voteCount={data.voteCount} />
 <BarometerPopup />
 <main>
   <BlauweArtikel />
