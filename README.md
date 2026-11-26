@@ -173,7 +173,7 @@ Hieronder staat de uitgebreide versie die we niet hebben gekozen:
 - **Ontwerp:** gebaseerd op de Figma-ontwerpen.
 
 
-## Datamodel
+## Datamodel Hva-Meter
 
 Het datamodel laat zien welke gegevens we opslaan en hoe ze aan elkaar gekoppeld zijn. Het bestaat uit twee tabellen:
 
@@ -183,6 +183,8 @@ Het datamodel laat zien welke gegevens we opslaan en hoe ze aan elkaar gekoppeld
 De tabellen staan in Directus. Het model is aangepast na feedback van een docent (zie issue #31).
 
 ![Datamodel](image.png)
+## Datamodel Redactie peilingen
+<img width="6128" height="6961" alt="Poll Editor Routing Architecture-2026-11-25-141601" src="https://github.com/user-attachments/assets/4e699ec8-0ded-4559-92d6-b23ede588fab" />
 
 ## Toekomstige uitbreidingen
 
