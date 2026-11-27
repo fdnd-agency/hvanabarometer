@@ -1,0 +1,94 @@
+<fieldset class="choices">
+  <legend>Doelgroep</legend>
+  <label
+    ><input
+      type="radio"
+      name="audience"
+      value="students"
+      checked
+      required
+    />
+    Studenten</label
+  >
+  <label
+    ><input type="radio" name="audience" value="employees" />
+    Medewerkers</label
+  >
+  <label
+    ><input type="radio" name="audience" value="everyone" />
+    Iedereen</label
+  >
+  <small
+    >We herkennen de groep aan het HvA-mailadres: voornaam.achternaam@
+    is student, voorletter.achternaam@ is medewerker.</small
+  >
+</fieldset>
+
+<style>
+  small {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: var(--spacing-xs);
+    justify-self: stretch;
+    color: var(--text-color-muted);
+  }
+
+  .choices {
+    label {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-xs);
+      min-block-size: var(--target-size);
+      padding-inline: var(--spacing-s);
+      border: var(--border);
+      border-radius: var(--border-radius);
+      background: var(--background-color);
+      font-weight: var(--font-weight);
+      white-space: nowrap;
+      cursor: pointer;
+
+      &:hover {
+        border-color: var(--primary-color);
+      }
+
+      &:has(:checked) {
+        box-shadow: inset 0 0 0 1px var(--border-color);
+      }
+    }
+
+    [type="radio"] {
+      flex-shrink: 0;
+      appearance: none;
+      inline-size: var(--control-size);
+      block-size: var(--control-size);
+      border: 1.5px solid var(--text-color-muted);
+      border-radius: 50%;
+
+      &:checked {
+        border: 5px solid var(--primary-color);
+      }
+
+      /* De focus komt op het label, omdat dat het klikbare vak is */
+      &:focus-visible {
+        outline: 0;
+      }
+    }
+
+    label:has(> [type="radio"]:focus-visible) {
+      outline: 3px solid var(--primary-color);
+      outline-offset: 2px;
+    }
+  }
+
+  @media (min-width: 48em) {
+    .choices {
+      grid-template-columns: repeat(3, minmax(min-content, 1fr));
+
+      legend,
+      small {
+        grid-column: 1 / -1;
+      }
+    }
+  }
+</style>
