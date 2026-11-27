@@ -8,11 +8,14 @@
 
 <style>
   .dashboard {
+    --hero-height: 305px;
+    --content-width: 70rem;
+
     min-height: 100vh;
-    /* Blauwe balk bovenaan (305px, zoals in het design), daaronder lichtblauw */
+    /* Blauwe balk bovenaan, daaronder lichtblauw */
     background: linear-gradient(
-      var(--blue) 0 305px,
-      var(--light-blue) 305px
+      var(--blue) 0 var(--hero-height),
+      var(--light-blue) var(--hero-height)
     );
   }
 </style>
