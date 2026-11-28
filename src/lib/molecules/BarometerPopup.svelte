@@ -1,6 +1,8 @@
 <script>
   import "../styles/styleguide.css";
+ import { deserialize } from "$app/forms";
 
+ let melding = $state ("");
   async function verstuurFormulier(event) {
     event.preventDefault();
 
@@ -9,6 +11,7 @@
 
     if (button.disabled) return;
 
+    melding = ""; 
     button.classList.remove("opgeslagen", "error");
     button.classList.add("laden");
     button.disabled = true;
@@ -22,10 +25,23 @@
         body: new URLSearchParams(formData),
       });
 
-      if (!response.ok) {
-        throw new Error("Verzenden mislukt");
-      }
+      const result = deserialize(await response.text());
+     if (result.type === "failure") {
+  melding = result.data.error;
 
+  button.classList.remove("laden");
+  button.classList.add("error");
+
+  if (result.data.alGestemd) {
+    button.disabled = true;
+    button.textContent = "Al gestemd vandaag";
+  } else {
+    button.disabled = false;
+    button.textContent = "Verzend";
+  }
+
+  return;
+}
       button.classList.remove("laden");
       button.classList.add("opgeslagen");
       button.textContent = "Verzonden ✔";
@@ -35,6 +51,8 @@
         popup.close();
       }, 1000);
     } catch (error) {
+      melding = "Er ging iets mis bij het versturen";
+
       button.classList.remove("laden");
       button.classList.add("error");
       button.disabled = false;
@@ -110,6 +128,9 @@
         required
       />
       <button type="submit" class="submit_button">Verzend</button>
+      <p class="form_message" aria-live="polite">
+  {melding}
+</p>
     </form>
   </div>
 </dialog>
@@ -283,5 +304,13 @@
     &:hover {
       background-color: darkblue;
     }
+  }
+  button:disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.6;
+}
+ .form_message{
+color:red;
   }
 </style>
